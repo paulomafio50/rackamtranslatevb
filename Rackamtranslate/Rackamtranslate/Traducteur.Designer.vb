@@ -33,6 +33,7 @@ Partial Class Traducteur
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GeckoWebBrowser1 = New Gecko.GeckoWebBrowser()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -121,11 +122,21 @@ Partial Class Traducteur
         '
         Me.Timer1.Enabled = True
         '
+        'GeckoWebBrowser1
+        '
+        Me.GeckoWebBrowser1.FrameEventsPropagateToMainWindow = False
+        Me.GeckoWebBrowser1.Location = New System.Drawing.Point(7, 16)
+        Me.GeckoWebBrowser1.Name = "GeckoWebBrowser1"
+        Me.GeckoWebBrowser1.Size = New System.Drawing.Size(787, 245)
+        Me.GeckoWebBrowser1.TabIndex = 15
+        Me.GeckoWebBrowser1.UseHttpActivityObserver = False
+        '
         'Traducteur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.GeckoWebBrowser1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -151,4 +162,5 @@ Partial Class Traducteur
     Friend WithEvents Button1 As Button
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents GeckoWebBrowser1 As Gecko.GeckoWebBrowser
 End Class
