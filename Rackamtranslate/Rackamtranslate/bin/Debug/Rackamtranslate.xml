@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Rackamtranslate
+</name>
+</assembly>
+<members>
+<member name="T:Rackamtranslate.My.Resources.Globalstrings">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagelater">
+<summary>
+  Recherche une chaîne localisée semblable à Later.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagelistview1">
+<summary>
+  Recherche une chaîne localisée semblable à You must select an item to be able to delete it!.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.MessageSave">
+<summary>
+  Recherche une chaîne localisée semblable à Saved.
+</summary>
+</member>
+<member name="T:Rackamtranslate.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>
