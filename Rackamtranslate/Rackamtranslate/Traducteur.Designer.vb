@@ -34,22 +34,25 @@ Partial Class Traducteur
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GeckoWebBrowser1 = New Gecko.GeckoWebBrowser()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(117, 369)
+        Me.TextBox1.Location = New System.Drawing.Point(156, 454)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(37, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(48, 22)
         Me.TextBox1.TabIndex = 14
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(475, 402)
+        Me.Label3.Location = New System.Drawing.Point(633, 495)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(51, 17)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Label3"
         '
@@ -57,9 +60,10 @@ Partial Class Traducteur
         '
         Me.Label2.AutoSize = True
         Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(470, 356)
+        Me.Label2.Location = New System.Drawing.Point(627, 438)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Label2"
         '
@@ -67,18 +71,20 @@ Partial Class Traducteur
         '
         Me.Label1.AutoSize = True
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(471, 308)
+        Me.Label1.Location = New System.Drawing.Point(628, 379)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Label1"
         '
         'Button4
         '
         Me.Button4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button4.Location = New System.Drawing.Point(695, 295)
+        Me.Button4.Location = New System.Drawing.Point(927, 363)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.Size = New System.Drawing.Size(100, 28)
         Me.Button4.TabIndex = 8
         Me.Button4.Text = "Button2"
         Me.Button4.UseVisualStyleBackColor = True
@@ -86,9 +92,10 @@ Partial Class Traducteur
         'Button3
         '
         Me.Button3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button3.Location = New System.Drawing.Point(322, 295)
+        Me.Button3.Location = New System.Drawing.Point(429, 363)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(100, 28)
         Me.Button3.TabIndex = 9
         Me.Button3.Text = "Next"
         Me.Button3.UseVisualStyleBackColor = True
@@ -96,9 +103,10 @@ Partial Class Traducteur
         'Button2
         '
         Me.Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button2.Location = New System.Drawing.Point(208, 295)
+        Me.Button2.Location = New System.Drawing.Point(277, 363)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(100, 28)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Previous"
         Me.Button2.UseVisualStyleBackColor = True
@@ -106,15 +114,17 @@ Partial Class Traducteur
         'Button1
         '
         Me.Button1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button1.Location = New System.Drawing.Point(36, 289)
+        Me.Button1.Location = New System.Drawing.Point(48, 356)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(118, 29)
+        Me.Button1.Size = New System.Drawing.Size(157, 36)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "Close"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
@@ -125,17 +135,28 @@ Partial Class Traducteur
         'GeckoWebBrowser1
         '
         Me.GeckoWebBrowser1.FrameEventsPropagateToMainWindow = False
-        Me.GeckoWebBrowser1.Location = New System.Drawing.Point(7, 16)
+        Me.GeckoWebBrowser1.Location = New System.Drawing.Point(9, 20)
+        Me.GeckoWebBrowser1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GeckoWebBrowser1.Name = "GeckoWebBrowser1"
-        Me.GeckoWebBrowser1.Size = New System.Drawing.Size(787, 245)
+        Me.GeckoWebBrowser1.Size = New System.Drawing.Size(1049, 302)
         Me.GeckoWebBrowser1.TabIndex = 15
         Me.GeckoWebBrowser1.UseHttpActivityObserver = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(788, 330)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Label4"
+        '
         'Traducteur
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GeckoWebBrowser1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
@@ -145,6 +166,7 @@ Partial Class Traducteur
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Traducteur"
         Me.Text = "Traducteur"
         Me.ResumeLayout(False)
@@ -163,4 +185,5 @@ Partial Class Traducteur
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Timer1 As Timer
     Friend WithEvents GeckoWebBrowser1 As Gecko.GeckoWebBrowser
+    Friend WithEvents Label4 As Label
 End Class
