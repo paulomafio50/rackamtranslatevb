@@ -14,9 +14,11 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -48,6 +50,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Geckofx-Core, Version=45.0.34.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx45.45.0.34\lib\net45\Geckofx-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Geckofx-Winforms, Version=45.0.34.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx45.45.0.34\lib\net45\Geckofx-Winforms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -154,6 +162,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Firefox\omni.ja" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -164,6 +173,35 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Firefox\AccessibleMarshal.dll" />
+    <Content Include="Firefox\breakpadinjector.dll" />
+    <Content Include="Firefox\d3dcompiler_47.dll" />
+    <Content Include="Firefox\freebl3.dll" />
+    <Content Include="Firefox\icudt58.dll" />
+    <Content Include="Firefox\icuin58.dll" />
+    <Content Include="Firefox\icuuc58.dll" />
+    <Content Include="Firefox\lgpllibs.dll" />
+    <Content Include="Firefox\libEGL.dll" />
+    <Content Include="Firefox\libGLESv2.dll" />
+    <Content Include="Firefox\mozglue.dll" />
+    <Content Include="Firefox\nss3.dll" />
+    <Content Include="Firefox\nssckbi.dll" />
+    <Content Include="Firefox\nssdbm3.dll" />
+    <Content Include="Firefox\plugin-container.exe" />
+    <Content Include="Firefox\plugin-hang-ui.exe" />
+    <Content Include="Firefox\sandboxbroker.dll" />
+    <Content Include="Firefox\softokn3.dll" />
+    <Content Include="Firefox\xul.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Geckofx45.45.0.34\build\Geckofx45.targets" Condition="Exists('..\packages\Geckofx45.45.0.34\build\Geckofx45.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Geckofx45.45.0.34\build\Geckofx45.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Geckofx45.45.0.34\build\Geckofx45.targets'))" />
+  </Target>
 </Project>
