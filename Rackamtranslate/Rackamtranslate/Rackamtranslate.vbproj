@@ -81,6 +81,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Chargement.Designer.vb">
       <DependentUpon>Chargement.vb</DependentUpon>
     </Compile>

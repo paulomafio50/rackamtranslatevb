@@ -2,7 +2,6 @@ C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Rackamtranslate.exe
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Rackamtranslate.pdb
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Rackamtranslate.xml
-C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.vbprojAssemblyReference.cache
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Chargement.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Globalstrings.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Principal.resources
@@ -15,3 +14,9 @@ C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.exe
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.xml
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.pdb
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Geckofx-Core.dll
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Geckofx-Winforms.dll
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Geckofx-Core.pdb
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Geckofx-Winforms.pdb
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.vbproj.CopyComplete
+C:\Users\polo\Source\Repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.vbprojAssemblyReference.cache
