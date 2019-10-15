@@ -41,3 +41,6 @@ C:\Users\razam\Source\Repos\paulomafio50\rackamtranslatevb\Rackamtranslate\Racka
 C:\Users\razam\Source\Repos\paulomafio50\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.exe
 C:\Users\razam\Source\Repos\paulomafio50\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.xml
 C:\Users\razam\Source\Repos\paulomafio50\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.pdb
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\HtmlAgilityPack.dll
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\HtmlAgilityPack.xml
