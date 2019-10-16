@@ -17,63 +17,23 @@ Imports Gecko.DOM
 Public Class Traducteur
 
 
-
-
-
-    Private _browser As Gecko.GeckoWebBrowser
-    'Dim Mytab As TabPage = Principal.TabControl2.SelectedTab
-
-    '    Dim MyRb As RichTextBox = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
-    '    'MsgBox(MyRb.Name)
-
-
     Private Sub Traducteur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        For Each item In Principal.dynamicTxt2list
-            ComboBox1.Items.Add(item)
-
-        Next
+        If Me.ComboBox1.Items.Count > 0 Then
+            Me.ComboBox1.SelectedIndex = 0
+        End If
         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
+        Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+
+        Me.Textsource.Text = line
     End Sub
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Visible = False
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        Dim Mytab As TabPage = Principal.TabControl2.SelectedTab
-        Dim MyRb As RichTextBox = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
-        Dim currentCharIndex As Long = MyRb.GetFirstCharIndexOfCurrentLine
-
-        Dim currentLineIndex As Long = MyRb.GetLineFromCharIndex(currentCharIndex)
-        'Dim currentLineText As String = MyRb.Lines(currentLineIndex)
-
-
-        Dim index As Long = MyRb.SelectionStart
-        Dim line As Long = MyRb.GetLineFromCharIndex(index)
-
-
-
-        If TextBox1.Text = "" Then
-            Label1.Text = "cursor at line " & line.ToString()
-            Label2.Text = Mytab.Tag.ToString()
-            Me.TextBox1.Text = line
-            Label3.Text = MyRb.Lines(line)
-        Else
-            TextBox1.Text = TextBox1.Text + 1
-            Label2.Text = Mytab.Tag.ToString()
-            Label3.Text = MyRb.Lines(TextBox1.Text)
-        End If
-
-
-
-
-        ' MyRb.SelectionStart = (MyRb.GetFirstCharIndexFromLine(line) + MyRb.Lines(line).Count) + 1
-
-    End Sub
 
 
 
@@ -84,47 +44,40 @@ Public Class Traducteur
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-        Dim myElement As Gecko.GeckoHtmlElement = Nothing
-        Dim elements = GeckoWebBrowser1.DomDocument.GetElementsByClassName("lmt__inner_textarea_container").Item(0)
-
-        Dim myDoc As Gecko.GeckoDocument = GeckoWebBrowser1.Window.Document
-        myElement = myDoc.GetHtmlElementById("lmt__inner_textarea_container")
 
 
-
-        Dim text = extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
+        Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
         MessageBox.Show(text)
 
     End Sub
 
-    'test
-    Public Function extract(ByVal xpath As String, ByVal type As String) As String
+    Public Function Extract(ByVal xpath As String, ByVal type As String) As String
         Dim result As String = String.Empty
-        Dim elm As GeckoHtmlElement = Nothing
+        Dim Elm As GeckoHtmlElement
         Dim wb As GeckoWebBrowser = GeckoWebBrowser1
 
         If wb IsNot Nothing Then
-            elm = GetElement(wb, xpath)
+            Elm = GetElement(wb, xpath)
 
-            If elm IsNot Nothing Then
+            If Elm IsNot Nothing Then
 
-                If elm IsNot Nothing Then
+                If Elm IsNot Nothing Then
 
                     Select Case type
                         Case "html"
-                            result = elm.OuterHtml
+                            result = Elm.OuterHtml
                         Case "text"
 
-                            If elm.[GetType]().Name = "GeckoTextAreaElement" Then
-                                result = (CType(elm, GeckoTextAreaElement)).Value
+                            If Elm.[GetType]().Name = "GeckoTextAreaElement" Then
+                                result = (CType(Elm, GeckoTextAreaElement)).Value
                             Else
-                                result = elm.TextContent.Trim()
+                                result = Elm.TextContent.Trim()
                             End If
 
                         Case "value"
-                            result = (CType(elm, GeckoInputElement)).Value
+                            result = (CType(Elm, GeckoInputElement)).Value
                         Case Else
-                            result = extractData(elm, type)
+                            result = ExtractData(Elm, type)
                     End Select
                 End If
             End If
@@ -133,7 +86,7 @@ Public Class Traducteur
         Return result
     End Function
 
-    Private Function extractData(ByVal ele As GeckoHtmlElement, ByVal attribute As String) As String
+    Private Function ExtractData(ByVal ele As GeckoHtmlElement, ByVal attribute As String) As String
         Dim result = String.Empty
 
         If ele IsNot Nothing Then
@@ -145,7 +98,6 @@ Public Class Traducteur
     End Function
 
 
-    'test
 
     Private Function GetElement(ByVal wb As GeckoWebBrowser, ByVal xpath As String) As GeckoHtmlElement
         Dim elm As GeckoHtmlElement = Nothing
@@ -175,7 +127,7 @@ Public Class Traducteur
 
     Private Function GetHtmlFromGeckoDocument(ByVal doc As GeckoDocument) As String
         Dim result = String.Empty
-        Dim element As GeckoHtmlElement = Nothing
+        Dim element As GeckoHtmlElement
         Dim geckoDomElement = doc.DocumentElement
 
         If TypeOf geckoDomElement Is GeckoHtmlElement Then
@@ -186,7 +138,32 @@ Public Class Traducteur
         Return result
     End Function
 
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        If Me.Visible Then
+            Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+
+            Me.Textsource.Text = line
+        End If
+    End Sub
+    Private Function Returnrichbox()
+        Dim Mytab As TabPage = Principal.TabControl2.TabPages("tabtrad" & Me.ComboBox1.SelectedItem)
+        Dim MyRb As RichTextBox = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
+        Return MyRb
+    End Function
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Me.NumericUpDown1.Value = 1
+        Dim count = Returnrichbox.lines.Length - 1
+
+
+
+
+        Me.NumericUpDown1.Maximum = count
+
 
     End Sub
 End Class
