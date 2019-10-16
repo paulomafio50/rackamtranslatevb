@@ -12,7 +12,6 @@ Public Class Principal
     Public dynamicTab2list As New List(Of TabPage)
     Public dynamicTab3list As New List(Of TabPage)
     Public dynamicTab4list As New List(Of TabPage)
-
     Public Property CheckedListBoxfichierEXTENTIES As Object
 
     Private Sub ToolStripMenuItem1_Click_1(sender As Object, e As EventArgs)
@@ -321,6 +320,7 @@ Public Class Principal
         Dim dynamicTxt As New TextBox
         Dim dynamicTab2 As New TabPage
         Dim dynamicTxt2 As New RichTextBox
+
         Dim dynamicTab3 As New TabPage
         Dim dynamicTxt3 As New TextBox
         Dim dynamicTab4 As New TabPage
@@ -367,6 +367,7 @@ Public Class Principal
         dynamicTxt.ScrollBars = ScrollBars.Both
         dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
         dynamicTxt2.Name = "textbtrad" & nom
+        dynamicTxt2.Tag = nom
         dynamicTxt2.Multiline = True
         dynamicTxt2.Size = dynamicTab2.Size
         dynamicTxt2.Anchor = TabControl2.Anchor
@@ -384,6 +385,7 @@ Public Class Principal
         dynamicTab2list.Add(dynamicTab2)
         dynamicTab3list.Add(dynamicTab3)
         dynamicTab4list.Add(dynamicTab4)
+        Traducteur.ComboBox1.Items.Add(dynamicTxt2.Tag)
     End Sub
 
     Private Sub RegexToolStripMenuItem_Click(sender As Object, e As EventArgs)

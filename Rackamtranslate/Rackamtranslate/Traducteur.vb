@@ -29,9 +29,11 @@ Public Class Traducteur
 
     Private Sub Traducteur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        For Each item In Principal.dynamicTxt2list
+            ComboBox1.Items.Add(item)
+
+        Next
         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
-
-
     End Sub
 
 
@@ -184,5 +186,7 @@ Public Class Traducteur
         Return result
     End Function
 
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
+    End Sub
 End Class

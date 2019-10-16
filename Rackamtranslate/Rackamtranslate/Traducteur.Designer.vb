@@ -22,7 +22,6 @@ Partial Class Traducteur
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,10 +30,9 @@ Partial Class Traducteur
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GeckoWebBrowser1 = New Gecko.GeckoWebBrowser()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -122,16 +120,6 @@ Partial Class Traducteur
         Me.Button1.Text = "Close"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
         'GeckoWebBrowser1
         '
         Me.GeckoWebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -155,11 +143,20 @@ Partial Class Traducteur
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Label4"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(161, 369)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 17
+        '
         'Traducteur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GeckoWebBrowser1)
         Me.Controls.Add(Me.TextBox1)
@@ -185,8 +182,7 @@ Partial Class Traducteur
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents GeckoWebBrowser1 As Gecko.GeckoWebBrowser
     Friend WithEvents Label4 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
