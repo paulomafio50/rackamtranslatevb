@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Principal
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Principal
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
@@ -39,9 +39,9 @@ Partial Class Principal
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabControl4 = New System.Windows.Forms.TabControl()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -150,16 +150,16 @@ Partial Class Principal
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
         'OptionsToolStripMenuItem
         '
-        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegexToolStripMenuItem, Me.ToolStripSeparator2, Me.RitchboxOptionToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegexToolStripMenuItem, Me.ToolStripSeparator4, Me.RitchboxOptionToolStripMenuItem})
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         resources.ApplyResources(Me.OptionsToolStripMenuItem, "OptionsToolStripMenuItem")
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        resources.ApplyResources(Me.ToolStripSeparator4, "ToolStripSeparator4")
         '
         'FolderBrowserDialog1
         '
@@ -282,7 +282,6 @@ Partial Class Principal
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabControl4 As TabControl
     Friend WithEvents TabControl3 As TabControl
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ColorDialog1 As ColorDialog
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
@@ -303,4 +302,5 @@ Partial Class Principal
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents TraducteurToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FontDialog1 As FontDialog
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
 End Class

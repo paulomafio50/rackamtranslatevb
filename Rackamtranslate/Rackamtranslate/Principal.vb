@@ -534,15 +534,7 @@ Public Class Principal
         'Help.Show()
     End Sub
 
-    Private Sub TranslatorToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
-        'If Traducteur.Visible = False Then
-        '    Traducteur.Visible = True
-        'Else
-        '    Traducteur.Show()
-        'End If
-
-    End Sub
 
     Private Sub TraducteurToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraducteurToolStripMenuItem.Click
         Traducteur.Show()
@@ -551,4 +543,6 @@ Public Class Principal
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
     End Sub
+
+
 End Class

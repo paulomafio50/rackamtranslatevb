@@ -1,6 +1,5 @@
 ﻿
 Imports System.Text
-
 Imports System.IO
 Imports System.Windows.Forms
 Imports System.Xml.XPath
@@ -22,9 +21,18 @@ Public Class Traducteur
             Me.ComboBox1.SelectedIndex = 0
         End If
         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
-        Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
 
-        Me.Textsource.Text = line
+        Try
+            Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+            Me.Textsource.Text = line
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+
+        Configcombobox()
     End Sub
 
 
@@ -47,7 +55,12 @@ Public Class Traducteur
 
 
         Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
-        MessageBox.Show(text)
+
+        Dim lines() As String = Returnrichbox.Lines
+        lines(Me.NumericUpDown1.Value - 1) = text
+        Returnrichbox.Lines = lines
+        Me.NumericUpDown1.Value += 1
+         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
 
     End Sub
 
@@ -146,6 +159,7 @@ Public Class Traducteur
         End If
     End Sub
     Private Function Returnrichbox()
+
         Dim Mytab As TabPage = Principal.TabControl2.TabPages("tabtrad" & Me.ComboBox1.SelectedItem)
         Dim MyRb As RichTextBox = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
         Return MyRb
@@ -156,14 +170,58 @@ Public Class Traducteur
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        Me.NumericUpDown1.Value = 1
-        Dim count = Returnrichbox.lines.Length - 1
+        Try
+            Me.NumericUpDown1.Value = 1
+            Dim count = Returnrichbox.lines.Length - 1
+            Me.NumericUpDown1.Maximum = count
 
+        Catch ex As Exception
 
+        End Try
 
-
-        Me.NumericUpDown1.Maximum = count
 
 
     End Sub
+
+    Private Sub Buttonok_Click(sender As Object, e As EventArgs) Handles Buttonok.Click
+
+        'If Traducteurconfig.ComboBox1.Items.Count > 0 Then
+        '    Traducteurconfig.ComboBox1.SelectedIndex = 0
+        'End If
+
+
+        GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+
+    End Sub
+    Private Sub Configcombobox()
+
+        'combobox traducteur
+        Me.ComboBoxtraducteur.Items.Add("Deepl")
+        Me.ComboBoxtraducteur.Items.Add("Google")
+        Me.ComboBoxtraducteur.Items.Add("Yandex")
+        Me.ComboBoxtraducteur.Text = "Deepl"
+        'combobox Langsource
+        Me.ComboBoxLangsource.Items.Add("en")
+        Me.ComboBoxLangsource.Items.Add("fr")
+        Me.ComboBoxLangsource.Items.Add("de")
+        Me.ComboBoxLangsource.Items.Add("es")
+        Me.ComboBoxLangsource.Items.Add("pt")
+        Me.ComboBoxLangsource.Items.Add("it")
+        Me.ComboBoxLangsource.Items.Add("nl")
+        Me.ComboBoxLangsource.Items.Add("pl")
+        Me.ComboBoxLangsource.Items.Add("ru")
+        Me.ComboBoxLangsource.Text = "en"
+        'combobox Langsource
+        Me.ComboBoxLangtarget.Items.Add("en")
+        Me.ComboBoxLangtarget.Items.Add("fr")
+        Me.ComboBoxLangtarget.Items.Add("de")
+        Me.ComboBoxLangtarget.Items.Add("es")
+        Me.ComboBoxLangtarget.Items.Add("pt")
+        Me.ComboBoxLangtarget.Items.Add("it")
+        Me.ComboBoxLangtarget.Items.Add("nl")
+        Me.ComboBoxLangtarget.Items.Add("pl")
+        Me.ComboBoxLangtarget.Items.Add("ru")
+        Me.ComboBoxLangtarget.Text = "fr"
+    End Sub
+
 End Class
