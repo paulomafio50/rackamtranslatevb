@@ -27,7 +27,7 @@ Partial Class Chargement
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(153, 166)
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 12)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(462, 23)
         Me.ProgressBar1.TabIndex = 10
@@ -36,10 +36,11 @@ Partial Class Chargement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(489, 49)
         Me.Controls.Add(Me.ProgressBar1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Chargement"
-        Me.Text = "Chargement"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
 
     End Sub

@@ -141,6 +141,7 @@
     <EmbeddedResource Include="Chargement.resx">
       <DependentUpon>Chargement.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Globalstrings.fr.resx" />
     <EmbeddedResource Include="Globalstrings.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,6 +203,7 @@
     <Content Include="Firefox\sandboxbroker.dll" />
     <Content Include="Firefox\softokn3.dll" />
     <Content Include="Firefox\xul.dll" />
+    <None Include="Resources\Jack1 %282%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Geckofx45.45.0.34\build\Geckofx45.targets" Condition="Exists('..\packages\Geckofx45.45.0.34\build\Geckofx45.targets')" />

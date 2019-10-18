@@ -17,6 +17,7 @@ Public Class Traducteur
 
 
     Private Sub Traducteur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If Me.ComboBox1.Items.Count > 0 Then
             Me.ComboBox1.SelectedIndex = 0
         End If
@@ -50,19 +51,7 @@ Public Class Traducteur
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-
-
-        Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
-
-        Dim lines() As String = Returnrichbox.Lines
-        lines(Me.NumericUpDown1.Value - 1) = text
-        Returnrichbox.Lines = lines
-        Me.NumericUpDown1.Value += 1
-         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
-
-    End Sub
 
     Public Function Extract(ByVal xpath As String, ByVal type As String) As String
         Dim result As String = String.Empty
@@ -179,15 +168,18 @@ Public Class Traducteur
 
         End Try
 
-
+        Try
+            Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+            Me.Textsource.Text = line
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
     Private Sub Buttonok_Click(sender As Object, e As EventArgs) Handles Buttonok.Click
+        Me.ButtonTraduire.Visible = True
 
-        'If Traducteurconfig.ComboBox1.Items.Count > 0 Then
-        '    Traducteurconfig.ComboBox1.SelectedIndex = 0
-        'End If
 
 
         GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
@@ -224,4 +216,54 @@ Public Class Traducteur
         Me.ComboBoxLangtarget.Text = "fr"
     End Sub
 
+    Private Sub Textsource_Click(sender As Object, e As EventArgs) Handles Textsource.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+    Private Sub WaitBrowser(ByVal wb As Gecko.GeckoWebBrowser)
+        While wb.IsBusy
+
+            Application.DoEvents()
+            System.Threading.Thread.Sleep(2000)
+        End While
+
+    End Sub
+
+    Private Sub ButtonTraduire_Click(sender As Object, e As EventArgs) Handles ButtonTraduire.Click
+
+
+
+
+
+
+
+        WaitBrowser(GeckoWebBrowser1)
+
+            Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
+
+
+        If text <> "" Then
+
+            Dim lines() As String = Returnrichbox.Lines
+            lines(Me.NumericUpDown1.Value - 1) = text
+            Returnrichbox.Lines = lines
+            Me.NumericUpDown1.Value += 1
+            GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+            WaitBrowser(GeckoWebBrowser1)
+
+        End If
+
+    End Sub
+
+    Private Sub Traducteur_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        e.Cancel = True
+        Me.Visible = False
+    End Sub
 End Class

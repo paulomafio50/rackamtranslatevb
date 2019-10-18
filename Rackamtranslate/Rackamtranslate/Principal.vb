@@ -23,6 +23,7 @@ Public Class Principal
     Private Sub FolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolderToolStripMenuItem.Click
         Me.FolderBrowserDialog1.ShowDialog()
         ListFiles(Me.FolderBrowserDialog1.SelectedPath)
+
     End Sub
     Public Sub ListFiles(ByVal [path] As String)
         If path = "" Then
@@ -30,7 +31,7 @@ Public Class Principal
         Else
             Dim DirInfo As New DirectoryInfo(path)
             Dim FileObj As IO.FileSystemInfo
-
+            Me.DecompilerToolStripMenuItem1.Visible = True
 
             For Each FileObj In DirInfo.GetFileSystemInfos
                 If FileObj.Attributes = FileAttributes.Directory Then
@@ -63,15 +64,22 @@ Public Class Principal
     '                                    |_||_|   |_||_|   |_||_| |_____/ \___|\___\___/|_| |_| |_| .__/|_|_|\___| |_||_|   |_||_|   |_||_|  
     '                                                                                             | |                                        
     '                                                                                             |_|                                        
-    Private Sub DecompilerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DecompilerToolStripMenuItem.Click
+
+    Private Sub DecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DecompilerToolStripMenuItem1.Click
+
+
 
         If ListView1.Items.Count > 0 Then
 
             Me.TabControl1.Visible = False
             Me.ListView1.Visible = False
             Me.TabControl2.Visible = True
+            Me.RecompilerToolStripMenuItem1.Visible = True
+            Me.TraducteurToolStripMenuItem1.Visible = True
+            Me.DecompilerToolStripMenuItem1.Visible = False
             Me.Visible = False
             Chargement.Show()
+
 
             Dim thread1 As New Thread(Sub() Decompile()) With {
                 .IsBackground = True
@@ -159,8 +167,9 @@ Public Class Principal
 
     End Sub
 
+    Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
 
-    Private Sub RecompilerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem.Click
+
         '                                           _  _     _  _     _  _   _____                                _ _        _  _     _  _     _  _   
         '                                         _| || |_ _| || |_ _| || |_|  __ \                              (_) |     _| || |_ _| || |_ _| || |_ 
         '                                        |_  __  _|_  __  _|_  __  _| |__) |___  ___ ___  _ __ ___  _ __  _| | ___|_  __  _|_  __  _|_  __  _|
@@ -173,7 +182,9 @@ Public Class Principal
             Me.ListView1.Visible = True
             Me.TabControl1.Visible = True
             Me.TabControl2.Visible = False
-
+            Me.RecompilerToolStripMenuItem1.Visible = False
+            Me.TraducteurToolStripMenuItem1.Visible = False
+            Me.DecompilerToolStripMenuItem1.Visible = True
             Me.Visible = False
 
 
@@ -290,7 +301,7 @@ Public Class Principal
         Dim nomfichier As String
         Dim chemin As String
         If OpenFileDialog1.ShowDialog() = 1 Then
-
+            Me.DecompilerToolStripMenuItem1.Visible = True
             For x = 0 To OpenFileDialog1.FileNames.Count - 1
                 nomfichier = Path.GetFileName(OpenFileDialog1.FileName)
                 chemin = Path.GetDirectoryName(OpenFileDialog1.FileName) + "\"
@@ -456,6 +467,7 @@ Public Class Principal
                 dynamicTab3list.RemoveAt(i)
                 dynamicTab4list(i).Dispose()
                 dynamicTab4list.RemoveAt(i)
+                Traducteur.ComboBox1.Items.RemoveAt(i)
 
                 ListView1.Items.RemoveAt(i)
 
@@ -488,6 +500,7 @@ Public Class Principal
         ListView1.Items.Clear()
         TabControl1.TabPages.Clear()
         TabControl2.TabPages.Clear()
+        Traducteur.ComboBox1.Items.Clear()
     End Sub
 
     Private Sub RegexToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles RegexToolStripMenuItem.Click
@@ -535,9 +548,10 @@ Public Class Principal
     End Sub
 
 
+    Private Sub TraducteurToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TraducteurToolStripMenuItem1.Click
 
-    Private Sub TraducteurToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraducteurToolStripMenuItem.Click
         Traducteur.Show()
+        Traducteur.Visible = True
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged

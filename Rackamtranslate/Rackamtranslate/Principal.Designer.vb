@@ -54,11 +54,9 @@ Partial Class Principal
         Me.EnregistrersousToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.QuitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OutilsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DecompilerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecompilerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TraducteurToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraducteurToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -171,7 +169,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.OutilsToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -222,31 +220,20 @@ Partial Class Principal
         Me.QuitterToolStripMenuItem.Name = "QuitterToolStripMenuItem"
         resources.ApplyResources(Me.QuitterToolStripMenuItem, "QuitterToolStripMenuItem")
         '
-        'OutilsToolStripMenuItem
+        'DecompilerToolStripMenuItem1
         '
-        Me.OutilsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DecompilerToolStripMenuItem, Me.RecompilerToolStripMenuItem, Me.ToolStripSeparator3, Me.TraducteurToolStripMenuItem})
-        Me.OutilsToolStripMenuItem.Name = "OutilsToolStripMenuItem"
-        resources.ApplyResources(Me.OutilsToolStripMenuItem, "OutilsToolStripMenuItem")
+        Me.DecompilerToolStripMenuItem1.Name = "DecompilerToolStripMenuItem1"
+        resources.ApplyResources(Me.DecompilerToolStripMenuItem1, "DecompilerToolStripMenuItem1")
         '
-        'DecompilerToolStripMenuItem
+        'RecompilerToolStripMenuItem1
         '
-        Me.DecompilerToolStripMenuItem.Name = "DecompilerToolStripMenuItem"
-        resources.ApplyResources(Me.DecompilerToolStripMenuItem, "DecompilerToolStripMenuItem")
+        Me.RecompilerToolStripMenuItem1.Name = "RecompilerToolStripMenuItem1"
+        resources.ApplyResources(Me.RecompilerToolStripMenuItem1, "RecompilerToolStripMenuItem1")
         '
-        'RecompilerToolStripMenuItem
+        'TraducteurToolStripMenuItem1
         '
-        Me.RecompilerToolStripMenuItem.Name = "RecompilerToolStripMenuItem"
-        resources.ApplyResources(Me.RecompilerToolStripMenuItem, "RecompilerToolStripMenuItem")
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
-        '
-        'TraducteurToolStripMenuItem
-        '
-        Me.TraducteurToolStripMenuItem.Name = "TraducteurToolStripMenuItem"
-        resources.ApplyResources(Me.TraducteurToolStripMenuItem, "TraducteurToolStripMenuItem")
+        Me.TraducteurToolStripMenuItem1.Name = "TraducteurToolStripMenuItem1"
+        resources.ApplyResources(Me.TraducteurToolStripMenuItem1, "TraducteurToolStripMenuItem1")
         '
         'Principal
         '
@@ -296,11 +283,9 @@ Partial Class Principal
     Friend WithEvents EnregistrersousToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents QuitterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OutilsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DecompilerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RecompilerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents TraducteurToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FontDialog1 As FontDialog
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents DecompilerToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents RecompilerToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TraducteurToolStripMenuItem1 As ToolStripMenuItem
 End Class
