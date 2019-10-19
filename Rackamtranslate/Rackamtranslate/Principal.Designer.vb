@@ -56,6 +56,7 @@ Partial Class Principal
         Me.QuitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TraducteurToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.ContextMenulistview.SuspendLayout()
@@ -169,7 +170,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -230,6 +231,11 @@ Partial Class Principal
         Me.RecompilerToolStripMenuItem1.Name = "RecompilerToolStripMenuItem1"
         resources.ApplyResources(Me.RecompilerToolStripMenuItem1, "RecompilerToolStripMenuItem1")
         '
+        'ReplaceToolStripMenuItem
+        '
+        Me.ReplaceToolStripMenuItem.Name = "ReplaceToolStripMenuItem"
+        resources.ApplyResources(Me.ReplaceToolStripMenuItem, "ReplaceToolStripMenuItem")
+        '
         'TraducteurToolStripMenuItem1
         '
         Me.TraducteurToolStripMenuItem1.Name = "TraducteurToolStripMenuItem1"
@@ -288,4 +294,5 @@ Partial Class Principal
     Friend WithEvents DecompilerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RecompilerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TraducteurToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReplaceToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -69,5 +69,14 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à .
+        '''</summary>
+        Friend ReadOnly Property sauvegarde() As String
+            Get
+                Return ResourceManager.GetString("sauvegarde", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

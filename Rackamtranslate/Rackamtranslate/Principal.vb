@@ -77,6 +77,7 @@ Public Class Principal
             Me.RecompilerToolStripMenuItem1.Visible = True
             Me.TraducteurToolStripMenuItem1.Visible = True
             Me.DecompilerToolStripMenuItem1.Visible = False
+            Me.ReplaceToolStripMenuItem.Visible = True
             Me.Visible = False
             Chargement.Show()
 
@@ -185,6 +186,7 @@ Public Class Principal
             Me.RecompilerToolStripMenuItem1.Visible = False
             Me.TraducteurToolStripMenuItem1.Visible = False
             Me.DecompilerToolStripMenuItem1.Visible = True
+            Me.ReplaceToolStripMenuItem.Visible = False
             Me.Visible = False
 
 
@@ -414,17 +416,22 @@ Public Class Principal
     '                                                                                __/ |                                                
     '                                                                               |___/                                                 
     Private Sub EnregistrerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnregistrerToolStripMenuItem.Click
-        Dim a As Integer = 0
-        For Each texbox In dynamicTxtlist
+        If ListView1.Items.Count > 0 Then
+            Dim a As Integer = 0
+            For Each texbox In dynamicTxtlist
 
-            IO.File.WriteAllText((ListView1.Items(a).Text & ListView1.Items(a).SubItems(1).Text), texbox.Text)
-            a += 1
+                IO.File.WriteAllText((ListView1.Items(a).Text & ListView1.Items(a).SubItems(1).Text), texbox.Text)
+                a += 1
 
-        Next
+            Next
+            MsgBox(My.Resources.Globalstrings.MessageSave)
 
 
 
-        MsgBox(My.Resources.Globalstrings.MessageSave)
+        End If
+
+
+
 
     End Sub
 
@@ -556,6 +563,10 @@ Public Class Principal
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub ReplaceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplaceToolStripMenuItem.Click
+        Remplacement.Show()
     End Sub
 
 

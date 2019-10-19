@@ -1,14 +1,5 @@
 ﻿
-Imports System.Text
-Imports System.IO
-Imports System.Windows.Forms
-Imports System.Xml.XPath
-Imports System.Threading.Tasks
 Imports Gecko
-Imports System.Text.RegularExpressions
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
 Imports Gecko.DOM
 
 
@@ -188,32 +179,37 @@ Public Class Traducteur
     Private Sub Configcombobox()
 
         'combobox traducteur
+        Me.ComboBoxtraducteur.Items.Clear()
         Me.ComboBoxtraducteur.Items.Add("Deepl")
-        Me.ComboBoxtraducteur.Items.Add("Google")
-        Me.ComboBoxtraducteur.Items.Add("Yandex")
+        'Me.ComboBoxtraducteur.Items.Add("Google")
+        'Me.ComboBoxtraducteur.Items.Add("Yandex")
         Me.ComboBoxtraducteur.Text = "Deepl"
         'combobox Langsource
-        Me.ComboBoxLangsource.Items.Add("en")
-        Me.ComboBoxLangsource.Items.Add("fr")
-        Me.ComboBoxLangsource.Items.Add("de")
-        Me.ComboBoxLangsource.Items.Add("es")
-        Me.ComboBoxLangsource.Items.Add("pt")
-        Me.ComboBoxLangsource.Items.Add("it")
-        Me.ComboBoxLangsource.Items.Add("nl")
-        Me.ComboBoxLangsource.Items.Add("pl")
-        Me.ComboBoxLangsource.Items.Add("ru")
-        Me.ComboBoxLangsource.Text = "en"
-        'combobox Langsource
-        Me.ComboBoxLangtarget.Items.Add("en")
-        Me.ComboBoxLangtarget.Items.Add("fr")
-        Me.ComboBoxLangtarget.Items.Add("de")
-        Me.ComboBoxLangtarget.Items.Add("es")
-        Me.ComboBoxLangtarget.Items.Add("pt")
-        Me.ComboBoxLangtarget.Items.Add("it")
-        Me.ComboBoxLangtarget.Items.Add("nl")
-        Me.ComboBoxLangtarget.Items.Add("pl")
-        Me.ComboBoxLangtarget.Items.Add("ru")
-        Me.ComboBoxLangtarget.Text = "fr"
+        If Me.ComboBox1.Text = "Deepl" Then
+            Me.ComboBoxLangsource.Items.Clear()
+            Me.ComboBoxLangsource.Items.Add("en")
+            Me.ComboBoxLangsource.Items.Add("fr")
+            Me.ComboBoxLangsource.Items.Add("de")
+            Me.ComboBoxLangsource.Items.Add("es")
+            Me.ComboBoxLangsource.Items.Add("pt")
+            Me.ComboBoxLangsource.Items.Add("it")
+            Me.ComboBoxLangsource.Items.Add("nl")
+            Me.ComboBoxLangsource.Items.Add("pl")
+            Me.ComboBoxLangsource.Items.Add("ru")
+            Me.ComboBoxLangsource.Text = "en"
+            'combobox Langsource
+            Me.ComboBoxLangtarget.Items.Clear()
+            Me.ComboBoxLangtarget.Items.Add("en")
+            Me.ComboBoxLangtarget.Items.Add("fr")
+            Me.ComboBoxLangtarget.Items.Add("de")
+            Me.ComboBoxLangtarget.Items.Add("es")
+            Me.ComboBoxLangtarget.Items.Add("pt")
+            Me.ComboBoxLangtarget.Items.Add("it")
+            Me.ComboBoxLangtarget.Items.Add("nl")
+            Me.ComboBoxLangtarget.Items.Add("pl")
+            Me.ComboBoxLangtarget.Items.Add("ru")
+            Me.ComboBoxLangtarget.Text = "fr"
+        End If
     End Sub
 
     Private Sub Textsource_Click(sender As Object, e As EventArgs) Handles Textsource.Click

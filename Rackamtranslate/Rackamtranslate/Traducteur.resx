@@ -130,16 +130,16 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 368</value>
+    <value>136, 364</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>23, 13</value>
   </data>
   <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="Label2.Text" xml:space="preserve">
-    <value>ligne</value>
+    <value>line</value>
   </data>
   <data name="&gt;&gt;Label2.Name" xml:space="preserve">
     <value>Label2</value>
@@ -163,16 +163,16 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 367</value>
+    <value>9, 363</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Fichier</value>
+    <value>Folder</value>
   </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
@@ -202,7 +202,7 @@
     <value>8</value>
   </data>
   <data name="ButtonTraduire.Text" xml:space="preserve">
-    <value>Traduire</value>
+    <value>Translate</value>
   </data>
   <data name="ButtonTraduire.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -247,7 +247,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 383</value>
+    <value>12, 379</value>
   </data>
   <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -271,7 +271,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="NumericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 383</value>
+    <value>139, 379</value>
   </data>
   <data name="NumericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 20</value>
@@ -298,7 +298,7 @@
     <value>True</value>
   </data>
   <data name="Textsource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 433</value>
+    <value>38, 429</value>
   </data>
   <data name="Textsource.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -322,10 +322,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="Buttonok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 377</value>
+    <value>275, 380</value>
   </data>
   <data name="Buttonok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 29</value>
+    <value>43, 22</value>
   </data>
   <data name="Buttonok.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -376,13 +376,13 @@
     <value>-3, 15</value>
   </data>
   <data name="Labeltraducteur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="Labeltraducteur.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="Labeltraducteur.Text" xml:space="preserve">
-    <value>Traducteur</value>
+    <value>Traslator</value>
   </data>
   <data name="&gt;&gt;Labeltraducteur.Name" xml:space="preserve">
     <value>Labeltraducteur</value>
@@ -403,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="Labellangtarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 20</value>
+    <value>515, 15</value>
   </data>
   <data name="Labellangtarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>

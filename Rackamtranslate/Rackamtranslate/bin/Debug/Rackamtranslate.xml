@@ -58,5 +58,10 @@ Rackamtranslate
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Rackamtranslate.My.Resources.Resources.sauvegarde">
+<summary>
+  Recherche une chaîne localisée semblable à .
+</summary>
+</member>
 </members>
 </doc>

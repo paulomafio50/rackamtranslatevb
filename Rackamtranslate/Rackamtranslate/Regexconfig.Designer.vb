@@ -97,45 +97,50 @@ Partial Class Regexconfig
         '
         'TextBoxRegexparav
         '
+        Me.TextBoxRegexparav.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexfor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBoxRegexparav.Location = New System.Drawing.Point(349, 164)
         Me.TextBoxRegexparav.Name = "TextBoxRegexparav"
         Me.TextBoxRegexparav.Size = New System.Drawing.Size(35, 20)
         Me.TextBoxRegexparav.TabIndex = 12
-        Me.TextBoxRegexparav.Text = "¤"
+        Me.TextBoxRegexparav.Text = Global.Rackamtranslate.My.MySettings.Default.regexfor
         Me.TextBoxRegexparav.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxRegexrempav
         '
+        Me.TextBoxRegexrempav.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexthis", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBoxRegexrempav.Location = New System.Drawing.Point(242, 164)
         Me.TextBoxRegexrempav.Name = "TextBoxRegexrempav"
         Me.TextBoxRegexrempav.Size = New System.Drawing.Size(35, 20)
         Me.TextBoxRegexrempav.TabIndex = 13
-        Me.TextBoxRegexrempav.Text = """"
+        Me.TextBoxRegexrempav.Text = Global.Rackamtranslate.My.MySettings.Default.regexthis
         Me.TextBoxRegexrempav.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxRegexav2
         '
+        Me.TextBoxRegexav2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexin2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBoxRegexav2.Location = New System.Drawing.Point(23, 187)
         Me.TextBoxRegexav2.Name = "TextBoxRegexav2"
         Me.TextBoxRegexav2.Size = New System.Drawing.Size(129, 20)
         Me.TextBoxRegexav2.TabIndex = 10
-        Me.TextBoxRegexav2.Text = "old "".+"""
+        Me.TextBoxRegexav2.Text = Global.Rackamtranslate.My.MySettings.Default.regexin2
         '
         'TextBoxRegexav1
         '
+        Me.TextBoxRegexav1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexin1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBoxRegexav1.Location = New System.Drawing.Point(23, 143)
         Me.TextBoxRegexav1.Name = "TextBoxRegexav1"
         Me.TextBoxRegexav1.Size = New System.Drawing.Size(129, 20)
         Me.TextBoxRegexav1.TabIndex = 11
-        Me.TextBoxRegexav1.Text = "#.+"".+"""
+        Me.TextBoxRegexav1.Text = Global.Rackamtranslate.My.MySettings.Default.regexin1
         '
         'TextBoxRegex
         '
+        Me.TextBoxRegex.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "saveregex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBoxRegex.Location = New System.Drawing.Point(23, 34)
         Me.TextBoxRegex.Name = "TextBoxRegex"
         Me.TextBoxRegex.Size = New System.Drawing.Size(192, 20)
         Me.TextBoxRegex.TabIndex = 9
-        Me.TextBoxRegex.Text = "(\s\s\s\s""|\s\s\s\s\w+\s"")(.+)("")"
+        Me.TextBoxRegex.Text = Global.Rackamtranslate.My.MySettings.Default.saveregex
         '
         'Regexconfig
         '
