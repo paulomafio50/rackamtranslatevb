@@ -158,8 +158,12 @@ Partial Class Regexconfig
         Me.Controls.Add(Me.TextBoxRegexav2)
         Me.Controls.Add(Me.TextBoxRegexav1)
         Me.Controls.Add(Me.TextBoxRegex)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Regexconfig"
-        Me.Text = "Regexconfig"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

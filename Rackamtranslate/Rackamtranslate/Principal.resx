@@ -169,19 +169,19 @@
     <value>254, 27</value>
   </metadata>
   <data name="RemoveItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>159, 22</value>
   </data>
   <data name="RemoveItemToolStripMenuItem.Text" xml:space="preserve">
     <value>Remove item</value>
   </data>
   <data name="RemoveAllItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>159, 22</value>
   </data>
   <data name="RemoveAllItemToolStripMenuItem.Text" xml:space="preserve">
     <value>Remove all item</value>
   </data>
   <data name="ContextMenulistview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 70</value>
+    <value>160, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenulistview.Name" xml:space="preserve">
     <value>ContextMenulistview</value>
@@ -439,6 +439,9 @@
   </data>
   <data name="ReplaceToolStripMenuItem.Text" xml:space="preserve">
     <value>Replace</value>
+  </data>
+  <data name="ReplaceToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="TraducteurToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>

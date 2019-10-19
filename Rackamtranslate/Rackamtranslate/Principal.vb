@@ -551,7 +551,7 @@ Public Class Principal
     End Sub
 
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
-        'Help.Show()
+        Help.Show()
     End Sub
 
 

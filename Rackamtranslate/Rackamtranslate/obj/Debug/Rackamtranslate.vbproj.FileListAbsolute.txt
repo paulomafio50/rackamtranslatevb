@@ -50,3 +50,4 @@ C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\fr\Rackamtranslate.resources.dll
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Globalstrings.fr.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\fr\Rackamtranslate.resources.dll
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Help.resources

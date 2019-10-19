@@ -39,7 +39,7 @@ Partial Class Remplacement
         '
         'Buttonrestoreremp
         '
-        Me.Buttonrestoreremp.Location = New System.Drawing.Point(412, 355)
+        Me.Buttonrestoreremp.Location = New System.Drawing.Point(422, 356)
         Me.Buttonrestoreremp.Name = "Buttonrestoreremp"
         Me.Buttonrestoreremp.Size = New System.Drawing.Size(105, 28)
         Me.Buttonrestoreremp.TabIndex = 12
@@ -48,7 +48,7 @@ Partial Class Remplacement
         '
         'Buttonapplyremp
         '
-        Me.Buttonapplyremp.Location = New System.Drawing.Point(110, 355)
+        Me.Buttonapplyremp.Location = New System.Drawing.Point(120, 355)
         Me.Buttonapplyremp.Name = "Buttonapplyremp"
         Me.Buttonapplyremp.Size = New System.Drawing.Size(112, 29)
         Me.Buttonapplyremp.TabIndex = 11
@@ -61,7 +61,7 @@ Partial Class Remplacement
         Me.Buttonadd.Name = "Buttonadd"
         Me.Buttonadd.Size = New System.Drawing.Size(37, 22)
         Me.Buttonadd.TabIndex = 9
-        Me.Buttonadd.Text = "+"
+        Me.Buttonadd.Text = "add"
         Me.Buttonadd.UseVisualStyleBackColor = True
         '
         'TextBoxremp2
@@ -110,13 +110,13 @@ Partial Class Remplacement
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
         Me.ToolStripMenuItem1.Text = "Remove item"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(159, 22)
         Me.ToolStripMenuItem2.Text = "Remove all item"
         '
         'Remplacement
@@ -130,8 +130,12 @@ Partial Class Remplacement
         Me.Controls.Add(Me.TextBoxremp2)
         Me.Controls.Add(Me.TextBoxremp1)
         Me.Controls.Add(Me.ListView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Remplacement"
-        Me.Text = "Remplacement"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
