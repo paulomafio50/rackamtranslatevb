@@ -22,6 +22,7 @@ Partial Class Traducteur
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Traducteur))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -37,6 +38,7 @@ Partial Class Traducteur
         Me.Labellangsouce = New System.Windows.Forms.Label()
         Me.ComboBoxLangtarget = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangsource = New System.Windows.Forms.ComboBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,6 +127,10 @@ Partial Class Traducteur
         resources.ApplyResources(Me.ComboBoxLangsource, "ComboBoxLangsource")
         Me.ComboBoxLangsource.Name = "ComboBoxLangsource"
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1500
+        '
         'Traducteur
         '
         resources.ApplyResources(Me, "$this")
@@ -166,4 +172,5 @@ Partial Class Traducteur
     Friend WithEvents Labellangsouce As Label
     Friend WithEvents ComboBoxLangtarget As ComboBox
     Friend WithEvents ComboBoxLangsource As ComboBox
+    Friend WithEvents Timer1 As Timer
 End Class

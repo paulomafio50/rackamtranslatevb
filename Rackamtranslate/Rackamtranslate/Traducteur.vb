@@ -185,7 +185,7 @@ Public Class Traducteur
         'Me.ComboBoxtraducteur.Items.Add("Yandex")
         Me.ComboBoxtraducteur.Text = "Deepl"
         'combobox Langsource
-        If Me.ComboBox1.Text = "Deepl" Then
+        If Me.ComboBoxtraducteur.Text = "Deepl" Then
             Me.ComboBoxLangsource.Items.Clear()
             Me.ComboBoxLangsource.Items.Add("en")
             Me.ComboBoxLangsource.Items.Add("fr")
@@ -233,8 +233,8 @@ Public Class Traducteur
     End Sub
 
     Private Sub ButtonTraduire_Click(sender As Object, e As EventArgs) Handles ButtonTraduire.Click
-
-
+        ButtonTraduire.Enabled = False
+        Timer1.Start()
 
 
 
@@ -261,5 +261,10 @@ Public Class Traducteur
     Private Sub Traducteur_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Stop()
+        ButtonTraduire.Enabled = True
     End Sub
 End Class
