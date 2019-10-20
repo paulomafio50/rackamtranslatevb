@@ -53,15 +53,5 @@ Rackamtranslate
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
-<member name="P:Rackamtranslate.My.Resources.Resources.Jack1__2_">
-<summary>
-  Recherche une ressource localisée de type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Rackamtranslate.My.Resources.Resources.sauvegarde">
-<summary>
-  Recherche une chaîne localisée semblable à .
-</summary>
-</member>
 </members>
 </doc>

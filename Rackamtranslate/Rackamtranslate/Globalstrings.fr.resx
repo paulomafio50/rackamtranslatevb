@@ -107,4 +107,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Messagelater" xml:space="preserve">
+    <value>Plus tard</value>
+  </data>
+  <data name="Messagelistview1" xml:space="preserve">
+    <value>Vous devez sélectionner un élément pour pouvoir le supprimer!</value>
+  </data>
+  <data name="MessageSave" xml:space="preserve">
+    <value>Enregistré</value>
+  </data>
 </root>

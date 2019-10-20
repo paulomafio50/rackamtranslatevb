@@ -59,24 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Jack1__2_() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Jack1__2_", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à .
-        '''</summary>
-        Friend ReadOnly Property sauvegarde() As String
-            Get
-                Return ResourceManager.GetString("sauvegarde", resourceCulture)
-            End Get
-        End Property
     End Module
 End Namespace

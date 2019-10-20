@@ -5,7 +5,7 @@ Imports System.Text
 
 
 Public Class Memory
-    Public MRT As New StringBuilder
+    Public Output As New StringBuilder
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
 
     End Sub
@@ -73,8 +73,10 @@ Public Class Memory
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim x As Integer
         Dim b As Integer
-        x = Me.ListView1.Items.Count
+        Dim z As Integer
 
+        x = Me.ListView1.Items.Count
+        Dim MRT As New StringBuilder
         For Each item As ListViewItem In ListView1.Items
 
             MRT.Append(IO.File.ReadAllText(item.Text & ListView1.Items(b).SubItems(1).Text))
@@ -83,10 +85,9 @@ Public Class Memory
 
         Dim txt As String
 
-        Dim t As Integer = 0
-        Dim li As Long = 0
 
-        Dim nbl As Integer
+
+
         Dim compteur As Integer = 0
 
         'For Each texbox In dynamicTxtlist
@@ -95,10 +96,8 @@ Public Class Memory
         'Next texbox
         'Invoke(New MethodInvoker(Sub() Chargement.ProgressBar1.Maximum = nbl))
 
-        Dim txttrans As String
-            Dim Output As New StringBuilder
-            Dim Output2 As New StringBuilder
-            Dim Output3 As New StringBuilder
+
+
 
 
 
@@ -111,15 +110,23 @@ Public Class Memory
         Dim Lines() As String = MRT.ToString.Split(Environment.NewLine)
 
         For Each Line As String In Lines
-                compteur += 1
+
             'If this line contains any of the SI values you want to replace
 
             Dim regex As Regex = New Regex(TextBoxRegex.Text)
             Dim match As Match = regex.Match(Line)
             If match.Success Then
-                Console.WriteLine(match.Value)
-                txttrans = match.Value
-                Output.AppendLine(txttrans)
+                z = Me.ListView2.Items.Count
+                txt = match.Value
+                If compteur = 0 Then
+
+                    Me.ListView2.Items.Add(txt)
+                    compteur = 1
+                Else
+                    ListView2.Items(z - 1).SubItems.Add(txt)
+                    compteur = 0
+
+                End If
             End If
 
 
@@ -129,7 +136,7 @@ Public Class Memory
 
         'Replace the RichTextBox.Text with the Stringbuilder output
 
-        TextBox1.Text = Output.ToString
+
 
 
 
@@ -138,4 +145,52 @@ Public Class Memory
 
 
     End Sub
+
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        SaveFileDialog1.Filter = " files (*.mem)|*.mem"
+        SaveFileDialog1.ShowDialog()
+    End Sub
+    Private Sub SaveFileDialog1_FileOk(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog1.FileOk
+        Dim FileToSaveAs As String = SaveFileDialog1.FileName
+        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+        Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
+            bf.Serialize(fs, New ArrayList(ListView2.Items))
+        End Using
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Dim fileName As String
+        Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog With {
+            .Multiselect = False,
+            .FileName = String.Empty,
+            .Filter = "mem files (*.mem)|*.mem",
+            .FilterIndex = 1,
+            .RestoreDirectory = True
+        }
+
+        If openFileDialog1.ShowDialog() = DialogResult.OK Then
+
+            Try
+                fileName = openFileDialog1.FileName
+                Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+                Using fs As New System.IO.FileStream(fileName, IO.FileMode.Open)
+                    ListView2.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))
+                End Using
+
+
+
+            Catch ex As Exception
+                MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
+            End Try
+
+        End If
+
+        openFileDialog1.Dispose()
+
+    End Sub
+
+
+
 End Class

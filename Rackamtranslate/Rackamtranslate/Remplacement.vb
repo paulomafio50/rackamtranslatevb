@@ -1,12 +1,12 @@
 ﻿Imports System.ComponentModel
 
 Public Class Remplacement
-    Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
     Private Sub Buttonadd_Click(sender As Object, e As EventArgs) Handles Buttonadd.Click
 
         Dim S() As String = Split(TextBoxremp1.Text & "¤:¤" & TextBoxremp2.Text, "¤:¤")
-        Dim I As New ListViewItem
-        I.Text = S(0)
+        Dim I As New ListViewItem With {
+            .Text = S(0)
+        }
         I.SubItems.Add(S(1))
         ListView1.Items.Add(I)
 
@@ -19,6 +19,8 @@ Public Class Remplacement
             Next
         Next
         'sauvegarde listview
+        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+
         Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Create)
             bf.Serialize(fs, New ArrayList(ListView1.Items))
         End Using
@@ -82,6 +84,7 @@ Public Class Remplacement
     Private Sub Remplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sauvegarde listview
         Try
+            Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
             Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Open)
                 ListView1.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))
             End Using
@@ -110,6 +113,7 @@ Public Class Remplacement
 
             End If
         End If
+        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
         Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Create)
             bf.Serialize(fs, New ArrayList(ListView1.Items))
         End Using
@@ -117,6 +121,7 @@ Public Class Remplacement
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         ListView1.Clear()
+        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
         Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Create)
             bf.Serialize(fs, New ArrayList(ListView1.Items))
         End Using

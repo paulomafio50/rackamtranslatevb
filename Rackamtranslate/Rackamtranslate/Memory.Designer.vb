@@ -30,12 +30,16 @@ Partial Class Memory
         Me.OpenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBoxRegex = New System.Windows.Forms.TextBox()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.Source = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Traslation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,7 +79,7 @@ Partial Class Memory
         '
         'OpenToolStripMenuItem
         '
-        Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem1})
+        Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem1, Me.SaveToolStripMenuItem})
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.OpenToolStripMenuItem.Text = "File"
@@ -90,14 +94,20 @@ Partial Class Memory
         'FilesToolStripMenuItem
         '
         Me.FilesToolStripMenuItem.Name = "FilesToolStripMenuItem"
-        Me.FilesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FilesToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.FilesToolStripMenuItem.Text = "Files"
         '
         'FolderToolStripMenuItem
         '
         Me.FolderToolStripMenuItem.Name = "FolderToolStripMenuItem"
-        Me.FolderToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FolderToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.FolderToolStripMenuItem.Text = "Folder"
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveToolStripMenuItem.Text = "Save"
         '
         'Button1
         '
@@ -121,14 +131,6 @@ Partial Class Memory
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(113, 303)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(591, 120)
-        Me.TextBox1.TabIndex = 15
-        '
         'TextBoxRegex
         '
         Me.TextBoxRegex.Location = New System.Drawing.Point(220, 262)
@@ -137,13 +139,37 @@ Partial Class Memory
         Me.TextBoxRegex.TabIndex = 16
         Me.TextBoxRegex.Text = """(.+)"""
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.DefaultExt = "mem"
+        '
+        'ListView2
+        '
+        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Source, Me.Traslation})
+        Me.ListView2.HideSelection = False
+        Me.ListView2.Location = New System.Drawing.Point(54, 308)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(659, 97)
+        Me.ListView2.TabIndex = 17
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
+        '
+        'Source
+        '
+        Me.Source.Text = "Source"
+        Me.Source.Width = 324
+        '
+        'Traslation
+        '
+        Me.Traslation.Text = "Traslation"
+        '
         'Memory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ListView2)
         Me.Controls.Add(Me.TextBoxRegex)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ListView1)
@@ -170,6 +196,10 @@ Partial Class Memory
     Friend WithEvents Button2 As Button
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBoxRegex As TextBox
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListView2 As ListView
+    Friend WithEvents Source As ColumnHeader
+    Friend WithEvents Traslation As ColumnHeader
 End Class
