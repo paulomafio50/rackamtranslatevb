@@ -569,5 +569,7 @@ Public Class Principal
         Remplacement.Show()
     End Sub
 
-
+    Private Sub MemoryTranslationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MemoryTranslationToolStripMenuItem.Click
+        Memory.Show()
+    End Sub
 End Class

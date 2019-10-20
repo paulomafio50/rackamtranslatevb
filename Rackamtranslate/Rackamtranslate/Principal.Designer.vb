@@ -58,6 +58,7 @@ Partial Class Principal
         Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TraducteurToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MemoryTranslationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -170,7 +171,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.MemoryTranslationToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -241,6 +242,11 @@ Partial Class Principal
         Me.TraducteurToolStripMenuItem1.Name = "TraducteurToolStripMenuItem1"
         resources.ApplyResources(Me.TraducteurToolStripMenuItem1, "TraducteurToolStripMenuItem1")
         '
+        'MemoryTranslationToolStripMenuItem
+        '
+        Me.MemoryTranslationToolStripMenuItem.Name = "MemoryTranslationToolStripMenuItem"
+        resources.ApplyResources(Me.MemoryTranslationToolStripMenuItem, "MemoryTranslationToolStripMenuItem")
+        '
         'Principal
         '
         resources.ApplyResources(Me, "$this")
@@ -295,4 +301,5 @@ Partial Class Principal
     Friend WithEvents RecompilerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TraducteurToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReplaceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MemoryTranslationToolStripMenuItem As ToolStripMenuItem
 End Class
