@@ -55,8 +55,8 @@ C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\bin\Debug\Rackamtranslate.application
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.exe.manifest
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.application
-C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Memory.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Globalstrings.en.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Principal.fr.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Traducteur.en.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Traducteur.fr.resources
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.MT.resources

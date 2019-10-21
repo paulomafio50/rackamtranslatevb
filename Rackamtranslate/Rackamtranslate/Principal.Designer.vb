@@ -58,8 +58,14 @@ Partial Class Principal
         Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TraducteurToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MemoryTranslationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreateMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApplyMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialogMT = New System.Windows.Forms.OpenFileDialog()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -171,7 +177,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.MemoryTranslationToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.MTToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -242,10 +248,35 @@ Partial Class Principal
         Me.TraducteurToolStripMenuItem1.Name = "TraducteurToolStripMenuItem1"
         resources.ApplyResources(Me.TraducteurToolStripMenuItem1, "TraducteurToolStripMenuItem1")
         '
-        'MemoryTranslationToolStripMenuItem
+        'MTToolStripMenuItem
         '
-        Me.MemoryTranslationToolStripMenuItem.Name = "MemoryTranslationToolStripMenuItem"
-        resources.ApplyResources(Me.MemoryTranslationToolStripMenuItem, "MemoryTranslationToolStripMenuItem")
+        Me.MTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenMTToolStripMenuItem, Me.CreateMTToolStripMenuItem, Me.ApplyMTToolStripMenuItem, Me.ShowMTToolStripMenuItem})
+        Me.MTToolStripMenuItem.Name = "MTToolStripMenuItem"
+        resources.ApplyResources(Me.MTToolStripMenuItem, "MTToolStripMenuItem")
+        '
+        'OpenMTToolStripMenuItem
+        '
+        Me.OpenMTToolStripMenuItem.Name = "OpenMTToolStripMenuItem"
+        resources.ApplyResources(Me.OpenMTToolStripMenuItem, "OpenMTToolStripMenuItem")
+        '
+        'CreateMTToolStripMenuItem
+        '
+        Me.CreateMTToolStripMenuItem.Name = "CreateMTToolStripMenuItem"
+        resources.ApplyResources(Me.CreateMTToolStripMenuItem, "CreateMTToolStripMenuItem")
+        '
+        'ApplyMTToolStripMenuItem
+        '
+        Me.ApplyMTToolStripMenuItem.Name = "ApplyMTToolStripMenuItem"
+        resources.ApplyResources(Me.ApplyMTToolStripMenuItem, "ApplyMTToolStripMenuItem")
+        '
+        'ShowMTToolStripMenuItem
+        '
+        Me.ShowMTToolStripMenuItem.Name = "ShowMTToolStripMenuItem"
+        resources.ApplyResources(Me.ShowMTToolStripMenuItem, "ShowMTToolStripMenuItem")
+        '
+        'OpenFileDialogMT
+        '
+        Me.OpenFileDialogMT.FileName = "OpenFileDialog2"
         '
         'Principal
         '
@@ -301,5 +332,11 @@ Partial Class Principal
     Friend WithEvents RecompilerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TraducteurToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReplaceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MemoryTranslationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreateMTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApplyMTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShowMTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialogMT As SaveFileDialog
+    Friend WithEvents OpenMTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenFileDialogMT As OpenFileDialog
 End Class

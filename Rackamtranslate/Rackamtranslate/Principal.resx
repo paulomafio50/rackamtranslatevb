@@ -359,13 +359,13 @@
     <value>Ctrl+O</value>
   </data>
   <data name="OuvrirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="OuvrirToolStripMenuItem.Text" xml:space="preserve">
     <value>Open</value>
   </data>
   <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>143, 6</value>
   </data>
   <data name="EnregistrerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -390,22 +390,22 @@
     <value>Ctrl+S</value>
   </data>
   <data name="EnregistrerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="EnregistrerToolStripMenuItem.Text" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="EnregistrersousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="EnregistrersousToolStripMenuItem.Text" xml:space="preserve">
     <value>Save as</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>143, 6</value>
   </data>
   <data name="QuitterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="QuitterToolStripMenuItem.Text" xml:space="preserve">
     <value>Quit</value>
@@ -452,11 +452,35 @@
   <data name="TraducteurToolStripMenuItem1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="MemoryTranslationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 20</value>
+  <data name="OpenMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="MemoryTranslationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Memory translation</value>
+  <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open MT</value>
+  </data>
+  <data name="CreateMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="CreateMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create MT</value>
+  </data>
+  <data name="ApplyMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apply MT</value>
+  </data>
+  <data name="ShowMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ShowMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show MT</value>
+  </data>
+  <data name="MTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 20</value>
+  </data>
+  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
+    <value>MT</value>
   </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -481,6 +505,12 @@
   </data>
   <metadata name="FontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 25</value>
+  </metadata>
+  <metadata name="SaveFileDialogMT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>702, 31</value>
+  </metadata>
+  <metadata name="OpenFileDialogMT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>850, 31</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2679,10 +2709,34 @@
   <data name="&gt;&gt;TraducteurToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MemoryTranslationToolStripMenuItem.Name" xml:space="preserve">
-    <value>MemoryTranslationToolStripMenuItem</value>
+  <data name="&gt;&gt;MTToolStripMenuItem.Name" xml:space="preserve">
+    <value>MTToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;MemoryTranslationToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;MTToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenMTToolStripMenuItem.Name" xml:space="preserve">
+    <value>OpenMTToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;OpenMTToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreateMTToolStripMenuItem.Name" xml:space="preserve">
+    <value>CreateMTToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CreateMTToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ApplyMTToolStripMenuItem.Name" xml:space="preserve">
+    <value>ApplyMTToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ApplyMTToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ShowMTToolStripMenuItem.Name" xml:space="preserve">
+    <value>ShowMTToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ShowMTToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FontDialog1.Name" xml:space="preserve">
@@ -2690,6 +2744,18 @@
   </data>
   <data name="&gt;&gt;FontDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveFileDialogMT.Name" xml:space="preserve">
+    <value>SaveFileDialogMT</value>
+  </data>
+  <data name="&gt;&gt;SaveFileDialogMT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialogMT.Name" xml:space="preserve">
+    <value>OpenFileDialogMT</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialogMT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Principal</value>

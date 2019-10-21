@@ -33,13 +33,15 @@ Partial Class Regexconfig
         Me.TextBoxRegexav2 = New System.Windows.Forms.TextBox()
         Me.TextBoxRegexav1 = New System.Windows.Forms.TextBox()
         Me.TextBoxRegex = New System.Windows.Forms.TextBox()
+        Me.TextBoxRegexforMT = New System.Windows.Forms.TextBox()
+        Me.LabelRegexforMT = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label4.Location = New System.Drawing.Point(23, 124)
+        Me.Label4.Location = New System.Drawing.Point(24, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(102, 13)
         Me.Label4.TabIndex = 19
@@ -49,7 +51,7 @@ Partial Class Regexconfig
         '
         Me.Label3.AutoSize = True
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(349, 144)
+        Me.Label3.Location = New System.Drawing.Point(219, 94)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(22, 13)
         Me.Label3.TabIndex = 18
@@ -59,7 +61,7 @@ Partial Class Regexconfig
         '
         Me.Label2.AutoSize = True
         Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(242, 145)
+        Me.Label2.Location = New System.Drawing.Point(158, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(27, 13)
         Me.Label2.TabIndex = 17
@@ -71,14 +73,14 @@ Partial Class Regexconfig
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Label1.Location = New System.Drawing.Point(23, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.Size = New System.Drawing.Size(179, 13)
         Me.Label1.TabIndex = 16
-        Me.Label1.Text = "Regex"
+        Me.Label1.Text = "Regex for decompiler and recompiler"
         '
         'ButtonRestav
         '
         Me.ButtonRestav.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ButtonRestav.Location = New System.Drawing.Point(242, 225)
+        Me.ButtonRestav.Location = New System.Drawing.Point(163, 165)
         Me.ButtonRestav.Name = "ButtonRestav"
         Me.ButtonRestav.Size = New System.Drawing.Size(94, 24)
         Me.ButtonRestav.TabIndex = 15
@@ -88,7 +90,7 @@ Partial Class Regexconfig
         'ButtonRempav
         '
         Me.ButtonRempav.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ButtonRempav.Location = New System.Drawing.Point(65, 225)
+        Me.ButtonRempav.Location = New System.Drawing.Point(23, 165)
         Me.ButtonRempav.Name = "ButtonRempav"
         Me.ButtonRempav.Size = New System.Drawing.Size(87, 24)
         Me.ButtonRempav.TabIndex = 14
@@ -98,7 +100,7 @@ Partial Class Regexconfig
         'TextBoxRegexparav
         '
         Me.TextBoxRegexparav.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexfor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegexparav.Location = New System.Drawing.Point(349, 164)
+        Me.TextBoxRegexparav.Location = New System.Drawing.Point(222, 110)
         Me.TextBoxRegexparav.Name = "TextBoxRegexparav"
         Me.TextBoxRegexparav.Size = New System.Drawing.Size(35, 20)
         Me.TextBoxRegexparav.TabIndex = 12
@@ -108,7 +110,7 @@ Partial Class Regexconfig
         'TextBoxRegexrempav
         '
         Me.TextBoxRegexrempav.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexthis", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegexrempav.Location = New System.Drawing.Point(242, 164)
+        Me.TextBoxRegexrempav.Location = New System.Drawing.Point(161, 110)
         Me.TextBoxRegexrempav.Name = "TextBoxRegexrempav"
         Me.TextBoxRegexrempav.Size = New System.Drawing.Size(35, 20)
         Me.TextBoxRegexrempav.TabIndex = 13
@@ -118,7 +120,7 @@ Partial Class Regexconfig
         'TextBoxRegexav2
         '
         Me.TextBoxRegexav2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexin2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegexav2.Location = New System.Drawing.Point(23, 187)
+        Me.TextBoxRegexav2.Location = New System.Drawing.Point(26, 121)
         Me.TextBoxRegexav2.Name = "TextBoxRegexav2"
         Me.TextBoxRegexav2.Size = New System.Drawing.Size(129, 20)
         Me.TextBoxRegexav2.TabIndex = 10
@@ -127,7 +129,7 @@ Partial Class Regexconfig
         'TextBoxRegexav1
         '
         Me.TextBoxRegexav1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "regexin1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegexav1.Location = New System.Drawing.Point(23, 143)
+        Me.TextBoxRegexav1.Location = New System.Drawing.Point(26, 95)
         Me.TextBoxRegexav1.Name = "TextBoxRegexav1"
         Me.TextBoxRegexav1.Size = New System.Drawing.Size(129, 20)
         Me.TextBoxRegexav1.TabIndex = 11
@@ -136,17 +138,36 @@ Partial Class Regexconfig
         'TextBoxRegex
         '
         Me.TextBoxRegex.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "saveregex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegex.Location = New System.Drawing.Point(23, 34)
+        Me.TextBoxRegex.Location = New System.Drawing.Point(26, 34)
         Me.TextBoxRegex.Name = "TextBoxRegex"
         Me.TextBoxRegex.Size = New System.Drawing.Size(192, 20)
         Me.TextBoxRegex.TabIndex = 9
         Me.TextBoxRegex.Text = Global.Rackamtranslate.My.MySettings.Default.saveregex
+        '
+        'TextBoxRegexforMT
+        '
+        Me.TextBoxRegexforMT.Location = New System.Drawing.Point(26, 240)
+        Me.TextBoxRegexforMT.Name = "TextBoxRegexforMT"
+        Me.TextBoxRegexforMT.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxRegexforMT.TabIndex = 20
+        Me.TextBoxRegexforMT.Text = """.+"""
+        '
+        'LabelRegexforMT
+        '
+        Me.LabelRegexforMT.AutoSize = True
+        Me.LabelRegexforMT.Location = New System.Drawing.Point(24, 224)
+        Me.LabelRegexforMT.Name = "LabelRegexforMT"
+        Me.LabelRegexforMT.Size = New System.Drawing.Size(72, 13)
+        Me.LabelRegexforMT.TabIndex = 21
+        Me.LabelRegexforMT.Text = "Regex for MT"
         '
         'Regexconfig
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(437, 290)
+        Me.Controls.Add(Me.LabelRegexforMT)
+        Me.Controls.Add(Me.TextBoxRegexforMT)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -180,4 +201,6 @@ Partial Class Regexconfig
     Friend WithEvents TextBoxRegexav2 As TextBox
     Friend WithEvents TextBoxRegexav1 As TextBox
     Friend WithEvents TextBoxRegex As TextBox
+    Friend WithEvents TextBoxRegexforMT As TextBox
+    Friend WithEvents LabelRegexforMT As Label
 End Class

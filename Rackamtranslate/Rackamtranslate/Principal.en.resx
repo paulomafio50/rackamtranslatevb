@@ -169,7 +169,7 @@
     <value>Font</value>
   </data>
   <data name="RitchboxOptionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ritchbox option!</value>
+    <value>Ritchbox option</value>
   </data>
   <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
@@ -227,5 +227,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Rackam translate beta</value>
+  </data>
+  <data name="CreateMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create MT</value>
+  </data>
+  <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apply MT</value>
+  </data>
+  <data name="ShowMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show MT</value>
+  </data>
+  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open MT</value>
   </data>
 </root>

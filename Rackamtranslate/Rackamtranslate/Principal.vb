@@ -569,7 +569,141 @@ Public Class Principal
         Remplacement.Show()
     End Sub
 
-    Private Sub MemoryTranslationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MemoryTranslationToolStripMenuItem.Click
-        Memory.Show()
+
+
+    Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
+        Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
+            .Filter = " files (*.mem)|*.mem"
+        }
+
+
+        If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim x As Integer
+            Dim b As Integer
+            Dim z As Integer
+            Dim txt As String
+            Dim MRT As New StringBuilder
+            Dim compteur As Integer = 0
+            Dim Lines() As String = MRT.ToString.Split(Environment.NewLine)
+            x = Me.ListView1.Items.Count
+            Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
+            Dim match As Match
+
+
+
+
+
+
+            For Each item As ListViewItem In ListView1.Items
+
+                MRT.Append(IO.File.ReadAllText(item.Text & ListView1.Items(b).SubItems(1).Text))
+                b += 1
+            Next
+
+
+
+            For Each Line As String In Lines
+                match = regex.Match(Line)
+                If match.Success Then
+                    z = MT.ListView2.Items.Count
+                    txt = match.Value
+                    If compteur = 0 Then
+
+                        MT.ListView2.Items.Add(txt)
+                        compteur = 1
+                    Else
+                        MT.ListView2.Items(z - 1).SubItems.Add(txt)
+                        compteur = 0
+
+                    End If
+                End If
+
+            Next Line
+        End If
+
+        Dim FileToSaveAs As String = SaveFileDialogMT.FileName
+        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+        Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
+            bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
+        End Using
+
+
+        SaveFileDialogMT.Dispose()
+    End Sub
+
+    Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
+        Dim fileName As String
+        Dim openFileDialogMT As OpenFileDialog = New OpenFileDialog With {
+            .Multiselect = False,
+            .FileName = String.Empty,
+            .Filter = "mem files (*.mem)|*.mem",
+            .FilterIndex = 1,
+            .RestoreDirectory = True
+        }
+
+
+        If openFileDialogMT.ShowDialog() = DialogResult.OK Then
+
+            Try
+                fileName = openFileDialogMT.FileName
+                Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+                Using fs As New System.IO.FileStream(fileName, IO.FileMode.Open)
+                    MT.ListView2.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))
+                End Using
+
+
+
+            Catch ex As Exception
+                MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
+            End Try
+
+        End If
+
+        openFileDialogMT.Dispose()
+    End Sub
+
+    Private Sub ShowMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMTToolStripMenuItem.Click
+        MT.Show()
+        MT.Visible = True
+    End Sub
+
+    Private Sub ApplyMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplyMTToolStripMenuItem.Click
+        Dim b As Integer = 0
+
+
+
+
+        For Each item As ListViewItem In ListView1.Items
+
+
+
+
+            For Each texbox In dynamicTxtlist
+
+
+                texbox.Text = texbox.Text.Replace(item.Text, ListView1.Items(b).SubItems(1).Text)
+
+
+            Next
+
+            b += 1
+
+
+
+
+        Next
+
+
+
+
+
+
+
+
+
+
+
+
+
     End Sub
 End Class

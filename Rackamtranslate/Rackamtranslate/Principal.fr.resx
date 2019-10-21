@@ -172,7 +172,7 @@
     <value>Décompiler</value>
   </data>
   <data name="RecompilerToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Recompiler!</value>
+    <value>Recompiler</value>
   </data>
   <data name="ReplaceToolStripMenuItem.Text" xml:space="preserve">
     <value>Remplacer</value>
@@ -185,5 +185,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Rackam translatebeta</value>
+  </data>
+  <data name="CreateMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer MT</value>
+  </data>
+  <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Appliquer MT</value>
+  </data>
+  <data name="ShowMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrez MT</value>
+  </data>
+  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir MT</value>
   </data>
 </root>
