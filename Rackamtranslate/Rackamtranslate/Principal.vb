@@ -692,7 +692,7 @@ Public Class Principal
 
 
 
-                For Each item As ListViewItem In ListView1.Items
+                For Each item As ListViewItem In MT.ListView2.Items
 
 
 
@@ -700,7 +700,7 @@ Public Class Principal
                     For Each texbox In dynamicTxtlist
 
 
-                        texbox.Text = texbox.Text.Replace(item.Text, ListView1.Items(b).SubItems(1).Text)
+                        texbox.Text = texbox.Text.Replace(item.Text, MT.ListView2.Items(b).SubItems(1).Text)
 
 
                     Next
@@ -715,7 +715,7 @@ Public Class Principal
             Else
                 MsgBox("Load MT before")
             End If
-
+            MsgBox("fini")
         Else
 
             MsgBox("open Files or folder before")

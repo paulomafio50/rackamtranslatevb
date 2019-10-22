@@ -171,9 +171,16 @@ Public Class Traducteur
     Private Sub Buttonok_Click(sender As Object, e As EventArgs) Handles Buttonok.Click
         Me.ButtonTraduire.Visible = True
 
+        Select Case Me.ComboBoxtraducteur.Text
+            Case "Deepl"
+                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+            Case "Google"
+                GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & ComboBoxLangsource.Text & "&tl=" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+            Case "Yandex"
+                GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & ComboBoxLangsource.Text & "-" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+        End Select
 
 
-        GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
 
     End Sub
     Private Sub Configcombobox()
@@ -181,8 +188,8 @@ Public Class Traducteur
         'combobox traducteur
         Me.ComboBoxtraducteur.Items.Clear()
         Me.ComboBoxtraducteur.Items.Add("Deepl")
-        'Me.ComboBoxtraducteur.Items.Add("Google")
-        'Me.ComboBoxtraducteur.Items.Add("Yandex")
+        Me.ComboBoxtraducteur.Items.Add("Google")
+        Me.ComboBoxtraducteur.Items.Add("Yandex")
         Me.ComboBoxtraducteur.Text = "Deepl"
         'combobox Langsource
         If Me.ComboBoxtraducteur.Text = "Deepl" Then
@@ -235,15 +242,22 @@ Public Class Traducteur
     Private Sub ButtonTraduire_Click(sender As Object, e As EventArgs) Handles ButtonTraduire.Click
         ButtonTraduire.Enabled = False
         Timer1.Start()
-
+        Dim text
 
 
 
 
         WaitBrowser(GeckoWebBrowser1)
 
-            Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
 
+        Select Case Me.ComboBoxtraducteur.Text
+            Case "Deepl"
+                text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
+            Case "Google"
+                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]", "text")
+            Case "Yandex"
+                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]", "text")
+        End Select
 
         If text <> "" Then
 
@@ -251,7 +265,14 @@ Public Class Traducteur
             lines(Me.NumericUpDown1.Value - 1) = text
             Returnrichbox.Lines = lines
             Me.NumericUpDown1.Value += 1
-            GeckoWebBrowser1.Navigate("https://www.deepl.com/translator" & "#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+            Select Case Me.ComboBoxtraducteur.Text
+                Case "Deepl"
+                    GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+                Case "Google"
+                    GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & ComboBoxLangsource.Text & "&tl=" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+                Case "Yandex"
+                    GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & ComboBoxLangsource.Text & "-" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+            End Select
             WaitBrowser(GeckoWebBrowser1)
 
         End If
@@ -266,5 +287,83 @@ Public Class Traducteur
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
         ButtonTraduire.Enabled = True
+    End Sub
+
+    Private Sub ComboBoxtraducteur_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxtraducteur.SelectedIndexChanged
+        Select Case Me.ComboBoxtraducteur.Text
+            Case "Deepl"
+                Me.ComboBoxLangsource.Items.Clear()
+                Me.ComboBoxLangsource.Items.Add("en")
+                Me.ComboBoxLangsource.Items.Add("fr")
+                Me.ComboBoxLangsource.Items.Add("de")
+                Me.ComboBoxLangsource.Items.Add("es")
+                Me.ComboBoxLangsource.Items.Add("pt")
+                Me.ComboBoxLangsource.Items.Add("it")
+                Me.ComboBoxLangsource.Items.Add("nl")
+                Me.ComboBoxLangsource.Items.Add("pl")
+                Me.ComboBoxLangsource.Items.Add("ru")
+                Me.ComboBoxLangsource.Text = "en"
+                'combobox Langsource
+                Me.ComboBoxLangtarget.Items.Clear()
+                Me.ComboBoxLangtarget.Items.Add("en")
+                Me.ComboBoxLangtarget.Items.Add("fr")
+                Me.ComboBoxLangtarget.Items.Add("de")
+                Me.ComboBoxLangtarget.Items.Add("es")
+                Me.ComboBoxLangtarget.Items.Add("pt")
+                Me.ComboBoxLangtarget.Items.Add("it")
+                Me.ComboBoxLangtarget.Items.Add("nl")
+                Me.ComboBoxLangtarget.Items.Add("pl")
+                Me.ComboBoxLangtarget.Items.Add("ru")
+                Me.ComboBoxLangtarget.Text = "fr"
+            Case "Google"
+                Me.ComboBoxLangsource.Items.Clear()
+                Me.ComboBoxLangsource.Items.Add("en")
+                Me.ComboBoxLangsource.Items.Add("fr")
+                Me.ComboBoxLangsource.Items.Add("de")
+                Me.ComboBoxLangsource.Items.Add("es")
+                Me.ComboBoxLangsource.Items.Add("pt")
+                Me.ComboBoxLangsource.Items.Add("it")
+                Me.ComboBoxLangsource.Items.Add("nl")
+                Me.ComboBoxLangsource.Items.Add("pl")
+                Me.ComboBoxLangsource.Items.Add("ru")
+                Me.ComboBoxLangsource.Text = "en"
+                'combobox Langsource
+                Me.ComboBoxLangtarget.Items.Clear()
+                Me.ComboBoxLangtarget.Items.Add("en")
+                Me.ComboBoxLangtarget.Items.Add("fr")
+                Me.ComboBoxLangtarget.Items.Add("de")
+                Me.ComboBoxLangtarget.Items.Add("es")
+                Me.ComboBoxLangtarget.Items.Add("pt")
+                Me.ComboBoxLangtarget.Items.Add("it")
+                Me.ComboBoxLangtarget.Items.Add("nl")
+                Me.ComboBoxLangtarget.Items.Add("pl")
+                Me.ComboBoxLangtarget.Items.Add("ru")
+                Me.ComboBoxLangtarget.Text = "fr"
+            Case "Yandex"
+                Me.ComboBoxLangsource.Items.Clear()
+                Me.ComboBoxLangsource.Items.Add("en")
+                Me.ComboBoxLangsource.Items.Add("fr")
+                Me.ComboBoxLangsource.Items.Add("de")
+                Me.ComboBoxLangsource.Items.Add("es")
+                Me.ComboBoxLangsource.Items.Add("pt")
+                Me.ComboBoxLangsource.Items.Add("it")
+                Me.ComboBoxLangsource.Items.Add("nl")
+                Me.ComboBoxLangsource.Items.Add("pl")
+                Me.ComboBoxLangsource.Items.Add("ru")
+                Me.ComboBoxLangsource.Text = "en"
+                'combobox Langsource
+                Me.ComboBoxLangtarget.Items.Clear()
+                Me.ComboBoxLangtarget.Items.Add("en")
+                Me.ComboBoxLangtarget.Items.Add("fr")
+                Me.ComboBoxLangtarget.Items.Add("de")
+                Me.ComboBoxLangtarget.Items.Add("es")
+                Me.ComboBoxLangtarget.Items.Add("pt")
+                Me.ComboBoxLangtarget.Items.Add("it")
+                Me.ComboBoxLangtarget.Items.Add("nl")
+                Me.ComboBoxLangtarget.Items.Add("pl")
+                Me.ComboBoxLangtarget.Items.Add("ru")
+                Me.ComboBoxLangtarget.Text = "fr"
+        End Select
+
     End Sub
 End Class
