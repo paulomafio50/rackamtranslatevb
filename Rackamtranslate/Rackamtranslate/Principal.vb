@@ -378,30 +378,7 @@ Public Class Principal
         dynamicTxt.Size = dynamicTab.Size
         dynamicTxt.Anchor = TabControl1.Anchor
         dynamicTxt.ScrollBars = ScrollBars.Both
-        Dim FILE_NAME As String = Chemin + nom
-
-        Dim TextLine As String = ""
-
-        If System.IO.File.Exists(FILE_NAME) = True Then
-
-            Dim objReader As New System.IO.StreamReader(FILE_NAME)
-
-            Do While objReader.Peek() <> -1
-
-                TextLine = TextLine & objReader.ReadLine() & vbNewLine
-
-            Loop
-
-
-            dynamicTxt.Text = TextLine
-        Else
-
-            MessageBox.Show("File Does Not Exist")
-
-        End If
-
-
-
+        dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
 
         dynamicTxt2.Name = "textbtrad" & nom
         dynamicTxt2.Tag = nom
@@ -618,7 +595,7 @@ Public Class Principal
                 Dim txt As String
                 Dim MRT As New StringBuilder
                 Dim compteur As Integer = 0
-                Dim Lines() As String = MRT.ToString.Split(Environment.NewLine)
+
                 x = Me.ListView1.Items.Count
                 Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
                 Dim match As Match
@@ -628,33 +605,29 @@ Public Class Principal
 
 
 
-                For Each item As ListViewItem In ListView1.Items
+                For Each texte As TextBox In dynamicTxtlist
 
-                    MRT.Append(IO.File.ReadAllText(item.Text & ListView1.Items(b).SubItems(1).Text))
-                    b += 1
-                Next
+                    Dim Lines() As String = texte.Text.Split(Environment.NewLine)
 
+                    For Each Line As String In Lines
+                        match = regex.Match(Line)
+                        If match.Success Then
+                            z = MT.ListView2.Items.Count
+                            txt = match.Value
+                            If compteur = 0 Then
 
+                                MT.ListView2.Items.Add(txt)
+                                compteur = 1
+                            Else
+                                MT.ListView2.Items(z - 1).SubItems.Add(txt)
+                                compteur = 0
 
-                For Each Line As String In Lines
-                    match = regex.Match(Line)
-                    If match.Success Then
-                        z = MT.ListView2.Items.Count
-                        txt = match.Value
-                        If compteur = 0 Then
-
-                            MT.ListView2.Items.Add(txt)
-                            compteur = 1
-                        Else
-                            MT.ListView2.Items(z - 1).SubItems.Add(txt)
-                            compteur = 0
-
+                            End If
                         End If
-                    End If
 
-                Next Line
+                    Next Line
 
-
+                Next
                 Dim FileToSaveAs As String = SaveFileDialogMT.FileName
                 Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
                 Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
