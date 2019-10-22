@@ -123,6 +123,12 @@
     <Compile Include="Chargement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Chargement2.Designer.vb">
+      <DependentUpon>Chargement2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chargement2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Globalstrings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +190,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Chargement.resx">
       <DependentUpon>Chargement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chargement2.resx">
+      <DependentUpon>Chargement2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Globalstrings.en.resx" />
     <EmbeddedResource Include="Globalstrings.fr.resx" />

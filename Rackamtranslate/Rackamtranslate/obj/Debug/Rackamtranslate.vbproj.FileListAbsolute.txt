@@ -60,3 +60,4 @@ C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Traducteur.en.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Traducteur.fr.resources
 C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.MT.resources
+C:\Users\polo\source\repos\rackamtranslatevb\Rackamtranslate\Rackamtranslate\obj\Debug\Rackamtranslate.Chargement2.resources

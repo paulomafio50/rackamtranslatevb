@@ -378,7 +378,31 @@ Public Class Principal
         dynamicTxt.Size = dynamicTab.Size
         dynamicTxt.Anchor = TabControl1.Anchor
         dynamicTxt.ScrollBars = ScrollBars.Both
-        dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
+        Dim FILE_NAME As String = Chemin + nom
+
+        Dim TextLine As String = ""
+
+        If System.IO.File.Exists(FILE_NAME) = True Then
+
+            Dim objReader As New System.IO.StreamReader(FILE_NAME)
+
+            Do While objReader.Peek() <> -1
+
+                TextLine = TextLine & objReader.ReadLine() & vbNewLine
+
+            Loop
+
+
+            dynamicTxt.Text = TextLine
+        Else
+
+            MessageBox.Show("File Does Not Exist")
+
+        End If
+
+
+
+
         dynamicTxt2.Name = "textbtrad" & nom
         dynamicTxt2.Tag = nom
         dynamicTxt2.Multiline = True
@@ -569,69 +593,87 @@ Public Class Principal
         Remplacement.Show()
     End Sub
 
+    '                      _  _     _  _     _  _     _  _     _  _   __  __ _______  _  _     _  _     _  _     _  _     _  _   
+    '                    _| || |_ _| || |_ _| || |_ _| || |_ _| || |_|  \/  |__   __|| || |_ _| || |_ _| || |_ _| || |_ _| || |_ 
+    '                   |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _| \  / |  | | |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _|
+    '                    _| || |_ _| || |_ _| || |_ _| || |_ _| || |_| |\/| |  | |  _| || |_ _| || |_ _| || |_ _| || |_ _| || |_ 
+    '                   |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _| |  | |  | | |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _|
+    '                     |_||_|   |_||_|   |_||_|   |_||_|   |_||_| |_|  |_|  |_|   |_||_|   |_||_|   |_||_|   |_||_|   |_||_|  
+
 
 
     Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
-        Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
+
+        If ListView1.Items.Count > 0 Then
+
+            Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
             .Filter = " files (*.mem)|*.mem"
         }
 
 
-        If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
-            Dim x As Integer
-            Dim b As Integer
-            Dim z As Integer
-            Dim txt As String
-            Dim MRT As New StringBuilder
-            Dim compteur As Integer = 0
-            Dim Lines() As String = MRT.ToString.Split(Environment.NewLine)
-            x = Me.ListView1.Items.Count
-            Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
-            Dim match As Match
+            If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Dim x As Integer
+                Dim b As Integer
+                Dim z As Integer
+                Dim txt As String
+                Dim MRT As New StringBuilder
+                Dim compteur As Integer = 0
+                Dim Lines() As String = MRT.ToString.Split(Environment.NewLine)
+                x = Me.ListView1.Items.Count
+                Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
+                Dim match As Match
 
 
 
 
 
 
-            For Each item As ListViewItem In ListView1.Items
+                For Each item As ListViewItem In ListView1.Items
 
-                MRT.Append(IO.File.ReadAllText(item.Text & ListView1.Items(b).SubItems(1).Text))
-                b += 1
-            Next
+                    MRT.Append(IO.File.ReadAllText(item.Text & ListView1.Items(b).SubItems(1).Text))
+                    b += 1
+                Next
 
 
 
-            For Each Line As String In Lines
-                match = regex.Match(Line)
-                If match.Success Then
-                    z = MT.ListView2.Items.Count
-                    txt = match.Value
-                    If compteur = 0 Then
+                For Each Line As String In Lines
+                    match = regex.Match(Line)
+                    If match.Success Then
+                        z = MT.ListView2.Items.Count
+                        txt = match.Value
+                        If compteur = 0 Then
 
-                        MT.ListView2.Items.Add(txt)
-                        compteur = 1
-                    Else
-                        MT.ListView2.Items(z - 1).SubItems.Add(txt)
-                        compteur = 0
+                            MT.ListView2.Items.Add(txt)
+                            compteur = 1
+                        Else
+                            MT.ListView2.Items(z - 1).SubItems.Add(txt)
+                            compteur = 0
 
+                        End If
                     End If
-                End If
 
-            Next Line
+                Next Line
+
+
+                Dim FileToSaveAs As String = SaveFileDialogMT.FileName
+                Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+                Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
+                    bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
+                End Using
+
+
+                SaveFileDialogMT.Dispose()
+            End If
+        Else
+            MsgBox("open Files or folder before")
         End If
-
-        Dim FileToSaveAs As String = SaveFileDialogMT.FileName
-        Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
-        Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
-            bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
-        End Using
-
-
-        SaveFileDialogMT.Dispose()
     End Sub
 
     Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
+        Me.Visible = False
+        Chargement2.Show()
+        MT.Show()
+        MT.Visible = False
         Dim fileName As String
         Dim openFileDialogMT As OpenFileDialog = New OpenFileDialog With {
             .Multiselect = False,
@@ -658,51 +700,55 @@ Public Class Principal
             End Try
 
         End If
-
+        Me.Visible = True
+        MT.Visible = True
+        Chargement2.Close()
         openFileDialogMT.Dispose()
     End Sub
-
     Private Sub ShowMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMTToolStripMenuItem.Click
         MT.Show()
         MT.Visible = True
     End Sub
 
     Private Sub ApplyMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplyMTToolStripMenuItem.Click
-        Dim b As Integer = 0
+        If ListView1.Items.Count > 0 Then
+
+            If MT.ListView2.Items.Count > 0 Then
+                Dim b As Integer = 0
 
 
 
 
-        For Each item As ListViewItem In ListView1.Items
+                For Each item As ListViewItem In ListView1.Items
 
 
 
 
-            For Each texbox In dynamicTxtlist
+                    For Each texbox In dynamicTxtlist
 
 
-                texbox.Text = texbox.Text.Replace(item.Text, ListView1.Items(b).SubItems(1).Text)
+                        texbox.Text = texbox.Text.Replace(item.Text, ListView1.Items(b).SubItems(1).Text)
 
 
-            Next
+                    Next
 
-            b += 1
-
-
-
-
-        Next
+                    b += 1
 
 
 
 
+                Next
+
+            Else
+                MsgBox("Load MT before")
+            End If
+
+        Else
+
+            MsgBox("open Files or folder before")
 
 
-
-
-
-
-
+        End If
 
 
     End Sub
