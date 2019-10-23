@@ -444,34 +444,34 @@
     <value>False</value>
   </data>
   <data name="TraducteurToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+    <value>70, 20</value>
   </data>
   <data name="TraducteurToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Traducteur</value>
+    <value>Translator</value>
   </data>
   <data name="TraducteurToolStripMenuItem1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="OpenMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Open MT</value>
   </data>
   <data name="CreateMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="CreateMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Create MT</value>
   </data>
   <data name="ApplyMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Apply MT</value>
   </data>
   <data name="ShowMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="ShowMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Show MT</value>

@@ -541,6 +541,16 @@ Public Class Principal
                 textbox.Font = FontDialog1.Font
             Next
         End If
+        Dim fcolors As DialogResult
+        fcolors = ColorDialog1.ShowDialog()
+
+        If fcolors = Windows.Forms.DialogResult.OK Then
+
+            For Each textbox In dynamicTxt2list
+
+                textbox.ForeColor = ColorDialog1.Color
+            Next
+        End If
     End Sub
 
     Private Sub QuitterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitterToolStripMenuItem.Click

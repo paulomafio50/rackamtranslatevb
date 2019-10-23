@@ -21,9 +21,6 @@ Public Class Traducteur
             MsgBox(ex.Message)
         End Try
 
-
-
-
         Configcombobox()
     End Sub
 
@@ -254,7 +251,7 @@ Public Class Traducteur
             Case "Deepl"
                 text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
             Case "Google"
-                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]", "text")
+                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div/span[1]/span", "text")
             Case "Yandex"
                 text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]", "text")
         End Select
