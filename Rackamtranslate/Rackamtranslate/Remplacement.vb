@@ -2,6 +2,7 @@
 
 Public Class Remplacement
     Private Sub Buttonadd_Click(sender As Object, e As EventArgs) Handles Buttonadd.Click
+
         If TextBoxremp1.Text = "" Then
             MsgBox("First box empty")
         Else
