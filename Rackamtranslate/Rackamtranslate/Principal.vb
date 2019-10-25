@@ -2,6 +2,7 @@
 Imports System.Text.RegularExpressions
 Imports System.Threading
 Imports System.Text
+Imports System.ComponentModel
 
 Public Class Principal
     Public dynamicTxtlist As New List(Of TextBox)
@@ -14,12 +15,30 @@ Public Class Principal
     Public dynamicTab4list As New List(Of TabPage)
     Public Property CheckedListBoxfichierEXTENTIES As Object
 
-    Private Sub ToolStripMenuItem1_Click_1(sender As Object, e As EventArgs)
+
+#Region "Ouverture de fichier"
+
+    Private Sub FilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilesToolStripMenuItem.Click
+
+        OpenFileDialog1.Filter = "fichier rpy ou txt|*.rpy;*.txt"
+        Dim nomfichier As String
+        Dim chemin As String
+        If OpenFileDialog1.ShowDialog() = 1 Then
+            Me.DecompilerToolStripMenuItem1.Visible = True
+            For x = 0 To OpenFileDialog1.FileNames.Count - 1
+                nomfichier = Path.GetFileName(OpenFileDialog1.FileName)
+                chemin = Path.GetDirectoryName(OpenFileDialog1.FileName) + "\"
+
+                Creationtab(nomfichier, chemin)
+
+            Next
+
+        End If
+
 
     End Sub
-
-
-
+#End Region
+#Region "Ouverture de Dossier"
     Private Sub FolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolderToolStripMenuItem.Click
         Me.FolderBrowserDialog1.ShowDialog()
         ListFiles(Me.FolderBrowserDialog1.SelectedPath)
@@ -51,19 +70,8 @@ Public Class Principal
             Next
         End If
     End Sub
-
-
-
-
-
-    '                                     _  _     _  _     _  _   _____                                 _ _        _  _     _  _     _  _   
-    '                                   _| || |_ _| || |_ _| || |_|  __ \                               (_) |     _| || |_ _| || |_ _| || |_ 
-    '                                  |_  __  _|_  __  _|_  __  _| |  | | ___  ___ ___  _ __ ___  _ __  _| | ___|_  __  _|_  __  _|_  __  _|
-    '                                   _| || |_ _| || |_ _| || |_| |  | |/ _ \/ __/ _ \| '_ ` _ \| '_ \| | |/ _ \_| || |_ _| || |_ _| || |_ 
-    '                                  |_  __  _|_  __  _|_  __  _| |__| |  __/ (_| (_) | | | | | | |_) | | |  __/_  __  _|_  __  _|_  __  _|
-    '                                    |_||_|   |_||_|   |_||_| |_____/ \___|\___\___/|_| |_| |_| .__/|_|_|\___| |_||_|   |_||_|   |_||_|  
-    '                                                                                             | |                                        
-    '                                                                                             |_|                                        
+#End Region
+#Region "Decompilation"
 
     Private Sub DecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DecompilerToolStripMenuItem1.Click
 
@@ -78,6 +86,7 @@ Public Class Principal
             Me.TraducteurToolStripMenuItem1.Visible = True
             Me.DecompilerToolStripMenuItem1.Visible = False
             Me.ReplaceToolStripMenuItem.Visible = True
+            Me.MTToolStripMenuItem.Visible = False
             Me.Visible = False
             Chargement.Show()
 
@@ -167,18 +176,11 @@ Public Class Principal
         Invoke(New MethodInvoker(Sub() Me.Visible = True))
 
     End Sub
+#End Region
+#Region "Recompilation"
 
     Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
 
-
-        '                                           _  _     _  _     _  _   _____                                _ _        _  _     _  _     _  _   
-        '                                         _| || |_ _| || |_ _| || |_|  __ \                              (_) |     _| || |_ _| || |_ _| || |_ 
-        '                                        |_  __  _|_  __  _|_  __  _| |__) |___  ___ ___  _ __ ___  _ __  _| | ___|_  __  _|_  __  _|_  __  _|
-        '                                         _| || |_ _| || |_ _| || |_|  _  // _ \/ __/ _ \| '_ ` _ \| '_ \| | |/ _ \_| || |_ _| || |_ _| || |_ 
-        '                                        |_  __  _|_  __  _|_  __  _| | \ \  __/ (_| (_) | | | | | | |_) | | |  __/_  __  _|_  __  _|_  __  _|
-        '                                          |_||_|   |_||_|   |_||_| |_|  \_\___|\___\___/|_| |_| |_| .__/|_|_|\___| |_||_|   |_||_|   |_||_|  
-        '                                                                                                  | |                                        
-        ''                                                                                                 |_|                                        
         If TabControl2.Visible = True Then
             Me.ListView1.Visible = True
             Me.TabControl1.Visible = True
@@ -188,7 +190,7 @@ Public Class Principal
             Me.DecompilerToolStripMenuItem1.Visible = True
             Me.ReplaceToolStripMenuItem.Visible = False
             Me.Visible = False
-
+            Me.MTToolStripMenuItem.Visible = True
 
             Chargement.Show()
 
@@ -256,75 +258,9 @@ Public Class Principal
         Invoke(New MethodInvoker(Sub() Chargement.Close()))
         Invoke(New MethodInvoker(Sub() Me.Visible = True))
     End Sub
-    '              _       _                                            _ _                                   
-    '             | |     (_)                                          | (_)                                  
-    ' _ __ ___  __| |_   _ _ _ __ ___    __ _  __ _ _ __ __ _ _ __   __| |_ _ __   _ __ ___   ___ _ __  _   _ 
-    '| '__/ _ \/ _` | | | | | '__/ _ \  / _` |/ _` | '__/ _` | '_ \ / _` | | '__| | '_ ` _ \ / _ \ '_ \| | | |
-    '| | |  __/ (_| | |_| | | | |  __/ | (_| | (_| | | | (_| | | | | (_| | | |    | | | | | |  __/ | | | |_| |
-    '|_|  \___|\__,_|\__,_|_|_|  \___|  \__,_|\__, |_|  \__,_|_| |_|\__,_|_|_|    |_| |_| |_|\___|_| |_|\__,_|
-    '                                          __/ |                                                          
-    '                                         |___/                                                          
-    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+#End Region
+#Region "Dynamic creation Tab Textbox"
 
-    'If GroupBox1.Width = 169 Then
-    '    GroupBox1.Width = 0
-    '    Button2.Left = 1
-    '    Button2.Text = ">>"
-
-    '    Me.ListView1.Left = Me.ListView1.Left - 169
-    '    Me.ListView1.Width = Me.ListView1.Width + 169
-    '    Me.TabControl1.Left = Me.TabControl1.Left - 169
-    '    Me.TabControl1.Width = Me.TabControl1.Width + 169
-    '    Me.TabControl2.Left = Me.TabControl2.Left - 169
-    '    Me.TabControl2.Width = Me.TabControl2.Width + 169
-
-    'Else
-    '    GroupBox1.Width = 169
-    '    Button2.Left = 166
-    '    Button2.Text = "<<"
-    '    Me.ListView1.Left = Me.ListView1.Left + 169
-    '    Me.ListView1.Width = Me.ListView1.Width - 169
-    '    Me.TabControl1.Left = Me.TabControl1.Left + 169
-    '    Me.TabControl1.Width = Me.TabControl1.Width - 169
-    '    Me.TabControl2.Left = Me.TabControl2.Left + 169
-    '    Me.TabControl2.Width = Me.TabControl2.Width - 169
-
-
-
-    'End If
-
-    'End Sub
-
-
-
-    Private Sub FilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilesToolStripMenuItem.Click
-
-        OpenFileDialog1.Filter = "fichier rpy ou txt|*.rpy;*.txt"
-        Dim nomfichier As String
-        Dim chemin As String
-        If OpenFileDialog1.ShowDialog() = 1 Then
-            Me.DecompilerToolStripMenuItem1.Visible = True
-            For x = 0 To OpenFileDialog1.FileNames.Count - 1
-                nomfichier = Path.GetFileName(OpenFileDialog1.FileName)
-                chemin = Path.GetDirectoryName(OpenFileDialog1.FileName) + "\"
-
-                Creationtab(nomfichier, chemin)
-
-            Next
-
-        End If
-
-
-    End Sub
-    ' _____                              _                            _   _               _______       ____    _______        _   _               
-    '|  __ \                            (_)                          | | (_)             |__   __|/\   |  _ \  |__   __|      | | | |              
-    '| |  | |_   _ _ __   __ _ _ __ ___  _  ___    ___ _ __ ___  __ _| |_ _  ___  _ __      | |  /  \  | |_) |    | | _____  _| |_| |__   _____  __
-    '| |  | | | | | '_ \ / _` | '_ ` _ \| |/ __|  / __| '__/ _ \/ _` | __| |/ _ \| '_ \     | | / /\ \ |  _ <     | |/ _ \ \/ / __| '_ \ / _ \ \/ /
-    '| |__| | |_| | | | | (_| | | | | | | | (__  | (__| | |  __/ (_| | |_| | (_) | | | |    | |/ ____ \| |_) |    | |  __/>  <| |_| |_) | (_) >  < 
-    '|_____/ \__, |_| |_|\__,_|_| |_| |_|_|\___|  \___|_|  \___|\__,_|\__|_|\___/|_| |_|    |_/_/    \_\____/     |_|\___/_/\_\\__|_.__/ \___/_/\_\
-    '         __/ |                                                                                                                                
-    '        |___/          
-    'test
     Public Sub Creationtab(ByVal nom As String, ByVal Chemin As String)
 
 
@@ -401,21 +337,9 @@ Public Class Principal
         dynamicTab4list.Add(dynamicTab4)
         Traducteur.ComboBox1.Items.Add(dynamicTxt2.Tag)
     End Sub
+#End Region
+#Region "Sauvegarde"
 
-    Private Sub RegexToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Regexconfig.Show()
-    End Sub
-
-
-
-    '                         _  _     _  _     _  _    _____                                           _        _  _     _  _     _  _   
-    '                       _| || |_ _| || |_ _| || |_ / ____|                                         | |     _| || |_ _| || |_ _| || |_ 
-    '                      |_  __  _|_  __  _|_  __  _| (___   __ _ _   ___   _____  __ _  __ _ _ __ __| | ___|_  __  _|_  __  _|_  __  _|
-    '                       _| || |_ _| || |_ _| || |_ \___ \ / _` | | | \ \ / / _ \/ _` |/ _` | '__/ _` |/ _ \_| || |_ _| || |_ _| || |_ 
-    '                      |_  __  _|_  __  _|_  __  _|____) | (_| | |_| |\ V /  __/ (_| | (_| | | | (_| |  __/_  __  _|_  __  _|_  __  _|
-    '                        |_||_|   |_||_|   |_||_| |_____/ \__,_|\__,_| \_/ \___|\__, |\__,_|_|  \__,_|\___| |_||_|   |_||_|   |_||_|  
-    '                                                                                __/ |                                                
-    '                                                                               |___/                                                 
     Private Sub EnregistrerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnregistrerToolStripMenuItem.Click
         If ListView1.Items.Count > 0 Then
             Dim a As Integer = 0
@@ -436,17 +360,34 @@ Public Class Principal
 
     End Sub
 
+    Private Sub EnregistrersousToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnregistrersousToolStripMenuItem.Click
+        MsgBox(My.Resources.Globalstrings.Messagelater)
+        'Dim chemin As String
+        Dim position As Integer = ListView1.Items(1).Text.LastIndexOf("\")
+        MsgBox(position)
+
+        Dim chemifin As String
+
+        'If ListView1.Items.Count > 0 Then
+        '    Dim a As Integer = 0
+        '    For Each texbox In dynamicTxtlist
+        '        chemin = ListView1.Items(a).Text & ListView1.Items(a).SubItems(1).Text
+        '        IO.File.WriteAllText((ListView1.Items(a).Text & ListView1.Items(a).SubItems(1).Text), texbox.Text)
+        '        a += 1
+
+        '    Next
+        '    MsgBox(My.Resources.Globalstrings.MessageSave)
+
+
+
+        'End If
+    End Sub
+#End Region
+#Region "Supression objet tableau"
 
 
 
 
-
-    '                  _  _     _  _     _  _   ______  __  __                       _____      _           _   _               _  _     _  _     _  _   
-    '                _| || |_ _| || |_ _| || |_|  ____|/ _|/ _|                     / ____|    | |         | | (_)            _| || |_ _| || |_ _| || |_ 
-    '               |_  __  _|_  __  _|_  __  _| |__  | |_| |_ __ _  ___ ___ _ __  | (___   ___| | ___  ___| |_ _  ___  _ __ |_  __  _|_  __  _|_  __  _|
-    '                _| || |_ _| || |_ _| || |_|  __| |  _|  _/ _` |/ __/ _ \ '__|  \___ \ / _ \ |/ _ \/ __| __| |/ _ \| '_ \ _| || |_ _| || |_ _| || |_ 
-    '               |_  __  _|_  __  _|_  __  _| |____| | | || (_| | (_|  __/ |     ____) |  __/ |  __/ (__| |_| | (_) | | | |_  __  _|_  __  _|_  __  _|
-    '                 |_||_|   |_||_|   |_||_| |______|_| |_| \__,_|\___\___|_|    |_____/ \___|_|\___|\___|\__|_|\___/|_| |_| |_||_|   |_||_|   |_||_|  
     Private Sub RemoveItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveItemToolStripMenuItem.Click
         Dim i As Integer
 
@@ -493,12 +434,7 @@ Public Class Principal
 
 
     End Sub
-    '                                              _  _     _  _     _  _   ______  __  __                      _______          _    _  _     _  _     _  _   
-    '                                            _| || |_ _| || |_ _| || |_|  ____|/ _|/ _|                    |__   __|        | | _| || |_ _| || |_ _| || |_ 
-    '                                           |_  __  _|_  __  _|_  __  _| |__  | |_| |_ __ _  ___ ___ _ __     | | ___  _   _| ||_  __  _|_  __  _|_  __  _|
-    '                                            _| || |_ _| || |_ _| || |_|  __| |  _|  _/ _` |/ __/ _ \ '__|    | |/ _ \| | | | __|| || |_ _| || |_ _| || |_ 
-    '                                           |_  __  _|_  __  _|_  __  _| |____| | | || (_| | (_|  __/ |       | | (_) | |_| | ||_  __  _|_  __  _|_  __  _|
-    '                                             |_||_|   |_||_|   |_||_| |______|_| |_| \__,_|\___\___|_|       |_|\___/ \__,_|\__||_||_|   |_||_|   |_||_|  
+
     Private Sub RemoveAllItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveAllItemToolStripMenuItem.Click
         ListView1.Clear()
         dynamicTxtlist.Clear()
@@ -510,6 +446,8 @@ Public Class Principal
         TabControl2.TabPages.Clear()
         Traducteur.ComboBox1.Items.Clear()
     End Sub
+#End Region
+#Region "Options"
 
     Private Sub RegexToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles RegexToolStripMenuItem.Click
         Regexconfig.Show()
@@ -552,14 +490,14 @@ Public Class Principal
             Next
         End If
     End Sub
+#End Region
+#Region "Divers"
 
     Private Sub QuitterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitterToolStripMenuItem.Click
         Me.Close()
     End Sub
 
-    Private Sub EnregistrersousToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnregistrersousToolStripMenuItem.Click
-        MsgBox(My.Resources.Globalstrings.Messagelater)
-    End Sub
+
 
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
         Help.Show()
@@ -572,35 +510,25 @@ Public Class Principal
         Traducteur.Visible = True
     End Sub
 
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-
-    End Sub
-
     Private Sub ReplaceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplaceToolStripMenuItem.Click
         Remplacement.Show()
     End Sub
-
-    '                      _  _     _  _     _  _     _  _     _  _   __  __ _______  _  _     _  _     _  _     _  _     _  _   
-    '                    _| || |_ _| || |_ _| || |_ _| || |_ _| || |_|  \/  |__   __|| || |_ _| || |_ _| || |_ _| || |_ _| || |_ 
-    '                   |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _| \  / |  | | |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _|
-    '                    _| || |_ _| || |_ _| || |_ _| || |_ _| || |_| |\/| |  | |  _| || |_ _| || |_ _| || |_ _| || |_ _| || |_ 
-    '                   |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _| |  | |  | | |_  __  _|_  __  _|_  __  _|_  __  _|_  __  _|
-    '                     |_||_|   |_||_|   |_||_|   |_||_|   |_||_| |_|  |_|  |_|   |_||_|   |_||_|   |_||_|   |_||_|   |_||_|  
-
+#End Region
+#Region "MT"
 
 
     Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
 
-        If ListView1.Items.Count > 0 Then
-
-            Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
+        Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
             .Filter = " files (*.mem)|*.mem"
         }
+        If ListView1.Items.Count > 0 Then
+
 
 
             If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
                 Dim x As Integer
-                Dim b As Integer
+
                 Dim z As Integer
                 Dim txt As String
                 Dim MRT As New StringBuilder
@@ -642,52 +570,48 @@ Public Class Principal
                 Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
                 Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
                     bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
+
                 End Using
 
 
-                SaveFileDialogMT.Dispose()
+
             End If
         Else
             MsgBox("open Files or folder before")
+
         End If
+        SaveFileDialogMT.Dispose()
     End Sub
 
     Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
-        Me.Visible = False
-        Chargement2.Show()
-        MT.Show()
-        MT.Visible = False
-        Dim fileName As String
-        Dim openFileDialogMT As OpenFileDialog = New OpenFileDialog With {
-            .Multiselect = False,
-            .FileName = String.Empty,
-            .Filter = "mem files (*.mem)|*.mem",
-            .FilterIndex = 1,
-            .RestoreDirectory = True
-        }
-
-
-        If openFileDialogMT.ShowDialog() = DialogResult.OK Then
-
-            Try
-                fileName = openFileDialogMT.FileName
-                Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
-                Using fs As New System.IO.FileStream(fileName, IO.FileMode.Open)
-                    MT.ListView2.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))
-                End Using
-
-
-
-            Catch ex As Exception
-                MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
-            End Try
-
-        End If
-        Me.Visible = True
-        MT.Visible = True
-        Chargement2.Close()
-        openFileDialogMT.Dispose()
+        Chargement2.OpenMTTool()
     End Sub
+    Sub OpenMT(ByVal filePath As String)
+
+        Dim filename As String = filePath
+
+        Try
+
+            Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+            Using fs As New System.IO.FileStream(filename, IO.FileMode.Open)
+                Invoke(New MethodInvoker(Sub() MT.ListView2.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))))
+            End Using
+
+
+
+            Invoke(New MethodInvoker(Sub() Chargement2.Close()))
+            Invoke(New MethodInvoker(Sub() MT.Visible = True))
+            Invoke(New MethodInvoker(Sub() Me.Visible = True))
+
+        Catch ex As Exception
+            MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
+        End Try
+
+
+
+
+    End Sub
+
     Private Sub ShowMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMTToolStripMenuItem.Click
         MT.Show()
         MT.Visible = True
@@ -735,4 +659,14 @@ Public Class Principal
 
 
     End Sub
+
+    Private Sub TutorielToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TutorielToolStripMenuItem.Click
+        Dim Path As String = Application.StartupPath
+        Process.Start(Path & "\pdf\help_En.pdf")
+    End Sub
+
+    Private Sub DiscordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiscordToolStripMenuItem.Click
+        Process.Start("https://discord.gg/PsuHkDn")
+    End Sub
+#End Region
 End Class

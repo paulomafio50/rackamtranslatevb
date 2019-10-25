@@ -29,6 +29,8 @@ Partial Class Principal
         Me.ColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TutorielToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DiscordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -65,7 +67,6 @@ Partial Class Principal
         Me.ShowMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
-        Me.OpenFileDialogMT = New System.Windows.Forms.OpenFileDialog()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -93,8 +94,19 @@ Partial Class Principal
         '
         'HelpToolStripMenuItem
         '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TutorielToolStripMenuItem, Me.DiscordToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
+        '
+        'TutorielToolStripMenuItem
+        '
+        Me.TutorielToolStripMenuItem.Name = "TutorielToolStripMenuItem"
+        resources.ApplyResources(Me.TutorielToolStripMenuItem, "TutorielToolStripMenuItem")
+        '
+        'DiscordToolStripMenuItem
+        '
+        Me.DiscordToolStripMenuItem.Name = "DiscordToolStripMenuItem"
+        resources.ApplyResources(Me.DiscordToolStripMenuItem, "DiscordToolStripMenuItem")
         '
         'ListView1
         '
@@ -177,7 +189,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.MTToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -274,10 +286,6 @@ Partial Class Principal
         Me.ShowMTToolStripMenuItem.Name = "ShowMTToolStripMenuItem"
         resources.ApplyResources(Me.ShowMTToolStripMenuItem, "ShowMTToolStripMenuItem")
         '
-        'OpenFileDialogMT
-        '
-        Me.OpenFileDialogMT.FileName = "OpenFileDialog2"
-        '
         'Principal
         '
         resources.ApplyResources(Me, "$this")
@@ -338,5 +346,6 @@ Partial Class Principal
     Friend WithEvents ShowMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveFileDialogMT As SaveFileDialog
     Friend WithEvents OpenMTToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OpenFileDialogMT As OpenFileDialog
+    Friend WithEvents TutorielToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DiscordToolStripMenuItem As ToolStripMenuItem
 End Class

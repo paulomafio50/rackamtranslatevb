@@ -142,6 +142,18 @@
   <data name="RitchboxOptionToolStripMenuItem.Text" xml:space="preserve">
     <value>Ritchbox option</value>
   </data>
+  <data name="TutorielToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="TutorielToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tutoriel</value>
+  </data>
+  <data name="DiscordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="DiscordToolStripMenuItem.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
   <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
@@ -508,9 +520,6 @@
   </metadata>
   <metadata name="SaveFileDialogMT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>702, 31</value>
-  </metadata>
-  <metadata name="OpenFileDialogMT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>850, 31</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2577,6 +2586,18 @@
   <data name="&gt;&gt;HelpToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;TutorielToolStripMenuItem.Name" xml:space="preserve">
+    <value>TutorielToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;TutorielToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DiscordToolStripMenuItem.Name" xml:space="preserve">
+    <value>DiscordToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DiscordToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnHeader1.Name" xml:space="preserve">
     <value>ColumnHeader1</value>
   </data>
@@ -2750,12 +2771,6 @@
   </data>
   <data name="&gt;&gt;SaveFileDialogMT.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpenFileDialogMT.Name" xml:space="preserve">
-    <value>OpenFileDialogMT</value>
-  </data>
-  <data name="&gt;&gt;OpenFileDialogMT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Principal</value>

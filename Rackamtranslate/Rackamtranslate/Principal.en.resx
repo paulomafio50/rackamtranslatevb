@@ -222,9 +222,6 @@
   <data name="TraducteurToolStripMenuItem1.Text" xml:space="preserve">
     <value>Traducteur</value>
   </data>
-  <data name="MemoryTranslationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Memory translation</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Rackam translate beta</value>
   </data>

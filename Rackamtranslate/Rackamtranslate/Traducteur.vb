@@ -185,8 +185,8 @@ Public Class Traducteur
         'combobox traducteur
         Me.ComboBoxtraducteur.Items.Clear()
         Me.ComboBoxtraducteur.Items.Add("Deepl")
-        Me.ComboBoxtraducteur.Items.Add("Google")
-        Me.ComboBoxtraducteur.Items.Add("Yandex")
+        'Me.ComboBoxtraducteur.Items.Add("Google")
+        'Me.ComboBoxtraducteur.Items.Add("Yandex")
         Me.ComboBoxtraducteur.Text = "Deepl"
         'combobox Langsource
         If Me.ComboBoxtraducteur.Text = "Deepl" Then
@@ -216,17 +216,9 @@ Public Class Traducteur
         End If
     End Sub
 
-    Private Sub Textsource_Click(sender As Object, e As EventArgs) Handles Textsource.Click
 
-    End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
     Private Sub WaitBrowser(ByVal wb As Gecko.GeckoWebBrowser)
         While wb.IsBusy
 
@@ -239,7 +231,7 @@ Public Class Traducteur
     Private Sub ButtonTraduire_Click(sender As Object, e As EventArgs) Handles ButtonTraduire.Click
         ButtonTraduire.Enabled = False
         Timer1.Start()
-        Dim text
+        Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
 
 
 
