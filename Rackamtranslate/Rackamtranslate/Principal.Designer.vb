@@ -67,6 +67,7 @@ Partial Class Principal
         Me.ShowMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -286,6 +287,11 @@ Partial Class Principal
         Me.ShowMTToolStripMenuItem.Name = "ShowMTToolStripMenuItem"
         resources.ApplyResources(Me.ShowMTToolStripMenuItem, "ShowMTToolStripMenuItem")
         '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerReportsProgress = True
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
+        '
         'Principal
         '
         resources.ApplyResources(Me, "$this")
@@ -348,4 +354,5 @@ Partial Class Principal
     Friend WithEvents OpenMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TutorielToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DiscordToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

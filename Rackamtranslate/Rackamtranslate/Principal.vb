@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions
 Imports System.Threading
 Imports System.Text
 Imports System.ComponentModel
+Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class Principal
     Public dynamicTxtlist As New List(Of TextBox)
@@ -326,7 +327,7 @@ Public Class Principal
         dynamicTxt3.Multiline = True
         dynamicTxt4.Name = "textbtradfin"
         dynamicTxt4.Multiline = True
-
+        Chargement2.dynamicTxtlist.Add(dynamicTxt)
         dynamicTxtlist.Add(dynamicTxt)
         dynamicTxt2list.Add(dynamicTxt2)
         dynamicTxt3list.Add(dynamicTxt3)
@@ -518,60 +519,23 @@ Public Class Principal
 
 
     Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
-
         Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
             .Filter = " files (*.mem)|*.mem"
         }
-        If ListView1.Items.Count > 0 Then
+        If Me.ListView1.Items.Count > 0 Then
 
 
 
             If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Dim x As Integer
+                Me.Visible = False
+                Chargement2.Show()
+                MT.Show()
+                MT.Visible = False
+                Selectionneur = "CMT"
+                filePath = Path.GetFullPath(SaveFileDialogMT.FileName)
 
-                Dim z As Integer
-                Dim txt As String
-                Dim MRT As New StringBuilder
-                Dim compteur As Integer = 0
+                BackgroundWorker1.RunWorkerAsync()
 
-                x = Me.ListView1.Items.Count
-                Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
-                Dim match As Match
-
-
-
-
-
-
-                For Each texte As TextBox In dynamicTxtlist
-
-                    Dim Lines() As String = texte.Text.Split(Environment.NewLine)
-
-                    For Each Line As String In Lines
-                        match = regex.Match(Line)
-                        If match.Success Then
-                            z = MT.ListView2.Items.Count
-                            txt = match.Value
-                            If compteur = 0 Then
-
-                                MT.ListView2.Items.Add(txt)
-                                compteur = 1
-                            Else
-                                MT.ListView2.Items(z - 1).SubItems.Add(txt)
-                                compteur = 0
-
-                            End If
-                        End If
-
-                    Next Line
-
-                Next
-                Dim FileToSaveAs As String = SaveFileDialogMT.FileName
-                Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
-                Using fs As New System.IO.FileStream(FileToSaveAs, IO.FileMode.Create)
-                    bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
-
-                End Using
 
 
 
@@ -584,33 +548,31 @@ Public Class Principal
     End Sub
 
     Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
-        Chargement2.OpenMTTool()
+        Dim OpenFileDialogMT As OpenFileDialog = New OpenFileDialog With {
+            .Filter = " files (*.mem)|*.mem"}
+
+
+
+        If OpenFileDialogMT.ShowDialog() = DialogResult.OK Then
+            Me.Visible = False
+            Chargement2.Show()
+            MT.Show()
+            MT.Visible = False
+            Selectionneur = "OMT"
+            filePath = Path.GetFullPath(OpenFileDialogMT.FileName)
+
+            BackgroundWorker1.RunWorkerAsync()
+        Else
+            Me.Visible = True
+
+        End If
+
+
+
+
+        OpenFileDialogMT.Dispose()
     End Sub
-    Sub OpenMT(ByVal filePath As String)
 
-        Dim filename As String = filePath
-
-        Try
-
-            Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
-            Using fs As New System.IO.FileStream(filename, IO.FileMode.Open)
-                Invoke(New MethodInvoker(Sub() MT.ListView2.Items.AddRange(bf.Deserialize(fs).ToArray(GetType(ListViewItem)))))
-            End Using
-
-
-
-            Invoke(New MethodInvoker(Sub() Chargement2.Close()))
-            Invoke(New MethodInvoker(Sub() MT.Visible = True))
-            Invoke(New MethodInvoker(Sub() Me.Visible = True))
-
-        Catch ex As Exception
-            MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
-        End Try
-
-
-
-
-    End Sub
 
     Private Sub ShowMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMTToolStripMenuItem.Click
         MT.Show()
@@ -669,4 +631,155 @@ Public Class Principal
         Process.Start("https://discord.gg/PsuHkDn")
     End Sub
 #End Region
+
+    Dim filePath As String = ""
+    Dim Selectionneur As String = ""
+
+    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    '    If BackgroundWorker1.IsBusy Then
+    '        If BackgroundWorker1.WorkerSupportsCancellation Then
+    '            BackgroundWorker1.CancelAsync()
+    '        End If
+    '    End If
+    'End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+
+
+        Try
+            Select Case Selectionneur
+
+                Case = "OMT"
+                    MT.ListView2.Clear()
+                    Dim FS As FileStream = File.Open(filePath, FileMode.Open)
+                    Dim BinFmtr As New BinaryFormatter
+                    Dim alSavedLV As New ArrayList
+                    alSavedLV = CType(BinFmtr.Deserialize(FS), ArrayList)
+                    Dim lvi As ListViewItem
+                    For item As Integer = 0 To alSavedLV.Count - 1
+                        If BackgroundWorker1.CancellationPending Then
+                            e.Cancel = True
+                            Exit For
+                        End If
+                        lvi = New ListViewItem
+
+                        lvi = CType(alSavedLV(item), ListViewItem)
+                        BackgroundWorker1.ReportProgress(CInt((item / alSavedLV.Count) * 100))
+                        Invoke(New MethodInvoker(Sub() UpdateLabel(Chargement2.Statut, FormatPercent(item / alSavedLV.Count, 2))))
+                        Invoke(New MethodInvoker(Sub() MT.ListView2.Items.Add(lvi)))
+
+                    Next
+                    FS.Close()
+                Case = "CMT"
+                    Invoke(New MethodInvoker(Sub() MT.ListView2.Clear()))
+
+
+                    Dim z As Integer = 0
+                    Dim txt As String
+                    Dim MRT As New StringBuilder
+                    Dim compteur As Integer = 0
+                    Dim lvi As ListViewItem
+
+                    Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
+                    Dim match As Match
+
+
+                    For Each texte As TextBox In dynamicTxtlist
+                        lvi = New ListViewItem
+
+                        Dim Lines() As String = texte.Text.Split(Environment.NewLine)
+
+
+                        For Each Line As String In Lines
+
+                            match = regex.Match(Line)
+                            If match.Success Then
+
+                                txt = match.Value
+                                If compteur = 0 Then
+                                    Invoke(New MethodInvoker(Sub() MT.ListView2.Items.Add(txt)))
+
+                                    compteur = 1
+                                Else
+                                    Invoke(New MethodInvoker(Sub() MT.ListView2.Items(z).SubItems.Add(txt)))
+                                    z += 1
+                                    compteur = 0
+
+                                End If
+                            End If
+
+                        Next Line
+
+                    Next
+
+                    'Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+                    'Using fs As New System.IO.FileStream(filePath, IO.FileMode.Create)
+                    '    bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
+                    'End Using
+
+
+
+
+                    'Dim FS As FileStream = File.Create(filePath)
+
+                    'Dim BinFmtr As New BinaryFormatter
+
+
+                    'Dim alSavedLV As New ArrayList
+
+
+                    'For item As Integer = 0 To MT.ListView2.Items.Count - 1
+
+
+                    '    alSavedLV.Add(MT.ListView2.Items(item))
+
+                    'Next
+
+
+
+                    'BinFmtr.Serialize(FS, alSavedLV)
+
+
+
+                    'FS.Close()
+            End Select
+        Catch ex As Exception
+            MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
+        End Try
+
+    End Sub
+    Delegate Sub SetLabelTextDelegat(ByVal [label] As Label, ByVal [text] As String)
+    Private Sub UpdateLabel(ByVal [label] As Label, ByVal [text] As String)
+        If [label].InvokeRequired Then
+            Dim myDelegate As New SetLabelTextDelegat(AddressOf UpdateLabel)
+            Chargement2.Invoke(myDelegate, New Object() {[label], [text]})
+        Else
+            label.Text = [text]
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
+        Chargement2.ProgressBar1.Value = e.ProgressPercentage
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        If e.Cancelled Then
+            Chargement2.Statut.Text = "Cancelled"
+            Delay(2)
+            MT.Visible = True
+            MT.ListView2.Clear()
+            MT.Close()
+            Me.Visible = True
+            Chargement2.Close()
+        Else
+            Chargement2.Statut.Text = "Complated"
+            Delay(2)
+            MT.Visible = True
+            Me.Visible = True
+            MT.ListView2.Refresh()
+            Chargement2.Close()
+        End If
+    End Sub
+
+
 End Class
