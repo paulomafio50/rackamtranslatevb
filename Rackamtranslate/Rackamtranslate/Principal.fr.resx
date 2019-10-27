@@ -198,4 +198,13 @@
   <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir MT</value>
   </data>
+  <data name="TutorielToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="DiscordToolStripMenuItem.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="Button1.Text" xml:space="preserve">
+    <value>Arrêter</value>
+  </data>
 </root>

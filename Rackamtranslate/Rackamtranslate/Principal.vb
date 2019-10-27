@@ -311,6 +311,7 @@ Public Class Principal
         dynamicTab4.Controls.Add(dynamicTxt4)
         'Configuration du nouveau textbox
         dynamicTxt.Name = "textborigine" & nom
+        dynamicTxt.Dock = DockStyle.Fill
         dynamicTxt.Multiline = True
         dynamicTxt.Size = dynamicTab.Size
         dynamicTxt.Anchor = TabControl1.Anchor
@@ -318,6 +319,7 @@ Public Class Principal
         dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
 
         dynamicTxt2.Name = "textbtrad" & nom
+        dynamicTxt2.Dock = DockStyle.Fill
         dynamicTxt2.Tag = nom
         dynamicTxt2.Multiline = True
         dynamicTxt2.Size = dynamicTab2.Size
@@ -327,7 +329,7 @@ Public Class Principal
         dynamicTxt3.Multiline = True
         dynamicTxt4.Name = "textbtradfin"
         dynamicTxt4.Multiline = True
-        Chargement2.dynamicTxtlist.Add(dynamicTxt)
+
         dynamicTxtlist.Add(dynamicTxt)
         dynamicTxt2list.Add(dynamicTxt2)
         dynamicTxt3list.Add(dynamicTxt3)
@@ -367,7 +369,7 @@ Public Class Principal
         Dim position As Integer = ListView1.Items(1).Text.LastIndexOf("\")
         MsgBox(position)
 
-        Dim chemifin As String
+        'Dim chemifin As String
 
         'If ListView1.Items.Count > 0 Then
         '    Dim a As Integer = 0
@@ -527,14 +529,14 @@ Public Class Principal
 
 
             If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Me.Visible = False
-                Chargement2.Show()
-                MT.Show()
-                MT.Visible = False
+                Me.ListView1.Visible = False
+                Me.TabControl1.Visible = False
+                Me.TabControlMTCharg.Visible = True
+                Me.TabControlMTCharg.SelectedIndex = 0
                 Selectionneur = "CMT"
                 filePath = Path.GetFullPath(SaveFileDialogMT.FileName)
 
-                BackgroundWorker1.RunWorkerAsync()
+                BackgroundWorkerMT.RunWorkerAsync()
 
 
 
@@ -554,16 +556,16 @@ Public Class Principal
 
 
         If OpenFileDialogMT.ShowDialog() = DialogResult.OK Then
-            Me.Visible = False
-            Chargement2.Show()
-            MT.Show()
-            MT.Visible = False
+            Me.ListView1.Visible = False
+            Me.TabControl1.Visible = False
+            Me.TabControlMTCharg.Visible = True
+            Me.TabControlMTCharg.SelectedIndex = 0
             Selectionneur = "OMT"
             filePath = Path.GetFullPath(OpenFileDialogMT.FileName)
 
-            BackgroundWorker1.RunWorkerAsync()
+            BackgroundWorkerMT.RunWorkerAsync()
         Else
-            Me.Visible = True
+
 
         End If
 
@@ -588,7 +590,7 @@ Public Class Principal
 
 
 
-                For Each item As ListViewItem In MT.ListView2.Items
+                For Each item As ListViewItem In Me.ListViewMT.Items
 
 
 
@@ -596,7 +598,7 @@ Public Class Principal
                     For Each texbox In dynamicTxtlist
 
 
-                        texbox.Text = texbox.Text.Replace(item.Text, MT.ListView2.Items(b).SubItems(1).Text)
+                        texbox.Text = texbox.Text.Replace(item.Text, Me.ListViewMT.Items(b).SubItems(1).Text)
 
 
                     Next
@@ -643,52 +645,56 @@ Public Class Principal
     '    End If
     'End Sub
 
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerMT.DoWork
 
 
         Try
             Select Case Selectionneur
 
                 Case = "OMT"
-                    MT.ListView2.Clear()
+                    Me.ListViewMT.Clear()
+                    Me.ListViewMT.Columns.Add("Source", 180, HorizontalAlignment.Left)
+                    Me.ListViewMT.Columns.Add("Target", 180, HorizontalAlignment.Left)
+
                     Dim FS As FileStream = File.Open(filePath, FileMode.Open)
                     Dim BinFmtr As New BinaryFormatter
                     Dim alSavedLV As New ArrayList
                     alSavedLV = CType(BinFmtr.Deserialize(FS), ArrayList)
                     Dim lvi As ListViewItem
                     For item As Integer = 0 To alSavedLV.Count - 1
-                        If BackgroundWorker1.CancellationPending Then
+                        If BackgroundWorkerMT.CancellationPending Then
                             e.Cancel = True
                             Exit For
                         End If
                         lvi = New ListViewItem
 
                         lvi = CType(alSavedLV(item), ListViewItem)
-                        BackgroundWorker1.ReportProgress(CInt((item / alSavedLV.Count) * 100))
-                        Invoke(New MethodInvoker(Sub() UpdateLabel(Chargement2.Statut, FormatPercent(item / alSavedLV.Count, 2))))
-                        Invoke(New MethodInvoker(Sub() MT.ListView2.Items.Add(lvi)))
+                        BackgroundWorkerMT.ReportProgress(CInt((item / alSavedLV.Count) * 100))
+                        UpdateLabel(Me.Status, FormatPercent(item / alSavedLV.Count, 2))
+                        Me.ListViewMT.Items.Add(lvi)
 
                     Next
                     FS.Close()
                 Case = "CMT"
-                    Invoke(New MethodInvoker(Sub() MT.ListView2.Clear()))
-
-
+                    Me.ListViewMT.Clear()
+                    Me.ListViewMT.Columns.Add("Source", 180, HorizontalAlignment.Left)
+                    Me.ListViewMT.Columns.Add("Target", 180, HorizontalAlignment.Left)
+                    Dim t As Integer = 0
                     Dim z As Integer = 0
                     Dim txt As String
                     Dim MRT As New StringBuilder
                     Dim compteur As Integer = 0
-                    Dim lvi As ListViewItem
+
 
                     Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
                     Dim match As Match
 
 
                     For Each texte As TextBox In dynamicTxtlist
-                        lvi = New ListViewItem
 
-                        Dim Lines() As String = texte.Text.Split(Environment.NewLine)
 
+                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
+                        t += 1
 
                         For Each Line As String In Lines
 
@@ -697,11 +703,11 @@ Public Class Principal
 
                                 txt = match.Value
                                 If compteur = 0 Then
-                                    Invoke(New MethodInvoker(Sub() MT.ListView2.Items.Add(txt)))
+                                    Me.ListViewMT.Items.Add(txt)
 
                                     compteur = 1
                                 Else
-                                    Invoke(New MethodInvoker(Sub() MT.ListView2.Items(z).SubItems.Add(txt)))
+                                    Me.ListViewMT.Items(z).SubItems.Add(txt)
                                     z += 1
                                     compteur = 0
 
@@ -712,36 +718,28 @@ Public Class Principal
 
                     Next
 
-                    'Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
-                    'Using fs As New System.IO.FileStream(filePath, IO.FileMode.Create)
-                    '    bf.Serialize(fs, New ArrayList(MT.ListView2.Items))
-                    'End Using
+                    Dim FS As FileStream = File.Create(filePath)
+
+                    Dim BinFmtr As New BinaryFormatter
+
+
+                    Dim alSavedLV As New ArrayList
+
+
+                    For item As Integer = 0 To Me.ListViewMT.Items.Count - 1
+
+
+                        alSavedLV.Add(Me.ListViewMT.Items(item))
+
+                    Next
 
 
 
-
-                    'Dim FS As FileStream = File.Create(filePath)
-
-                    'Dim BinFmtr As New BinaryFormatter
-
-
-                    'Dim alSavedLV As New ArrayList
-
-
-                    'For item As Integer = 0 To MT.ListView2.Items.Count - 1
-
-
-                    '    alSavedLV.Add(MT.ListView2.Items(item))
-
-                    'Next
+                    BinFmtr.Serialize(FS, alSavedLV)
 
 
 
-                    'BinFmtr.Serialize(FS, alSavedLV)
-
-
-
-                    'FS.Close()
+                    FS.Close()
             End Select
         Catch ex As Exception
             MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
@@ -752,34 +750,40 @@ Public Class Principal
     Private Sub UpdateLabel(ByVal [label] As Label, ByVal [text] As String)
         If [label].InvokeRequired Then
             Dim myDelegate As New SetLabelTextDelegat(AddressOf UpdateLabel)
-            Chargement2.Invoke(myDelegate, New Object() {[label], [text]})
+            Me.Invoke(myDelegate, New Object() {[label], [text]})
         Else
             label.Text = [text]
         End If
     End Sub
 
-    Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
-        Chargement2.ProgressBar1.Value = e.ProgressPercentage
+    Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorkerMT.ProgressChanged
+        Me.ProgressBarrr.Value = e.ProgressPercentage
     End Sub
 
-    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerMT.RunWorkerCompleted
         If e.Cancelled Then
-            Chargement2.Statut.Text = "Cancelled"
+            Me.Status.Text = "Cancelled"
             Delay(2)
-            MT.Visible = True
-            MT.ListView2.Clear()
-            MT.Close()
-            Me.Visible = True
-            Chargement2.Close()
+            Me.TabControlMTCharg.Visible = False
+            Me.ListView1.Visible = True
+            Me.TabControl1.Visible = True
+
         Else
-            Chargement2.Statut.Text = "Complated"
+            Me.Status.Text = "Complated"
             Delay(2)
-            MT.Visible = True
-            Me.Visible = True
-            MT.ListView2.Refresh()
-            Chargement2.Close()
+
+            Me.TabControlMTCharg.SelectedIndex = 1
+            AutoSizeListViewColumns(Me.ListViewMT)
         End If
     End Sub
 
-
+    Private Sub AutoSizeListViewColumns(oListView As ListView)
+        Dim nCol As Integer = 0
+        SuspendLayout()
+        For nCol = 0 To (oListView.Columns.Count - 1)
+            oListView.Columns(nCol).Width = -1
+        Next
+        oListView.Refresh()
+        ResumeLayout()
+    End Sub
 End Class

@@ -22,10 +22,20 @@ Partial Class MT
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListView2 = New System.Windows.Forms.ListView()
         Me.Source = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Translation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ListView2 = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
+        '
+        'Source
+        '
+        Me.Source.Text = "Source"
+        Me.Source.Width = 383
+        '
+        'Translation
+        '
+        Me.Translation.Text = "Translation"
+        Me.Translation.Width = 382
         '
         'ListView2
         '
@@ -37,16 +47,6 @@ Partial Class MT
         Me.ListView2.TabIndex = 18
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
-        '
-        'Source
-        '
-        Me.Source.Text = "Source"
-        Me.Source.Width = 383
-        '
-        'Translation
-        '
-        Me.Translation.Text = "Translation"
-        Me.Translation.Width = 382
         '
         'MT
         '
@@ -60,7 +60,7 @@ Partial Class MT
 
     End Sub
 
-    Friend WithEvents ListView2 As ListView
     Friend WithEvents Source As ColumnHeader
     Friend WithEvents Translation As ColumnHeader
+    Friend WithEvents ListView2 As ListView
 End Class

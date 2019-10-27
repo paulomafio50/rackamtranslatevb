@@ -240,4 +240,13 @@
   <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Open MT</value>
   </data>
+  <data name="TutorielToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tutoriel</value>
+  </data>
+  <data name="DiscordToolStripMenuItem.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="Button1.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>
