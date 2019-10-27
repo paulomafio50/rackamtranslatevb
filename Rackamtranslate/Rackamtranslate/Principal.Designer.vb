@@ -294,6 +294,8 @@ Partial Class Principal
         '
         'ShowMTToolStripMenuItem
         '
+        Me.ShowMTToolStripMenuItem.Checked = True
+        Me.ShowMTToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ShowMTToolStripMenuItem.Name = "ShowMTToolStripMenuItem"
         resources.ApplyResources(Me.ShowMTToolStripMenuItem, "ShowMTToolStripMenuItem")
         '

@@ -79,23 +79,29 @@ Public Class Principal
 
 
         If ListView1.Items.Count > 0 Then
-
-            Me.TabControl1.Visible = False
             Me.ListView1.Visible = False
-            Me.TabControl2.Visible = True
-            Me.RecompilerToolStripMenuItem1.Visible = True
-            Me.TraducteurToolStripMenuItem1.Visible = True
-            Me.DecompilerToolStripMenuItem1.Visible = False
-            Me.ReplaceToolStripMenuItem.Visible = True
-            Me.MTToolStripMenuItem.Visible = False
-            Me.Visible = False
-            Chargement.Show()
+            Me.TabControl1.Visible = False
+            Me.TabControlMTCharg.Visible = True
+            Me.TabControlMTCharg.SelectedIndex = 0
+            Selectionneur = "DECOMP"
+
+            BackgroundWorkerMT.RunWorkerAsync()
+            'Me.TabControl1.Visible = False
+            'Me.ListView1.Visible = False
+            'Me.TabControl2.Visible = True
+            'Me.RecompilerToolStripMenuItem1.Visible = True
+            'Me.TraducteurToolStripMenuItem1.Visible = True
+            'Me.DecompilerToolStripMenuItem1.Visible = False
+            'Me.ReplaceToolStripMenuItem.Visible = True
+            'Me.MTToolStripMenuItem.Visible = False
+            'Me.Visible = False
+            'Chargement.Show()
 
 
-            Dim thread1 As New Thread(Sub() Decompile()) With {
-                .IsBackground = True
-            }
-            thread1.Start()
+            'Dim thread1 As New Thread(Sub() Decompile()) With {
+            '    .IsBackground = True
+            '}
+            'thread1.Start()
 
         End If
     End Sub
@@ -183,22 +189,27 @@ Public Class Principal
     Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
 
         If TabControl2.Visible = True Then
-            Me.ListView1.Visible = True
-            Me.TabControl1.Visible = True
             Me.TabControl2.Visible = False
-            Me.RecompilerToolStripMenuItem1.Visible = False
-            Me.TraducteurToolStripMenuItem1.Visible = False
-            Me.DecompilerToolStripMenuItem1.Visible = True
-            Me.ReplaceToolStripMenuItem.Visible = False
-            Me.Visible = False
-            Me.MTToolStripMenuItem.Visible = True
+            Me.TabControlMTCharg.Visible = True
+            Me.TabControlMTCharg.SelectedIndex = 0
+            Selectionneur = "RECOMP"
+            BackgroundWorkerMT.RunWorkerAsync()
+            'Me.ListView1.Visible = True
+            'Me.TabControl1.Visible = True
+            'Me.TabControl2.Visible = False
+            'Me.RecompilerToolStripMenuItem1.Visible = False
+            'Me.TraducteurToolStripMenuItem1.Visible = False
+            'Me.DecompilerToolStripMenuItem1.Visible = True
+            'Me.ReplaceToolStripMenuItem.Visible = False
+            'Me.Visible = False
+            'Me.MTToolStripMenuItem.Visible = True
 
-            Chargement.Show()
+            'Chargement.Show()
 
-            Dim thread1 As New Thread(Sub() Recompile()) With {
-                .IsBackground = True
-            }
-            thread1.Start()
+            'Dim thread1 As New Thread(Sub() Recompile()) With {
+            '    .IsBackground = True
+            '}
+            'thread1.Start()
         End If
     End Sub
     Sub Recompile()
@@ -653,8 +664,8 @@ Public Class Principal
 
                 Case = "OMT"
                     Me.ListViewMT.Clear()
-                    Me.ListViewMT.Columns.Add("Source", 180, HorizontalAlignment.Left)
-                    Me.ListViewMT.Columns.Add("Target", 180, HorizontalAlignment.Left)
+                    Me.ListViewMT.Columns.Add("Source")
+                    Me.ListViewMT.Columns.Add("Target")
 
                     Dim FS As FileStream = File.Open(filePath, FileMode.Open)
                     Dim BinFmtr As New BinaryFormatter
@@ -667,82 +678,167 @@ Public Class Principal
                             Exit For
                         End If
                         lvi = New ListViewItem
-
                         lvi = CType(alSavedLV(item), ListViewItem)
                         BackgroundWorkerMT.ReportProgress(CInt((item / alSavedLV.Count) * 100))
                         UpdateLabel(Me.Status, FormatPercent(item / alSavedLV.Count, 2))
                         Me.ListViewMT.Items.Add(lvi)
-
                     Next
                     FS.Close()
                 Case = "CMT"
                     Me.ListViewMT.Clear()
-                    Me.ListViewMT.Columns.Add("Source", 180, HorizontalAlignment.Left)
-                    Me.ListViewMT.Columns.Add("Target", 180, HorizontalAlignment.Left)
+                    Me.ListViewMT.Columns.Add("Source")
+                    Me.ListViewMT.Columns.Add("Target")
                     Dim t As Integer = 0
                     Dim z As Integer = 0
                     Dim txt As String
                     Dim MRT As New StringBuilder
                     Dim compteur As Integer = 0
-
-
                     Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
                     Dim match As Match
-
-
                     For Each texte As TextBox In dynamicTxtlist
-
-
+                        If BackgroundWorkerMT.CancellationPending Then
+                            e.Cancel = True
+                            Exit For
+                        End If
                         Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
                         t += 1
-
                         For Each Line As String In Lines
-
                             match = regex.Match(Line)
                             If match.Success Then
-
                                 txt = match.Value
                                 If compteur = 0 Then
                                     Me.ListViewMT.Items.Add(txt)
-
                                     compteur = 1
                                 Else
                                     Me.ListViewMT.Items(z).SubItems.Add(txt)
                                     z += 1
                                     compteur = 0
-
                                 End If
+                            End If
+                        Next Line
+                    Next
+                    Dim FS As FileStream = File.Create(filePath)
+                    Dim BinFmtr As New BinaryFormatter
+                    Dim alSavedLV As New ArrayList
+                    For item As Integer = 0 To Me.ListViewMT.Items.Count - 1
+                        alSavedLV.Add(Me.ListViewMT.Items(item))
+                    Next
+                    BinFmtr.Serialize(FS, alSavedLV)
+                    FS.Close()
+                Case = "DECOMP"
+                    Dim txt As String
+                    Dim txt2 As String
+                    Dim txt3 As String
+                    Dim t As Integer = 0
+                    Dim li As Long = 0
+
+                    Dim nbl As Integer
+                    Dim compteur As Integer = 0
+
+                    For Each texbox In dynamicTxtlist
+
+                        nbl += texbox.Lines.Count
+                    Next texbox
+
+
+                    For Each texbox In dynamicTxtlist
+                        Dim txttrans As String
+                        Dim Output As New StringBuilder
+                        Dim Output2 As New StringBuilder
+                        Dim Output3 As New StringBuilder
+
+
+                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
+
+                        For Each Line As String In Lines
+                            compteur += 1
+                            BackgroundWorkerMT.ReportProgress(CInt((compteur / nbl) * 100))
+                            UpdateLabel(Me.Status, FormatPercent(compteur / nbl, 2))
+                            If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
+
+                                txttrans = Line.Replace(vbCr, "").Replace(vbLf, "")
+
+
+                                txt = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$2")
+                                txt2 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$1")
+                                txt3 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$3")
+                                '
+                                Output.AppendLine(txt)
+                                Output2.AppendLine(txt2)
+                                Output3.AppendLine(txt3)
+
+                                li += 1
+
                             End If
 
                         Next Line
 
-                    Next
-
-                    Dim FS As FileStream = File.Create(filePath)
-
-                    Dim BinFmtr As New BinaryFormatter
-
-
-                    Dim alSavedLV As New ArrayList
-
-
-                    For item As Integer = 0 To Me.ListViewMT.Items.Count - 1
-
-
-                        alSavedLV.Add(Me.ListViewMT.Items(item))
+                        dynamicTxt2list(t).Text = Output.ToString
+                        dynamicTxt3list(t).Text = Output2.ToString
+                        dynamicTxt4list(t).Text = Output3.ToString
+                        t += 1
+                        li = 0
 
                     Next
+                Case = "RECOMP"
+                    Dim txt As String
+                    Dim t As Integer = 0
+                    Dim li As Long = 0
+                    Dim ln As Integer = 1
+                    Dim nombredetext As Long = dynamicTxtlist.Count
+                    Dim nbl As Integer
+                    Dim compteur As Integer = 0
+
+                    For Each texbox In dynamicTxtlist
+
+                        nbl += texbox.Lines.Count
+                    Next texbox
 
 
 
-                    BinFmtr.Serialize(FS, alSavedLV)
+                    For Each texbox In dynamicTxtlist
+
+                        Dim Output As New StringBuilder
 
 
 
-                    FS.Close()
+                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
+
+                        For Each Line As String In Lines
+
+                            compteur += 1
+                            BackgroundWorkerMT.ReportProgress(CInt((compteur / nbl) * 100))
+                            UpdateLabel(Me.Status, FormatPercent(compteur / nbl, 2))
+
+                            If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
+
+                                txt = Line
+                             
+                                Invoke(New MethodInvoker(Sub() txt = dynamicTxt3list(t).Lines(li) & dynamicTxt2list(t).Lines(li) & dynamicTxt4list(t).Lines(li)))
+                                Output.AppendLine(txt)
+
+
+
+
+                                li += 1
+                            Else : Output.AppendLine(Line)
+                            End If
+
+
+
+                        Next Line
+
+                        'Replace the RichTextBox.Text with the Stringbuilder output
+                        Invoke(New MethodInvoker(Sub() dynamicTxtlist(t).Text = Output.ToString))
+                        t += 1
+                        li = 0
+                        ln += 1
+                    Next
+
+
             End Select
         Catch ex As Exception
-            MessageBox.Show("Une erreur est survenue lors de l'ouverture du fichier : {0}.", ex.Message)
+            MessageBox.Show(ex.Message)
         End Try
 
     End Sub
@@ -770,15 +866,31 @@ Public Class Principal
 
         Else
             Me.Status.Text = "Complated"
-            Delay(2)
-
-            Me.TabControlMTCharg.SelectedIndex = 1
-            AutoSizeListViewColumns(Me.ListViewMT)
+            Delay(1)
+            Select Case Selectionneur
+                Case = "OMT"
+                    Me.TabControlMTCharg.SelectedIndex = 1
+                    AutoSizeListViewColumns(Me.ListViewMT)
+                Case = "CMT"
+                    Me.TabControlMTCharg.SelectedIndex = 1
+                    AutoSizeListViewColumns(Me.ListViewMT)
+                Case = "DECOMP"
+                    Me.TabControlMTCharg.Visible = False
+                    Me.TabControl2.Visible = True
+                    Me.DecompilerToolStripMenuItem1.Visible = False
+                    Me.RecompilerToolStripMenuItem1.Visible = True
+                Case = "RECOMP"
+                    Me.TabControlMTCharg.Visible = False
+                    Me.ListView1.Visible = True
+                    Me.TabControl1.Visible = True
+                    Me.DecompilerToolStripMenuItem1.Visible = True
+                    Me.RecompilerToolStripMenuItem1.Visible = False
+            End Select
         End If
     End Sub
 
     Private Sub AutoSizeListViewColumns(oListView As ListView)
-        Dim nCol As Integer = 0
+        Dim nCol As Integer
         SuspendLayout()
         For nCol = 0 To (oListView.Columns.Count - 1)
             oListView.Columns(nCol).Width = -1
@@ -786,4 +898,5 @@ Public Class Principal
         oListView.Refresh()
         ResumeLayout()
     End Sub
+
 End Class
