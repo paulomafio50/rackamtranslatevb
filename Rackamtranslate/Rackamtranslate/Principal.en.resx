@@ -231,9 +231,6 @@
   <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Apply MT</value>
   </data>
-  <data name="ShowMTToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show MT</value>
-  </data>
   <data name="MTToolStripMenuItem.Text" xml:space="preserve">
     <value>MT</value>
   </data>
@@ -248,5 +245,17 @@
   </data>
   <data name="Button1.Text" xml:space="preserve">
     <value>Stop</value>
+  </data>
+  <data name="MTToolStripMenuItem1.Text" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="DecompileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Decompile</value>
+  </data>
+  <data name="MainToolStripMenuItem.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="ViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
   </data>
 </root>

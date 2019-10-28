@@ -134,12 +134,6 @@
     <Compile Include="Help.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MT.Designer.vb">
-      <DependentUpon>MT.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MT.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,9 +189,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MT.resx">
-      <DependentUpon>MT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.en.resx">
       <DependentUpon>Principal.vb</DependentUpon>

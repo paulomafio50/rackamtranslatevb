@@ -567,8 +567,6 @@ Public Class Principal
         Dim OpenFileDialogMT As OpenFileDialog = New OpenFileDialog With {
             .Filter = " files (*.mem)|*.mem"}
 
-
-
         If OpenFileDialogMT.ShowDialog() = DialogResult.OK Then
             Me.ListView1.Visible = False
             Me.TabControl1.Visible = False
@@ -591,37 +589,23 @@ Public Class Principal
     End Sub
 
 
-    Private Sub ShowMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMTToolStripMenuItem.Click
-        MT.Show()
-        MT.Visible = True
-    End Sub
+
 
     Private Sub ApplyMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplyMTToolStripMenuItem.Click
         If ListView1.Items.Count > 0 Then
 
-            If MT.ListView2.Items.Count > 0 Then
+            If Me.ListViewMT.Items.Count > 0 Then
                 Dim b As Integer = 0
-
-
-
 
                 For Each item As ListViewItem In Me.ListViewMT.Items
 
-
-
-
                     For Each texbox In dynamicTxtlist
 
-
                         texbox.Text = texbox.Text.Replace(item.Text, Me.ListViewMT.Items(b).SubItems(1).Text)
-
 
                     Next
 
                     b += 1
-
-
-
 
                 Next
 
@@ -632,7 +616,6 @@ Public Class Principal
         Else
 
             MsgBox("open Files or folder before")
-
 
         End If
 
@@ -766,7 +749,6 @@ Public Class Principal
                                 txt = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$2")
                                 txt2 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$1")
                                 txt3 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$3")
-                                '
                                 Output.AppendLine(txt)
                                 Output2.AppendLine(txt2)
                                 Output3.AppendLine(txt3)
@@ -785,7 +767,7 @@ Public Class Principal
 
                     Next
                 Case = "RECOMP"
-                    Dim txt As String
+                    Dim txt As String = ""
                     Dim t As Integer = 0
                     Dim li As Long = 0
                     Dim ln As Integer = 1
@@ -797,8 +779,6 @@ Public Class Principal
 
                         nbl += texbox.Lines.Count
                     Next texbox
-
-
 
                     For Each texbox In dynamicTxtlist
 
@@ -816,15 +796,12 @@ Public Class Principal
 
                             If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
 
-                                txt = Line
-                             
                                 Invoke(New MethodInvoker(Sub() txt = dynamicTxt3list(t).Lines(li) & dynamicTxt2list(t).Lines(li) & dynamicTxt4list(t).Lines(li)))
+
                                 Output.AppendLine(txt)
 
-
-
-
                                 li += 1
+
                             Else : Output.AppendLine(Line)
                             End If
 
@@ -887,6 +864,8 @@ Public Class Principal
                     Me.TabControl2.Visible = True
                     Me.DecompilerToolStripMenuItem1.Visible = False
                     Me.RecompilerToolStripMenuItem1.Visible = True
+                    Me.TraducteurToolStripMenuItem1.Visible = True
+                    Me.ReplaceToolStripMenuItem.Visible = True
                 Case = "RECOMP"
                     Me.MenuStrip1.Visible = True
                     Me.TabControlMTCharg.Visible = False
@@ -894,6 +873,8 @@ Public Class Principal
                     Me.TabControl1.Visible = True
                     Me.DecompilerToolStripMenuItem1.Visible = True
                     Me.RecompilerToolStripMenuItem1.Visible = False
+                    Me.TraducteurToolStripMenuItem1.Visible = False
+                    Me.ReplaceToolStripMenuItem.Visible = False
             End Select
         End If
     End Sub
@@ -908,4 +889,35 @@ Public Class Principal
         ResumeLayout()
     End Sub
 
+    Private Sub MTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MTToolStripMenuItem1.Click
+        Me.TabControlMTCharg.Visible = True
+        Me.TabControlMTCharg.SelectedIndex = 1
+        Me.TabControl1.Visible = False
+        Me.ListView1.Visible = False
+        Me.TabControl2.Visible = False
+        Me.MTToolStripMenuItem1.Checked = True
+        Me.DecompileToolStripMenuItem.Checked = False
+        Me.MainToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub DecompileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DecompileToolStripMenuItem.Click
+        Me.TabControlMTCharg.Visible = False
+
+        Me.TabControl1.Visible = False
+        Me.ListView1.Visible = False
+        Me.TabControl2.Visible = True
+        Me.MTToolStripMenuItem1.Checked = False
+        Me.DecompileToolStripMenuItem.Checked = True
+        Me.MainToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub MainToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MainToolStripMenuItem.Click
+        Me.TabControlMTCharg.Visible = False
+        Me.TabControl1.Visible = True
+        Me.ListView1.Visible = True
+        Me.TabControl2.Visible = False
+        Me.MTToolStripMenuItem1.Checked = False
+        Me.DecompileToolStripMenuItem.Checked = False
+        Me.MainToolStripMenuItem.Checked = True
+    End Sub
 End Class

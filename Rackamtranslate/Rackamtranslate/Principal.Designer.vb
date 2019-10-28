@@ -64,24 +64,27 @@ Partial Class Principal
         Me.OpenMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApplyMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShowMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
         Me.BackgroundWorkerMT = New System.ComponentModel.BackgroundWorker()
         Me.TabControlMTCharg = New System.Windows.Forms.TabControl()
         Me.TabPageProgressBar = New System.Windows.Forms.TabPage()
+        Me.MyPictureBox = New System.Windows.Forms.PictureBox()
         Me.ProgressBarrr = New System.Windows.Forms.ProgressBar()
         Me.Status = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPageMT = New System.Windows.Forms.TabPage()
         Me.ListViewMT = New System.Windows.Forms.ListView()
-        Me.MyPictureBox = New System.Windows.Forms.PictureBox()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DecompileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControlMTCharg.SuspendLayout()
         Me.TabPageProgressBar.SuspendLayout()
-        Me.TabPageMT.SuspendLayout()
         CType(Me.MyPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPageMT.SuspendLayout()
         Me.SuspendLayout()
         '
         'RegexToolStripMenuItem
@@ -202,7 +205,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.ViewToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -275,7 +278,7 @@ Partial Class Principal
         '
         'MTToolStripMenuItem
         '
-        Me.MTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenMTToolStripMenuItem, Me.CreateMTToolStripMenuItem, Me.ApplyMTToolStripMenuItem, Me.ShowMTToolStripMenuItem})
+        Me.MTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenMTToolStripMenuItem, Me.CreateMTToolStripMenuItem, Me.ApplyMTToolStripMenuItem})
         Me.MTToolStripMenuItem.Name = "MTToolStripMenuItem"
         resources.ApplyResources(Me.MTToolStripMenuItem, "MTToolStripMenuItem")
         '
@@ -293,13 +296,6 @@ Partial Class Principal
         '
         Me.ApplyMTToolStripMenuItem.Name = "ApplyMTToolStripMenuItem"
         resources.ApplyResources(Me.ApplyMTToolStripMenuItem, "ApplyMTToolStripMenuItem")
-        '
-        'ShowMTToolStripMenuItem
-        '
-        Me.ShowMTToolStripMenuItem.Checked = True
-        Me.ShowMTToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ShowMTToolStripMenuItem.Name = "ShowMTToolStripMenuItem"
-        resources.ApplyResources(Me.ShowMTToolStripMenuItem, "ShowMTToolStripMenuItem")
         '
         'BackgroundWorkerMT
         '
@@ -324,6 +320,12 @@ Partial Class Principal
         resources.ApplyResources(Me.TabPageProgressBar, "TabPageProgressBar")
         Me.TabPageProgressBar.Name = "TabPageProgressBar"
         Me.TabPageProgressBar.UseVisualStyleBackColor = True
+        '
+        'MyPictureBox
+        '
+        resources.ApplyResources(Me.MyPictureBox, "MyPictureBox")
+        Me.MyPictureBox.Name = "MyPictureBox"
+        Me.MyPictureBox.TabStop = False
         '
         'ProgressBarrr
         '
@@ -360,11 +362,26 @@ Partial Class Principal
         Me.ListViewMT.UseCompatibleStateImageBehavior = False
         Me.ListViewMT.View = System.Windows.Forms.View.Details
         '
-        'MyPictureBox
+        'ViewToolStripMenuItem
         '
-        resources.ApplyResources(Me.MyPictureBox, "MyPictureBox")
-        Me.MyPictureBox.Name = "MyPictureBox"
-        Me.MyPictureBox.TabStop = False
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MTToolStripMenuItem1, Me.DecompileToolStripMenuItem, Me.MainToolStripMenuItem})
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        resources.ApplyResources(Me.ViewToolStripMenuItem, "ViewToolStripMenuItem")
+        '
+        'MTToolStripMenuItem1
+        '
+        Me.MTToolStripMenuItem1.Name = "MTToolStripMenuItem1"
+        resources.ApplyResources(Me.MTToolStripMenuItem1, "MTToolStripMenuItem1")
+        '
+        'DecompileToolStripMenuItem
+        '
+        Me.DecompileToolStripMenuItem.Name = "DecompileToolStripMenuItem"
+        resources.ApplyResources(Me.DecompileToolStripMenuItem, "DecompileToolStripMenuItem")
+        '
+        'MainToolStripMenuItem
+        '
+        Me.MainToolStripMenuItem.Name = "MainToolStripMenuItem"
+        resources.ApplyResources(Me.MainToolStripMenuItem, "MainToolStripMenuItem")
         '
         'Principal
         '
@@ -384,8 +401,8 @@ Partial Class Principal
         Me.TabControlMTCharg.ResumeLayout(False)
         Me.TabPageProgressBar.ResumeLayout(False)
         Me.TabPageProgressBar.PerformLayout()
-        Me.TabPageMT.ResumeLayout(False)
         CType(Me.MyPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPageMT.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -429,7 +446,6 @@ Partial Class Principal
     Friend WithEvents MTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreateMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ApplyMTToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveFileDialogMT As SaveFileDialog
     Friend WithEvents OpenMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TutorielToolStripMenuItem As ToolStripMenuItem
@@ -443,4 +459,8 @@ Partial Class Principal
     Friend WithEvents Button1 As Button
     Friend WithEvents ListViewMT As ListView
     Friend WithEvents MyPictureBox As PictureBox
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MTToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DecompileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MainToolStripMenuItem As ToolStripMenuItem
 End Class
