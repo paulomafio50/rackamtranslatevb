@@ -75,11 +75,13 @@ Partial Class Principal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPageMT = New System.Windows.Forms.TabPage()
         Me.ListViewMT = New System.Windows.Forms.ListView()
+        Me.MyPictureBox = New System.Windows.Forms.PictureBox()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControlMTCharg.SuspendLayout()
         Me.TabPageProgressBar.SuspendLayout()
         Me.TabPageMT.SuspendLayout()
+        CType(Me.MyPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RegexToolStripMenuItem
@@ -315,6 +317,7 @@ Partial Class Principal
         '
         'TabPageProgressBar
         '
+        Me.TabPageProgressBar.Controls.Add(Me.MyPictureBox)
         Me.TabPageProgressBar.Controls.Add(Me.ProgressBarrr)
         Me.TabPageProgressBar.Controls.Add(Me.Status)
         Me.TabPageProgressBar.Controls.Add(Me.Button1)
@@ -357,6 +360,12 @@ Partial Class Principal
         Me.ListViewMT.UseCompatibleStateImageBehavior = False
         Me.ListViewMT.View = System.Windows.Forms.View.Details
         '
+        'MyPictureBox
+        '
+        resources.ApplyResources(Me.MyPictureBox, "MyPictureBox")
+        Me.MyPictureBox.Name = "MyPictureBox"
+        Me.MyPictureBox.TabStop = False
+        '
         'Principal
         '
         resources.ApplyResources(Me, "$this")
@@ -376,6 +385,7 @@ Partial Class Principal
         Me.TabPageProgressBar.ResumeLayout(False)
         Me.TabPageProgressBar.PerformLayout()
         Me.TabPageMT.ResumeLayout(False)
+        CType(Me.MyPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -432,4 +442,5 @@ Partial Class Principal
     Friend WithEvents Status As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents ListViewMT As ListView
+    Friend WithEvents MyPictureBox As PictureBox
 End Class

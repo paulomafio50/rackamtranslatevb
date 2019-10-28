@@ -83,6 +83,7 @@ Public Class Principal
             Me.TabControl1.Visible = False
             Me.TabControlMTCharg.Visible = True
             Me.TabControlMTCharg.SelectedIndex = 0
+            Me.MenuStrip1.Visible = False
             Selectionneur = "DECOMP"
 
             BackgroundWorkerMT.RunWorkerAsync()
@@ -192,6 +193,7 @@ Public Class Principal
             Me.TabControl2.Visible = False
             Me.TabControlMTCharg.Visible = True
             Me.TabControlMTCharg.SelectedIndex = 0
+            Me.MenuStrip1.Visible = False
             Selectionneur = "RECOMP"
             BackgroundWorkerMT.RunWorkerAsync()
             'Me.ListView1.Visible = True
@@ -544,6 +546,7 @@ Public Class Principal
                 Me.TabControl1.Visible = False
                 Me.TabControlMTCharg.Visible = True
                 Me.TabControlMTCharg.SelectedIndex = 0
+                Me.MenuStrip1.Visible = False
                 Selectionneur = "CMT"
                 filePath = Path.GetFullPath(SaveFileDialogMT.FileName)
 
@@ -571,6 +574,7 @@ Public Class Principal
             Me.TabControl1.Visible = False
             Me.TabControlMTCharg.Visible = True
             Me.TabControlMTCharg.SelectedIndex = 0
+            Me.MenuStrip1.Visible = False
             Selectionneur = "OMT"
             filePath = Path.GetFullPath(OpenFileDialogMT.FileName)
 
@@ -828,7 +832,7 @@ Public Class Principal
 
                         Next Line
 
-                        'Replace the RichTextBox.Text with the Stringbuilder output
+
                         Invoke(New MethodInvoker(Sub() dynamicTxtlist(t).Text = Output.ToString))
                         t += 1
                         li = 0
@@ -860,6 +864,7 @@ Public Class Principal
         If e.Cancelled Then
             Me.Status.Text = "Cancelled"
             Delay(2)
+            Me.MenuStrip1.Visible = True
             Me.TabControlMTCharg.Visible = False
             Me.ListView1.Visible = True
             Me.TabControl1.Visible = True
@@ -870,16 +875,20 @@ Public Class Principal
             Select Case Selectionneur
                 Case = "OMT"
                     Me.TabControlMTCharg.SelectedIndex = 1
+                    Me.MenuStrip1.Visible = True
                     AutoSizeListViewColumns(Me.ListViewMT)
                 Case = "CMT"
                     Me.TabControlMTCharg.SelectedIndex = 1
+                    Me.MenuStrip1.Visible = True
                     AutoSizeListViewColumns(Me.ListViewMT)
                 Case = "DECOMP"
+                    Me.MenuStrip1.Visible = True
                     Me.TabControlMTCharg.Visible = False
                     Me.TabControl2.Visible = True
                     Me.DecompilerToolStripMenuItem1.Visible = False
                     Me.RecompilerToolStripMenuItem1.Visible = True
                 Case = "RECOMP"
+                    Me.MenuStrip1.Visible = True
                     Me.TabControlMTCharg.Visible = False
                     Me.ListView1.Visible = True
                     Me.TabControl1.Visible = True
