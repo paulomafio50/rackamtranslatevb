@@ -379,8 +379,8 @@ Public Class Principal
     Private Sub EnregistrersousToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnregistrersousToolStripMenuItem.Click
         MsgBox(My.Resources.Globalstrings.Messagelater)
         'Dim chemin As String
-        Dim position As Integer = ListView1.Items(1).Text.LastIndexOf("\")
-        MsgBox(position)
+        'Dim position As Integer = ListView1.Items(1).Text.LastIndexOf("\")
+        'MsgBox(position)
 
         'Dim chemifin As String
 
@@ -759,9 +759,9 @@ Public Class Principal
 
                         Next Line
 
-                        dynamicTxt2list(t).Text = Output.ToString
-                        dynamicTxt3list(t).Text = Output2.ToString
-                        dynamicTxt4list(t).Text = Output3.ToString
+                        Invoke(New MethodInvoker(Sub() dynamicTxt2list(t).Text = Output.ToString))
+                        Invoke(New MethodInvoker(Sub() dynamicTxt3list(t).Text = Output2.ToString))
+                        Invoke(New MethodInvoker(Sub() dynamicTxt4list(t).Text = Output3.ToString))
                         t += 1
                         li = 0
 
@@ -783,9 +783,12 @@ Public Class Principal
                     For Each texbox In dynamicTxtlist
 
                         Dim Output As New StringBuilder
-
-
-
+                        Dim stringdebut() As String 
+                        Invoke(New MethodInvoker(Sub() stringdebut = dynamicTxt3list(t).Text.Split(Environment.NewLine)))
+                        Dim stringmilieu() As String
+                        Invoke(New MethodInvoker(Sub() stringmilieu = dynamicTxt2list(t).Text.Split(vbLf)))
+                        Dim stringfin() As String
+                        Invoke(New MethodInvoker(Sub() stringfin = dynamicTxt4list(t).Text.Split(Environment.NewLine)))
                         Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
 
                         For Each Line As String In Lines
@@ -796,9 +799,11 @@ Public Class Principal
 
                             If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
 
-                                Invoke(New MethodInvoker(Sub() txt = dynamicTxt3list(t).Lines(li) & dynamicTxt2list(t).Lines(li) & dynamicTxt4list(t).Lines(li)))
 
-                                Output.AppendLine(txt)
+
+#Disable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
+                                Output.AppendLine(stringdebut(li) & stringmilieu(li) & stringfin(li))
+#Enable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
 
                                 li += 1
 
@@ -823,6 +828,8 @@ Public Class Principal
         End Try
 
     End Sub
+
+
     Delegate Sub SetLabelTextDelegat(ByVal [label] As Label, ByVal [text] As String)
     Private Sub UpdateLabel(ByVal [label] As Label, ByVal [text] As String)
         If [label].InvokeRequired Then

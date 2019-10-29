@@ -186,7 +186,7 @@ Public Class Traducteur
         Me.ComboBoxtraducteur.Items.Clear()
         Me.ComboBoxtraducteur.Items.Add("Deepl")
         'Me.ComboBoxtraducteur.Items.Add("Google")
-        'Me.ComboBoxtraducteur.Items.Add("Yandex")
+        Me.ComboBoxtraducteur.Items.Add("Yandex")
         Me.ComboBoxtraducteur.Text = "Deepl"
         'combobox Langsource
         If Me.ComboBoxtraducteur.Text = "Deepl" Then
@@ -245,7 +245,7 @@ Public Class Traducteur
             Case "Google"
                 text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div/span[1]/span", "text")
             Case "Yandex"
-                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]", "text")
+                text = Extract("/html/body/div[2]/div[2]/div[2]/div[2]/div/pre/span", "text")
         End Select
 
         If text <> "" Then
@@ -329,6 +329,7 @@ Public Class Traducteur
                 Me.ComboBoxLangtarget.Items.Add("ru")
                 Me.ComboBoxLangtarget.Text = "fr"
             Case "Yandex"
+                GeckoWebBrowser1.Navigate("https://translate.yandex.com/")
                 Me.ComboBoxLangsource.Items.Clear()
                 Me.ComboBoxLangsource.Items.Add("en")
                 Me.ComboBoxLangsource.Items.Add("fr")
