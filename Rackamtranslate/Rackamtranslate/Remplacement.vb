@@ -1,4 +1,4 @@
-﻿Imports System.ComponentModel
+﻿
 
 Public Class Remplacement
     Private Sub Buttonadd_Click(sender As Object, e As EventArgs) Handles Buttonadd.Click

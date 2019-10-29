@@ -1,8 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text.RegularExpressions
-Imports System.Threading
 Imports System.Text
-Imports System.ComponentModel
 Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class Principal

@@ -56,6 +56,10 @@ Partial Class Principal
         Me.EnregistrersousToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.QuitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DecompileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,10 +79,6 @@ Partial Class Principal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPageMT = New System.Windows.Forms.TabPage()
         Me.ListViewMT = New System.Windows.Forms.ListView()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DecompileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControlMTCharg.SuspendLayout()
@@ -205,7 +205,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.ViewToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.OptionsToolStripMenuItem, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.ViewToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -255,6 +255,27 @@ Partial Class Principal
         '
         Me.QuitterToolStripMenuItem.Name = "QuitterToolStripMenuItem"
         resources.ApplyResources(Me.QuitterToolStripMenuItem, "QuitterToolStripMenuItem")
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MTToolStripMenuItem1, Me.DecompileToolStripMenuItem, Me.MainToolStripMenuItem})
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        resources.ApplyResources(Me.ViewToolStripMenuItem, "ViewToolStripMenuItem")
+        '
+        'MTToolStripMenuItem1
+        '
+        Me.MTToolStripMenuItem1.Name = "MTToolStripMenuItem1"
+        resources.ApplyResources(Me.MTToolStripMenuItem1, "MTToolStripMenuItem1")
+        '
+        'DecompileToolStripMenuItem
+        '
+        Me.DecompileToolStripMenuItem.Name = "DecompileToolStripMenuItem"
+        resources.ApplyResources(Me.DecompileToolStripMenuItem, "DecompileToolStripMenuItem")
+        '
+        'MainToolStripMenuItem
+        '
+        Me.MainToolStripMenuItem.Name = "MainToolStripMenuItem"
+        resources.ApplyResources(Me.MainToolStripMenuItem, "MainToolStripMenuItem")
         '
         'DecompilerToolStripMenuItem1
         '
@@ -361,27 +382,6 @@ Partial Class Principal
         Me.ListViewMT.Name = "ListViewMT"
         Me.ListViewMT.UseCompatibleStateImageBehavior = False
         Me.ListViewMT.View = System.Windows.Forms.View.Details
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MTToolStripMenuItem1, Me.DecompileToolStripMenuItem, Me.MainToolStripMenuItem})
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        resources.ApplyResources(Me.ViewToolStripMenuItem, "ViewToolStripMenuItem")
-        '
-        'MTToolStripMenuItem1
-        '
-        Me.MTToolStripMenuItem1.Name = "MTToolStripMenuItem1"
-        resources.ApplyResources(Me.MTToolStripMenuItem1, "MTToolStripMenuItem1")
-        '
-        'DecompileToolStripMenuItem
-        '
-        Me.DecompileToolStripMenuItem.Name = "DecompileToolStripMenuItem"
-        resources.ApplyResources(Me.DecompileToolStripMenuItem, "DecompileToolStripMenuItem")
-        '
-        'MainToolStripMenuItem
-        '
-        Me.MainToolStripMenuItem.Name = "MainToolStripMenuItem"
-        resources.ApplyResources(Me.MainToolStripMenuItem, "MainToolStripMenuItem")
         '
         'Principal
         '

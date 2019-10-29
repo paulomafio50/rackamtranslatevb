@@ -42,6 +42,7 @@ Partial Class Help
         Me.ClientSize = New System.Drawing.Size(120, 62)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Name = "Help"
+        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.ResumeLayout(False)
         Me.PerformLayout()
