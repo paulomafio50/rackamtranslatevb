@@ -5,9 +5,12 @@
 
     Private Sub Help_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        Dim Path As String = Application.StartupPath
-        Process.Start(Path & "\pdf\help_En.pdf")
+        Try
+            Dim Path As String = Application.StartupPath
+            Process.Start(Path & "\pdf\help_En.pdf")
+        Catch
+            MsgBox("No have help file(help_En.pdf) in pdf subfolder")
+        End Try
 
     End Sub
 
