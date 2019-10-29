@@ -491,7 +491,11 @@ Public Class Traducteur
                 Lang = "yo"
             Case "Zulu"
                 Lang = "zu"
+            Case Else
+                Lang = ""
         End Select
+
         Return Lang
+
     End Function
 End Class

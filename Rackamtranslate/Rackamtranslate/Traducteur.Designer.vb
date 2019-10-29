@@ -32,18 +32,22 @@ Partial Class Traducteur
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Textsource = New System.Windows.Forms.Label()
         Me.Buttonok = New System.Windows.Forms.Button()
-        Me.ComboBoxtraducteur = New System.Windows.Forms.ComboBox()
         Me.Labeltraducteur = New System.Windows.Forms.Label()
         Me.Labellangtarget = New System.Windows.Forms.Label()
         Me.Labellangsouce = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ComboBoxLangtargetYand = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxtraducteur = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangsourceYand = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangtargetGog = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangsourceGog = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangtargetDeepl = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangsourceDeepl = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -58,8 +62,8 @@ Partial Class Traducteur
         '
         'ButtonTraduire
         '
-        resources.ApplyResources(Me.ButtonTraduire, "ButtonTraduire")
         Me.ButtonTraduire.BackColor = System.Drawing.SystemColors.Control
+        resources.ApplyResources(Me.ButtonTraduire, "ButtonTraduire")
         Me.ButtonTraduire.Name = "ButtonTraduire"
         Me.ButtonTraduire.UseVisualStyleBackColor = False
         '
@@ -95,16 +99,6 @@ Partial Class Traducteur
         Me.Buttonok.Name = "Buttonok"
         Me.Buttonok.UseVisualStyleBackColor = True
         '
-        'ComboBoxtraducteur
-        '
-        Me.ComboBoxtraducteur.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "ComboBoxtraducteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.ComboBoxtraducteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxtraducteur.FormattingEnabled = True
-        Me.ComboBoxtraducteur.Items.AddRange(New Object() {resources.GetString("ComboBoxtraducteur.Items"), resources.GetString("ComboBoxtraducteur.Items1"), resources.GetString("ComboBoxtraducteur.Items2")})
-        resources.ApplyResources(Me.ComboBoxtraducteur, "ComboBoxtraducteur")
-        Me.ComboBoxtraducteur.Name = "ComboBoxtraducteur"
-        Me.ComboBoxtraducteur.Text = Global.Rackamtranslate.My.MySettings.Default.ComboBoxtraducteur
-        '
         'Labeltraducteur
         '
         resources.ApplyResources(Me.Labeltraducteur, "Labeltraducteur")
@@ -135,6 +129,16 @@ Partial Class Traducteur
         Me.ComboBoxLangtargetYand.Name = "ComboBoxLangtargetYand"
         Me.ComboBoxLangtargetYand.Text = Global.Rackamtranslate.My.MySettings.Default.ComboBoxLangtargetYandL
         Me.ComboBoxLangtargetYand.Visible = Global.Rackamtranslate.My.MySettings.Default.ComboBoxLangtargetYandV
+        '
+        'ComboBoxtraducteur
+        '
+        Me.ComboBoxtraducteur.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "ComboBoxtraducteur", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ComboBoxtraducteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxtraducteur.FormattingEnabled = True
+        Me.ComboBoxtraducteur.Items.AddRange(New Object() {resources.GetString("ComboBoxtraducteur.Items"), resources.GetString("ComboBoxtraducteur.Items1"), resources.GetString("ComboBoxtraducteur.Items2")})
+        resources.ApplyResources(Me.ComboBoxtraducteur, "ComboBoxtraducteur")
+        Me.ComboBoxtraducteur.Name = "ComboBoxtraducteur"
+        Me.ComboBoxtraducteur.Text = Global.Rackamtranslate.My.MySettings.Default.ComboBoxtraducteur
         '
         'ComboBoxLangsourceYand
         '
@@ -196,33 +200,50 @@ Partial Class Traducteur
         Me.ComboBoxLangsourceDeepl.Text = Global.Rackamtranslate.My.MySettings.Default.ComboBoxLangsourceDeeplL
         Me.ComboBoxLangsourceDeepl.Visible = Global.Rackamtranslate.My.MySettings.Default.ComboBoxLangsourceDeeplV
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.SandyBrown
+        Me.Panel1.Controls.Add(Me.ComboBoxtraducteur)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangtargetYand)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangsourceGog)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangsourceYand)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangtargetGog)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangtargetDeepl)
+        Me.Panel1.Controls.Add(Me.Labellangsouce)
+        Me.Panel1.Controls.Add(Me.ComboBoxLangsourceDeepl)
+        Me.Panel1.Controls.Add(Me.Labellangtarget)
+        Me.Panel1.Controls.Add(Me.Labeltraducteur)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.SandyBrown
+        Me.Panel2.Controls.Add(Me.NumericUpDown1)
+        Me.Panel2.Controls.Add(Me.ButtonTraduire)
+        Me.Panel2.Controls.Add(Me.Buttonok)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Textsource)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.ComboBox1)
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
+        '
         'Traducteur
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.ComboBoxLangtargetYand)
-        Me.Controls.Add(Me.ComboBoxLangsourceYand)
-        Me.Controls.Add(Me.ComboBoxLangtargetDeepl)
-        Me.Controls.Add(Me.ComboBoxLangsourceDeepl)
-        Me.Controls.Add(Me.ComboBoxtraducteur)
-        Me.Controls.Add(Me.Labeltraducteur)
-        Me.Controls.Add(Me.Labellangtarget)
-        Me.Controls.Add(Me.Labellangsouce)
-        Me.Controls.Add(Me.ComboBoxLangtargetGog)
-        Me.Controls.Add(Me.ComboBoxLangsourceGog)
-        Me.Controls.Add(Me.Buttonok)
-        Me.Controls.Add(Me.Textsource)
-        Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GeckoWebBrowser1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ButtonTraduire)
         Me.Name = "Traducteur"
         Me.ShowIcon = False
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label2 As Label
@@ -244,4 +265,6 @@ Partial Class Traducteur
     Friend WithEvents ComboBoxLangtargetDeepl As ComboBox
     Friend WithEvents ComboBoxLangsourceYand As ComboBox
     Friend WithEvents ComboBoxLangtargetYand As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

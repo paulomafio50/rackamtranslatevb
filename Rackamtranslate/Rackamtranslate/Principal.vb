@@ -105,83 +105,7 @@ Public Class Principal
         End If
     End Sub
 
-    Sub Decompile()
 
-
-
-
-
-
-        Dim txt As String
-        Dim txt2 As String
-        Dim txt3 As String
-        Dim t As Integer = 0
-        Dim li As Long = 0
-
-        Dim nbl As Integer
-        Dim compteur As Integer = 0
-
-        For Each texbox In dynamicTxtlist
-
-            nbl += texbox.Lines.Count
-        Next texbox
-        Invoke(New MethodInvoker(Sub() Chargement.ProgressBar1.Maximum = nbl))
-
-        For Each texbox In dynamicTxtlist
-            Dim txttrans As String
-            Dim Output As New StringBuilder
-            Dim Output2 As New StringBuilder
-            Dim Output3 As New StringBuilder
-
-
-
-
-
-
-
-            'Search your RichTextBox.Text line by line (Use String.Split instead of Regex to get the lines. This will prevent blank lines occuring in the results.)
-
-            Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
-
-            For Each Line As String In Lines
-                compteur += 1
-                'If this line contains any of the SI values you want to replace
-                If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
-                    'retire le retour le chariot
-                    txttrans = Line.Replace(vbCr, "").Replace(vbLf, "")
-
-
-                    'Create a link to the MatchConversion function that will allow you to apply logic when replacing search results
-                    txt = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$2")
-                    txt2 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$1")
-                    txt3 = Regex.Replace(txttrans, Regexconfig.TextBoxRegex.Text, "$3")
-                    '
-                    Output.AppendLine(txt)
-                    Output2.AppendLine(txt2)
-                    Output3.AppendLine(txt3)
-                    'If there are no SI Values in this row, then just add the row as is to the stringbuilder
-                    li += 1
-
-                End If
-
-            Next Line
-
-            'Replace the RichTextBox.Text with the Stringbuilder output
-
-            Invoke(New MethodInvoker(Sub() dynamicTxt2list(t).Text = Output.ToString))
-            Invoke(New MethodInvoker(Sub() dynamicTxt3list(t).Text = Output2.ToString))
-            Invoke(New MethodInvoker(Sub() dynamicTxt4list(t).Text = Output3.ToString))
-            t += 1
-            li = 0
-            Invoke(New MethodInvoker(Sub() Chargement.ProgressBar1.Value = compteur))
-        Next
-
-        Threading.Thread.Sleep(1000)
-        Invoke(New MethodInvoker(Sub() Chargement.Close()))
-
-        Invoke(New MethodInvoker(Sub() Me.Visible = True))
-
-    End Sub
 #End Region
 #Region "Recompilation"
 
@@ -194,82 +118,9 @@ Public Class Principal
             Me.MenuStrip1.Visible = False
             Selectionneur = "RECOMP"
             BackgroundWorkerMT.RunWorkerAsync()
-            'Me.ListView1.Visible = True
-            'Me.TabControl1.Visible = True
-            'Me.TabControl2.Visible = False
-            'Me.RecompilerToolStripMenuItem1.Visible = False
-            'Me.TraducteurToolStripMenuItem1.Visible = False
-            'Me.DecompilerToolStripMenuItem1.Visible = True
-            'Me.ReplaceToolStripMenuItem.Visible = False
-            'Me.Visible = False
-            'Me.MTToolStripMenuItem.Visible = True
-
-            'Chargement.Show()
-
-            'Dim thread1 As New Thread(Sub() Recompile()) With {
-            '    .IsBackground = True
-            '}
-            'thread1.Start()
         End If
     End Sub
-    Sub Recompile()
-        Dim txt As String
-        Dim t As Integer = 0
-        Dim li As Long = 0
-        Dim ln As Integer = 1
-        Dim nombredetext As Long = dynamicTxtlist.Count
-        Dim nbl As Integer
-        Dim compteur As Integer = 0
 
-        For Each texbox In dynamicTxtlist
-
-            nbl += texbox.Lines.Count
-        Next texbox
-        Invoke(New MethodInvoker(Sub() Chargement.ProgressBar1.Maximum = nbl))
-
-
-        For Each texbox In dynamicTxtlist
-
-            Dim Output As New StringBuilder
-
-            'Search your RichTextBox.Text line by line (Use String.Split instead of Regex to get the lines. This will prevent blank lines occuring in the results.)
-
-            Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
-
-            For Each Line As String In Lines
-
-                compteur += 1
-
-                'If this line contains any of the SI values you want to replace
-                If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
-
-                    txt = Line
-                    'Regex.Replace effectively splits the text using your searchpattern as the marker for each split
-                    Invoke(New MethodInvoker(Sub() txt = dynamicTxt3list(t).Lines(li) & dynamicTxt2list(t).Lines(li) & dynamicTxt4list(t).Lines(li)))
-                    Output.AppendLine(txt)
-                    'If there are no SI Values in this row, then just add the row as is to the stringbuilder
-
-
-
-                    li += 1
-                Else : Output.AppendLine(Line)
-                End If
-
-                Invoke(New MethodInvoker(Sub() Chargement.ProgressBar1.Value = compteur))
-
-            Next Line
-
-            'Replace the RichTextBox.Text with the Stringbuilder output
-            Invoke(New MethodInvoker(Sub() dynamicTxtlist(t).Text = Output.ToString))
-
-            t += 1
-            li = 0
-            ln += 1
-        Next
-
-        Invoke(New MethodInvoker(Sub() Chargement.Close()))
-        Invoke(New MethodInvoker(Sub() Me.Visible = True))
-    End Sub
 #End Region
 #Region "Dynamic creation Tab Textbox"
 
@@ -510,13 +361,6 @@ Public Class Principal
     Private Sub QuitterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitterToolStripMenuItem.Click
         Me.Close()
     End Sub
-
-
-
-    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
-        Help.Show()
-    End Sub
-
 
     Private Sub TraducteurToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TraducteurToolStripMenuItem1.Click
 
