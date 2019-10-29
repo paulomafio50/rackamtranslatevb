@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("(\s\s\s\s""|\s\s\s\s\w+\s"")(.+)("")")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property saveregex() As String
             Get
                 Return CType(Me("saveregex"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("#.+"".+""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property regexin1() As String
             Get
                 Return CType(Me("regexin1"),String)
@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("old "".+""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property regexin2() As String
             Get
                 Return CType(Me("regexin2"),String)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property regexthis() As String
             Get
                 Return CType(Me("regexthis"),String)
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("¤")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property regexfor() As String
             Get
                 Return CType(Me("regexfor"),String)
@@ -122,6 +122,162 @@ Namespace My
             End Get
             Set
                 Me("SauvegardeLR") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ComboBoxLangsourceDeeplV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangsourceDeeplV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangsourceDeeplV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangsourceDeeplL() As String
+            Get
+                Return CType(Me("ComboBoxLangsourceDeeplL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangsourceDeeplL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangTargetDeeplL() As String
+            Get
+                Return CType(Me("ComboBoxLangTargetDeeplL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangTargetDeeplL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ComboBoxLangtargetDeeplV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangtargetDeeplV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangtargetDeeplV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangsourceGogL() As String
+            Get
+                Return CType(Me("ComboBoxLangsourceGogL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangsourceGogL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ComboBoxLangsourceGogV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangsourceGogV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangsourceGogV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangtargetGogL() As String
+            Get
+                Return CType(Me("ComboBoxLangtargetGogL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangtargetGogL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ComboBoxLangtargetGogV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangtargetGogV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangtargetGogV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangsourceYandL() As String
+            Get
+                Return CType(Me("ComboBoxLangsourceYandL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangsourceYandL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ComboBoxLangsourceYandV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangsourceYandV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangsourceYandV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxLangtargetYandL() As String
+            Get
+                Return CType(Me("ComboBoxLangtargetYandL"),String)
+            End Get
+            Set
+                Me("ComboBoxLangtargetYandL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ComboBoxLangtargetYandV() As Boolean
+            Get
+                Return CType(Me("ComboBoxLangtargetYandV"),Boolean)
+            End Get
+            Set
+                Me("ComboBoxLangtargetYandV") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ComboBoxtraducteur() As String
+            Get
+                Return CType(Me("ComboBoxtraducteur"),String)
+            End Get
+            Set
+                Me("ComboBoxtraducteur") = value
             End Set
         End Property
     End Class

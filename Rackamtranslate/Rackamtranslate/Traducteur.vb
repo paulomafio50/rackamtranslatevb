@@ -12,7 +12,15 @@ Public Class Traducteur
         If Me.ComboBox1.Items.Count > 0 Then
             Me.ComboBox1.SelectedIndex = 0
         End If
-        GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
+        Select Case ComboBoxtraducteur.Text
+            Case "Deepl"
+                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
+            Case "Google"
+                GeckoWebBrowser1.Navigate("https://translate.google.com")
+            Case "Yandex"
+                GeckoWebBrowser1.Navigate("https://translate.yandex.com")
+        End Select
+
 
         Try
             Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
@@ -21,7 +29,7 @@ Public Class Traducteur
             MsgBox(ex.Message)
         End Try
 
-        Configcombobox()
+
     End Sub
 
 
@@ -170,51 +178,17 @@ Public Class Traducteur
 
         Select Case Me.ComboBoxtraducteur.Text
             Case "Deepl"
-                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
             Case "Google"
-                GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & ComboBoxLangsource.Text & "&tl=" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
             Case "Yandex"
-                GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & ComboBoxLangsource.Text & "-" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
         End Select
 
 
 
     End Sub
-    Private Sub Configcombobox()
 
-        'combobox traducteur
-        Me.ComboBoxtraducteur.Items.Clear()
-        Me.ComboBoxtraducteur.Items.Add("Deepl")
-        Me.ComboBoxtraducteur.Items.Add("Google")
-        Me.ComboBoxtraducteur.Items.Add("Yandex")
-        Me.ComboBoxtraducteur.Text = "Deepl"
-        'combobox Langsource
-        If Me.ComboBoxtraducteur.Text = "Deepl" Then
-            Me.ComboBoxLangsource.Items.Clear()
-            Me.ComboBoxLangsource.Items.Add("en")
-            Me.ComboBoxLangsource.Items.Add("fr")
-            Me.ComboBoxLangsource.Items.Add("de")
-            Me.ComboBoxLangsource.Items.Add("es")
-            Me.ComboBoxLangsource.Items.Add("pt")
-            Me.ComboBoxLangsource.Items.Add("it")
-            Me.ComboBoxLangsource.Items.Add("nl")
-            Me.ComboBoxLangsource.Items.Add("pl")
-            Me.ComboBoxLangsource.Items.Add("ru")
-            Me.ComboBoxLangsource.Text = "en"
-            'combobox Langsource
-            Me.ComboBoxLangtarget.Items.Clear()
-            Me.ComboBoxLangtarget.Items.Add("en")
-            Me.ComboBoxLangtarget.Items.Add("fr")
-            Me.ComboBoxLangtarget.Items.Add("de")
-            Me.ComboBoxLangtarget.Items.Add("es")
-            Me.ComboBoxLangtarget.Items.Add("pt")
-            Me.ComboBoxLangtarget.Items.Add("it")
-            Me.ComboBoxLangtarget.Items.Add("nl")
-            Me.ComboBoxLangtarget.Items.Add("pl")
-            Me.ComboBoxLangtarget.Items.Add("ru")
-            Me.ComboBoxLangtarget.Text = "fr"
-        End If
-    End Sub
 
 
 
@@ -256,11 +230,11 @@ Public Class Traducteur
             Me.NumericUpDown1.Value += 1
             Select Case Me.ComboBoxtraducteur.Text
                 Case "Deepl"
-                    GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & ComboBoxLangsource.Text & "/" & ComboBoxLangtarget.Text & "/" & Me.Textsource.Text)
+                    GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
                 Case "Google"
-                    GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & ComboBoxLangsource.Text & "&tl=" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+                    GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
                 Case "Yandex"
-                    GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & ComboBoxLangsource.Text & "-" & ComboBoxLangtarget.Text & "&text=" & Me.Textsource.Text)
+                    GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
             End Select
             WaitBrowser(GeckoWebBrowser1)
 
@@ -281,80 +255,243 @@ Public Class Traducteur
     Private Sub ComboBoxtraducteur_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxtraducteur.SelectedIndexChanged
         Select Case Me.ComboBoxtraducteur.Text
             Case "Deepl"
-                Me.ComboBoxLangsource.Items.Clear()
-                Me.ComboBoxLangsource.Items.Add("en")
-                Me.ComboBoxLangsource.Items.Add("fr")
-                Me.ComboBoxLangsource.Items.Add("de")
-                Me.ComboBoxLangsource.Items.Add("es")
-                Me.ComboBoxLangsource.Items.Add("pt")
-                Me.ComboBoxLangsource.Items.Add("it")
-                Me.ComboBoxLangsource.Items.Add("nl")
-                Me.ComboBoxLangsource.Items.Add("pl")
-                Me.ComboBoxLangsource.Items.Add("ru")
-                Me.ComboBoxLangsource.Text = "en"
-                'combobox Langsource
-                Me.ComboBoxLangtarget.Items.Clear()
-                Me.ComboBoxLangtarget.Items.Add("en")
-                Me.ComboBoxLangtarget.Items.Add("fr")
-                Me.ComboBoxLangtarget.Items.Add("de")
-                Me.ComboBoxLangtarget.Items.Add("es")
-                Me.ComboBoxLangtarget.Items.Add("pt")
-                Me.ComboBoxLangtarget.Items.Add("it")
-                Me.ComboBoxLangtarget.Items.Add("nl")
-                Me.ComboBoxLangtarget.Items.Add("pl")
-                Me.ComboBoxLangtarget.Items.Add("ru")
-                Me.ComboBoxLangtarget.Text = "fr"
+                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
+                Me.ComboBoxLangsourceDeepl.Visible = True
+                Me.ComboBoxLangtargetDeepl.Visible = True
+                Me.ComboBoxLangsourceGog.Visible = False
+                Me.ComboBoxLangtargetGog.Visible = False
+                Me.ComboBoxLangsourceYand.Visible = False
+                Me.ComboBoxLangtargetYand.Visible = False
             Case "Google"
                 GeckoWebBrowser1.Navigate("https://translate.google.com")
-                Me.ComboBoxLangsource.Items.Clear()
-                Me.ComboBoxLangsource.Items.Add("en")
-                Me.ComboBoxLangsource.Items.Add("fr")
-                Me.ComboBoxLangsource.Items.Add("de")
-                Me.ComboBoxLangsource.Items.Add("es")
-                Me.ComboBoxLangsource.Items.Add("pt")
-                Me.ComboBoxLangsource.Items.Add("it")
-                Me.ComboBoxLangsource.Items.Add("nl")
-                Me.ComboBoxLangsource.Items.Add("pl")
-                Me.ComboBoxLangsource.Items.Add("ru")
-                Me.ComboBoxLangsource.Text = "en"
+                Me.ComboBoxLangsourceDeepl.Visible = False
+                Me.ComboBoxLangtargetDeepl.Visible = False
+                Me.ComboBoxLangsourceGog.Visible = True
+                Me.ComboBoxLangtargetGog.Visible = True
+                Me.ComboBoxLangsourceYand.Visible = False
+                Me.ComboBoxLangtargetYand.Visible = False
                 'combobox Langsource
-                Me.ComboBoxLangtarget.Items.Clear()
-                Me.ComboBoxLangtarget.Items.Add("en")
-                Me.ComboBoxLangtarget.Items.Add("fr")
-                Me.ComboBoxLangtarget.Items.Add("de")
-                Me.ComboBoxLangtarget.Items.Add("es")
-                Me.ComboBoxLangtarget.Items.Add("pt")
-                Me.ComboBoxLangtarget.Items.Add("it")
-                Me.ComboBoxLangtarget.Items.Add("nl")
-                Me.ComboBoxLangtarget.Items.Add("pl")
-                Me.ComboBoxLangtarget.Items.Add("ru")
-                Me.ComboBoxLangtarget.Text = "fr"
+
             Case "Yandex"
                 GeckoWebBrowser1.Navigate("https://translate.yandex.com/")
-                Me.ComboBoxLangsource.Items.Clear()
-                Me.ComboBoxLangsource.Items.Add("en")
-                Me.ComboBoxLangsource.Items.Add("fr")
-                Me.ComboBoxLangsource.Items.Add("de")
-                Me.ComboBoxLangsource.Items.Add("es")
-                Me.ComboBoxLangsource.Items.Add("pt")
-                Me.ComboBoxLangsource.Items.Add("it")
-                Me.ComboBoxLangsource.Items.Add("nl")
-                Me.ComboBoxLangsource.Items.Add("pl")
-                Me.ComboBoxLangsource.Items.Add("ru")
-                Me.ComboBoxLangsource.Text = "en"
-                'combobox Langsource
-                Me.ComboBoxLangtarget.Items.Clear()
-                Me.ComboBoxLangtarget.Items.Add("en")
-                Me.ComboBoxLangtarget.Items.Add("fr")
-                Me.ComboBoxLangtarget.Items.Add("de")
-                Me.ComboBoxLangtarget.Items.Add("es")
-                Me.ComboBoxLangtarget.Items.Add("pt")
-                Me.ComboBoxLangtarget.Items.Add("it")
-                Me.ComboBoxLangtarget.Items.Add("nl")
-                Me.ComboBoxLangtarget.Items.Add("pl")
-                Me.ComboBoxLangtarget.Items.Add("ru")
-                Me.ComboBoxLangtarget.Text = "fr"
+                Me.ComboBoxLangsourceDeepl.Visible = False
+                Me.ComboBoxLangtargetDeepl.Visible = False
+                Me.ComboBoxLangsourceGog.Visible = False
+                Me.ComboBoxLangtargetGog.Visible = False
+                Me.ComboBoxLangsourceYand.Visible = True
+                Me.ComboBoxLangtargetYand.Visible = True
         End Select
 
     End Sub
+    Public Function Lang(ByVal Source As String) As String
+        Select Case Source
+            Case "Afrikaans"
+                Lang = "af"
+            Case "Albanian"
+                Lang = "sq"
+            Case "Amharic"
+                Lang = "am"
+            Case "Arabic"
+                Lang = "ar"
+            Case "Armenian"
+                Lang = "hy"
+            Case "Azerbaijani"
+                Lang = "az"
+            Case "Basque"
+                Lang = "eu"
+            Case "Belarusian"
+                Lang = "be"
+            Case "Bengah"
+                Lang = "bn"
+            Case "Bosnian"
+                Lang = "bs"
+            Case "Bulgarian"
+                Lang = "bg"
+            Case "Catalan"
+                Lang = "ca"
+            Case "Cebuano"
+                Lang = "ceb"
+            Case "Chichewa"
+                Lang = "ny"
+            Case "Chinese"
+                Lang = "zh-CN"
+            Case "Corsican"
+                Lang = "co"
+            Case "Croatian"
+                Lang = "hr"
+            Case "Czech"
+                Lang = "cs"
+            Case "Danish"
+                Lang = "da"
+            Case "Dutch"
+                Lang = "nl"
+            Case "English"
+                Lang = "en"
+            Case "Esperanto"
+                Lang = "eo"
+            Case "Estonian"
+                Lang = "et"
+            Case "Filipino"
+                Lang = "tl"
+            Case "Finnish"
+                Lang = "fi"
+            Case "French"
+                Lang = "fr"
+            Case "Frisian"
+                Lang = "fy"
+            Case "Galician"
+                Lang = "gl"
+            Case "Georgian"
+                Lang = "ka"
+            Case "German"
+                Lang = "de"
+            Case "Greek"
+                Lang = "el"
+            Case "Gujarati"
+                Lang = "gu"
+            Case "Haitian Creole"
+                Lang = "ht"
+            Case "Hausa"
+                Lang = "ha"
+            Case "Hawaiian"
+                Lang = "haw"
+            Case "Hebrew"
+                Lang = "iw"
+            Case "Hindi"
+                Lang = "hi"
+            Case "Hmong"
+                Lang = "hmn"
+            Case "Hunganan"
+                Lang = "hu"
+            Case "Icelandic"
+                Lang = "is"
+            Case "lgbo"
+                Lang = "ig"
+            Case "Indonesian"
+                Lang = "id"
+            Case "Irish"
+                Lang = "ga"
+            Case "Italian"
+                Lang = "it"
+            Case "Japanese"
+                Lang = "ja"
+            Case "Javanese"
+                Lang = "jw"
+            Case "Kannada"
+                Lang = "kn"
+            Case "Kazakh"
+                Lang = "kk"
+            Case "Khmer"
+                Lang = "km"
+            Case "Korean"
+                Lang = "ko"
+            Case "Kurdish(Kurmanji)"
+                Lang = "ku"
+            Case "Kyrgyz"
+                Lang = "ky"
+            Case "Lao"
+                Lang = "lo"
+            Case "Latin"
+                Lang = "la"
+            Case "Latvian"
+                Lang = "lv"
+            Case "Lithuanian"
+                Lang = "lt"
+            Case "Luxembourgish"
+                Lang = "lb"
+            Case "Macedonian"
+                Lang = "mk"
+            Case "Malagasy"
+                Lang = "mg"
+            Case "Malay"
+                Lang = "ms"
+            Case "Malayalam"
+                Lang = "ml"
+            Case "Maltese"
+                Lang = "mt"
+            Case "Maori"
+                Lang = "mi"
+            Case "Marathi"
+                Lang = "mr"
+            Case "Mongolian"
+                Lang = "mn"
+            Case "Myanmar(Burmese)"
+                Lang = "my"
+            Case "Nepali"
+                Lang = "ne"
+            Case "Norwegian"
+                Lang = "no"
+            Case "Pashto"
+                Lang = "ps"
+            Case "Persian"
+                Lang = "fa"
+            Case "Polish"
+                Lang = "pl"
+            Case "Portuguese"
+                Lang = "pt"
+            Case "Punjabi"
+                Lang = "pa"
+            Case "Romanian"
+                Lang = "ro"
+            Case "Russian"
+                Lang = "ru"
+            Case "Samoan"
+                Lang = "sm"
+            Case "Scots Gaelic"
+                Lang = "gd"
+            Case "Serbian"
+                Lang = "sr"
+            Case "Sesotho"
+                Lang = "st"
+            Case "Shona"
+                Lang = "sn"
+            Case "Sindhi"
+                Lang = "sd"
+            Case "Sinhala"
+                Lang = "si"
+            Case "Slovak"
+                Lang = "sk"
+            Case "Slovenian"
+                Lang = "sl"
+            Case "Somali"
+                Lang = "so"
+            Case "Spanish"
+                Lang = "es"
+            Case "Sundanese"
+                Lang = "su"
+            Case "Swahili"
+                Lang = "sw"
+            Case "Swedish"
+                Lang = "sv"
+            Case "Tajik"
+                Lang = "tg"
+            Case "Tamil"
+                Lang = "ta"
+            Case "Telugu"
+                Lang = "te"
+            Case "Thai"
+                Lang = "th"
+            Case "Turkish"
+                Lang = "tr"
+            Case "Ukrainian"
+                Lang = "uk"
+            Case "Urdu"
+                Lang = "ur"
+            Case "Uzbek"
+                Lang = "uz"
+            Case "Vietnamese"
+                Lang = "vi"
+            Case "Welsh"
+                Lang = "cy"
+            Case "Xhosa"
+                Lang = "xh"
+            Case "Yiddish"
+                Lang = "yi"
+            Case "Yoruba"
+                Lang = "yo"
+            Case "Zulu"
+                Lang = "zu"
+        End Select
+        Return Lang
+    End Function
 End Class

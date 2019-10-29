@@ -3,21 +3,60 @@
   <Profiles />
   <Settings>
     <Setting Name="saveregex" Type="System.String" Scope="User">
-      <Value Profile="(Default)">(\s\s\s\s"|\s\s\s\s\w+\s")(.+)(")</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="regexin1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">#.+".+"</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="regexin2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">old ".+"</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="regexthis" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="regexfor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">¤</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SauvegardeLR" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangsourceDeeplV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ComboBoxLangsourceDeeplL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangTargetDeeplL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangtargetDeeplV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ComboBoxLangsourceGogL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangsourceGogV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ComboBoxLangtargetGogL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangtargetGogV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ComboBoxLangsourceYandL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangsourceYandV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ComboBoxLangtargetYandL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ComboBoxLangtargetYandV" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ComboBoxtraducteur" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
