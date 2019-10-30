@@ -149,11 +149,11 @@ Public Class Principal
         TabControl3.TabPages.Add(dynamicTab4)
         'configuration du nouvel onglet
         dynamicTab.Name = "taborigine" & nom
-        dynamicTab.Size = TabControl1.Size
+
         dynamicTab.Text = nom
         dynamicTab2.Name = "tabtrad" & nom
         dynamicTab2.Tag = nom
-        dynamicTab2.Size = TabControl2.Size
+
         dynamicTab2.Text = nom
         dynamicTab3.Name = "tabtraddebut" & nom
         dynamicTab3.Text = nom
@@ -168,8 +168,8 @@ Public Class Principal
         dynamicTxt.Name = "textborigine" & nom
         dynamicTxt.Dock = DockStyle.Fill
         dynamicTxt.Multiline = True
-        dynamicTxt.Size = dynamicTab.Size
-        dynamicTxt.Anchor = TabControl1.Anchor
+
+
         dynamicTxt.ScrollBars = ScrollBars.Both
         dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
 
@@ -177,8 +177,8 @@ Public Class Principal
         dynamicTxt2.Dock = DockStyle.Fill
         dynamicTxt2.Tag = nom
         dynamicTxt2.Multiline = True
-        dynamicTxt2.Size = dynamicTab2.Size
-        dynamicTxt2.Anchor = TabControl2.Anchor
+
+
         dynamicTxt2.ScrollBars = ScrollBars.Both
         dynamicTxt3.Name = "textbtraddebut" & nom
         dynamicTxt3.Multiline = True
@@ -369,6 +369,12 @@ Public Class Principal
 
 
     Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
+        If TabControl1.Visible = False Then
+            MsgBox("after recompile")
+            Exit Sub
+        End If
+
+
         Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
             .Filter = " files (*.mem)|*.mem"
         }
@@ -399,6 +405,10 @@ Public Class Principal
     End Sub
 
     Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
+        If TabControl1.Visible = False Then
+            MsgBox("after recompile")
+            Exit Sub
+        End If
         Dim OpenFileDialogMT As OpenFileDialog = New OpenFileDialog With {
             .Filter = " files (*.mem)|*.mem"}
 
@@ -762,4 +772,44 @@ Public Class Principal
         Me.DecompileToolStripMenuItem.Checked = False
         Me.MainToolStripMenuItem.Checked = True
     End Sub
+
+#Region "affichageligne"
+    'plustard
+    Public Sub AddLineNumbers(ByVal richbox As RichTextBox, ByVal LineNumberTextBox As TextBox)
+
+        Dim pt As Point = New Point(0, 0)
+        Dim First_Index As Integer = richbox.GetCharIndexFromPosition(pt)
+        Dim First_Line As Integer = richbox.GetLineFromCharIndex(First_Index)
+        pt.X = ClientRectangle.Width
+        pt.Y = ClientRectangle.Height
+        Dim Last_Index As Integer = richbox.GetCharIndexFromPosition(pt)
+        Dim Last_Line As Integer = richbox.GetLineFromCharIndex(Last_Index)
+        LineNumberTextBox.Dock = HorizontalAlignment.Center
+        LineNumberTextBox.Text = ""
+        LineNumberTextBox.Width = getWidth(richbox)
+
+        For i As Integer = First_Line To Last_Line + 2
+            LineNumberTextBox.Text += i + 1 & vbLf
+        Next
+
+    End Sub
+
+    Public Function getWidth(ByVal richbox As RichTextBox) As Integer
+        Dim w As Integer = 25
+        Dim line As Integer = richbox.Lines.Length
+
+        If line <= 99 Then
+            w = 20 + CInt(richbox.Font.Size)
+        ElseIf line <= 999 Then
+            w = 30 + CInt(richbox.Font.Size)
+        Else
+            w = 50 + CInt(richbox.Font.Size)
+        End If
+
+        Return w
+    End Function
+
+
+
+#End Region
 End Class

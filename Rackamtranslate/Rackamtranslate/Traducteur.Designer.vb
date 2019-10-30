@@ -72,6 +72,7 @@ Partial Class Traducteur
         resources.ApplyResources(Me.GeckoWebBrowser1, "GeckoWebBrowser1")
         Me.GeckoWebBrowser1.FrameEventsPropagateToMainWindow = False
         Me.GeckoWebBrowser1.Name = "GeckoWebBrowser1"
+        Me.GeckoWebBrowser1.TabStop = False
         Me.GeckoWebBrowser1.UseHttpActivityObserver = False
         '
         'ComboBox1

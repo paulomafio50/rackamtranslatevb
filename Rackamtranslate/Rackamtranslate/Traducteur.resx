@@ -446,312 +446,415 @@
   </metadata>
   <data name="ComboBoxLangtargetYand.Items" xml:space="preserve">
     <value>Afrikaans</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items1" xml:space="preserve">
     <value>Albanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items2" xml:space="preserve">
     <value>Amharic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items3" xml:space="preserve">
     <value>Arabic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items4" xml:space="preserve">
     <value>Armenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items5" xml:space="preserve">
     <value>Azerbaijani</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items6" xml:space="preserve">
     <value>Basque</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items7" xml:space="preserve">
     <value>Belarusian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items8" xml:space="preserve">
     <value>Bengah</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items9" xml:space="preserve">
     <value>Bosnian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items10" xml:space="preserve">
     <value>Bulgarian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items11" xml:space="preserve">
     <value>Catalan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items12" xml:space="preserve">
     <value>Cebuano</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items13" xml:space="preserve">
     <value>Chichewa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items14" xml:space="preserve">
     <value>Chinese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items15" xml:space="preserve">
     <value>Corsican</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items16" xml:space="preserve">
     <value>Croatian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items17" xml:space="preserve">
     <value>Czech</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items18" xml:space="preserve">
     <value>Danish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items19" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items20" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items21" xml:space="preserve">
     <value>Esperanto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items22" xml:space="preserve">
     <value>Estonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items23" xml:space="preserve">
     <value>Filipino</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items24" xml:space="preserve">
     <value>Finnish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items25" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items26" xml:space="preserve">
     <value>Frisian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items27" xml:space="preserve">
     <value>Galician</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items28" xml:space="preserve">
     <value>Georgian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items29" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items30" xml:space="preserve">
     <value>Greek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items31" xml:space="preserve">
     <value>Gujarati</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items32" xml:space="preserve">
     <value>Haitian Creole</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items33" xml:space="preserve">
     <value>Hausa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items34" xml:space="preserve">
     <value>Hawaiian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items35" xml:space="preserve">
     <value>Hebrew</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items36" xml:space="preserve">
     <value>Hindi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items37" xml:space="preserve">
     <value>Hmong</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items38" xml:space="preserve">
     <value>Hunganan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items39" xml:space="preserve">
     <value>Icelandic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items40" xml:space="preserve">
     <value>Igbo</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items41" xml:space="preserve">
     <value>Indonesian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items42" xml:space="preserve">
     <value>Irish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items43" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items44" xml:space="preserve">
     <value>Japanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items45" xml:space="preserve">
     <value>Javanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items46" xml:space="preserve">
     <value>Kannada</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items47" xml:space="preserve">
     <value>Kazakh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items48" xml:space="preserve">
     <value>Khmer</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items49" xml:space="preserve">
     <value>Korean</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items50" xml:space="preserve">
     <value>Kurdish (Kurmanji)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items51" xml:space="preserve">
     <value>Kyrgyz</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items52" xml:space="preserve">
     <value>Lao</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items53" xml:space="preserve">
     <value>Latin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items54" xml:space="preserve">
     <value>Latvian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items55" xml:space="preserve">
     <value>Lithuanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items56" xml:space="preserve">
     <value>Luxembourgish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items57" xml:space="preserve">
     <value>Macedonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items58" xml:space="preserve">
     <value>Malagasy</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items59" xml:space="preserve">
     <value>Malay</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items60" xml:space="preserve">
     <value>Malayalam</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items61" xml:space="preserve">
     <value>Maltese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items62" xml:space="preserve">
     <value>Maori</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items63" xml:space="preserve">
     <value>Marathi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items64" xml:space="preserve">
     <value>Mongolian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items65" xml:space="preserve">
     <value>Myanmar (Burmese)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items66" xml:space="preserve">
     <value>Nepali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items67" xml:space="preserve">
     <value>Norwegian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items68" xml:space="preserve">
     <value>Pashto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items69" xml:space="preserve">
     <value>Persian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items70" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items71" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items72" xml:space="preserve">
     <value>Punjabi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items73" xml:space="preserve">
     <value>Romanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items74" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items75" xml:space="preserve">
     <value>Samoan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items76" xml:space="preserve">
     <value>Scots Gaelic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items77" xml:space="preserve">
     <value>Serbian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items78" xml:space="preserve">
     <value>Sesotho</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items79" xml:space="preserve">
     <value>Shona</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items80" xml:space="preserve">
     <value>Sindhi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items81" xml:space="preserve">
     <value>Sinhala</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items82" xml:space="preserve">
     <value>Slovak</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items83" xml:space="preserve">
     <value>Slovenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items84" xml:space="preserve">
     <value>Somali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items85" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items86" xml:space="preserve">
     <value>Sundanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items87" xml:space="preserve">
     <value>Swahili</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items88" xml:space="preserve">
     <value>Swedish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items89" xml:space="preserve">
     <value>Tajik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items90" xml:space="preserve">
     <value>Tamil</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items91" xml:space="preserve">
     <value>Telugu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items92" xml:space="preserve">
     <value>Thai</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items93" xml:space="preserve">
     <value>Turkish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items94" xml:space="preserve">
     <value>Ukrainian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items95" xml:space="preserve">
     <value>Urdu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items96" xml:space="preserve">
     <value>Uzbek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items97" xml:space="preserve">
     <value>Vietnamese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items98" xml:space="preserve">
     <value>Welsh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items99" xml:space="preserve">
     <value>Xhosa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items100" xml:space="preserve">
     <value>Yiddish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items101" xml:space="preserve">
     <value>Yoruba</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Items102" xml:space="preserve">
     <value>Zulu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Location" type="System.Drawing.Point, System.Drawing">
     <value>602, 15</value>
@@ -776,12 +879,15 @@
   </data>
   <data name="ComboBoxtraducteur.Items" xml:space="preserve">
     <value>Deepl</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxtraducteur.Items1" xml:space="preserve">
     <value>Google</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxtraducteur.Items2" xml:space="preserve">
     <value>Yandex</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxtraducteur.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 15</value>
@@ -806,309 +912,411 @@
   </data>
   <data name="ComboBoxLangsourceYand.Items" xml:space="preserve">
     <value>Afrikaans</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items1" xml:space="preserve">
     <value>Albanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items2" xml:space="preserve">
     <value>Amharic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items3" xml:space="preserve">
     <value>Armenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items4" xml:space="preserve">
     <value>Azerbaijani</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items5" xml:space="preserve">
     <value>Basque</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items6" xml:space="preserve">
     <value>Belarusian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items7" xml:space="preserve">
     <value>Bengah</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items8" xml:space="preserve">
     <value>Bosnian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items9" xml:space="preserve">
     <value>Bulgarian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items10" xml:space="preserve">
     <value>Catalan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items11" xml:space="preserve">
     <value>Cebuano</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items12" xml:space="preserve">
     <value>Chichewa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items13" xml:space="preserve">
     <value>Chinese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items14" xml:space="preserve">
     <value>Corsican</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items15" xml:space="preserve">
     <value>Croatian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items16" xml:space="preserve">
     <value>Czech</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items17" xml:space="preserve">
     <value>Danish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items18" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items19" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items20" xml:space="preserve">
     <value>Esperanto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items21" xml:space="preserve">
     <value>Estonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items22" xml:space="preserve">
     <value>Filipino</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items23" xml:space="preserve">
     <value>Finnish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items24" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items25" xml:space="preserve">
     <value>Frisian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items26" xml:space="preserve">
     <value>Galician</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items27" xml:space="preserve">
     <value>Georgian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items28" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items29" xml:space="preserve">
     <value>Greek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items30" xml:space="preserve">
     <value>Gujarati</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items31" xml:space="preserve">
     <value>Haitian Creole</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items32" xml:space="preserve">
     <value>Hausa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items33" xml:space="preserve">
     <value>Hawaiian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items34" xml:space="preserve">
     <value>Hebrew</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items35" xml:space="preserve">
     <value>Hindi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items36" xml:space="preserve">
     <value>Hmong</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items37" xml:space="preserve">
     <value>Hunganan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items38" xml:space="preserve">
     <value>Icelandic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items39" xml:space="preserve">
     <value>Igbo</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items40" xml:space="preserve">
     <value>Indonesian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items41" xml:space="preserve">
     <value>Irish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items42" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items43" xml:space="preserve">
     <value>Japanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items44" xml:space="preserve">
     <value>Javanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items45" xml:space="preserve">
     <value>Kannada</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items46" xml:space="preserve">
     <value>Kazakh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items47" xml:space="preserve">
     <value>Khmer</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items48" xml:space="preserve">
     <value>Korean</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items49" xml:space="preserve">
     <value>Kurdish (Kurmanji)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items50" xml:space="preserve">
     <value>Kyrgyz</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items51" xml:space="preserve">
     <value>Lao</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items52" xml:space="preserve">
     <value>Latin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items53" xml:space="preserve">
     <value>Latvian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items54" xml:space="preserve">
     <value>Lithuanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items55" xml:space="preserve">
     <value>Luxembourgish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items56" xml:space="preserve">
     <value>Macedonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items57" xml:space="preserve">
     <value>Malagasy</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items58" xml:space="preserve">
     <value>Malay</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items59" xml:space="preserve">
     <value>Malayalam</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items60" xml:space="preserve">
     <value>Maltese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items61" xml:space="preserve">
     <value>Maori</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items62" xml:space="preserve">
     <value>Marathi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items63" xml:space="preserve">
     <value>Mongolian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items64" xml:space="preserve">
     <value>Myanmar (Burmese)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items65" xml:space="preserve">
     <value>Nepali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items66" xml:space="preserve">
     <value>Norwegian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items67" xml:space="preserve">
     <value>Pashto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items68" xml:space="preserve">
     <value>Persian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items69" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items70" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items71" xml:space="preserve">
     <value>Punjabi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items72" xml:space="preserve">
     <value>Romanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items73" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items74" xml:space="preserve">
     <value>Samoan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items75" xml:space="preserve">
     <value>Scots Gaelic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items76" xml:space="preserve">
     <value>Serbian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items77" xml:space="preserve">
     <value>Sesotho</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items78" xml:space="preserve">
     <value>Shona</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items79" xml:space="preserve">
     <value>Sindhi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items80" xml:space="preserve">
     <value>Sinhala</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items81" xml:space="preserve">
     <value>Slovak</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items82" xml:space="preserve">
     <value>Slovenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items83" xml:space="preserve">
     <value>Somali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items84" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items85" xml:space="preserve">
     <value>Sundanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items86" xml:space="preserve">
     <value>Swahili</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items87" xml:space="preserve">
     <value>Swedish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items88" xml:space="preserve">
     <value>Tajik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items89" xml:space="preserve">
     <value>Tamil</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items90" xml:space="preserve">
     <value>Telugu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items91" xml:space="preserve">
     <value>Thai</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items92" xml:space="preserve">
     <value>Turkish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items93" xml:space="preserve">
     <value>Ukrainian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items94" xml:space="preserve">
     <value>Urdu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items95" xml:space="preserve">
     <value>Uzbek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items96" xml:space="preserve">
     <value>Vietnamese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items97" xml:space="preserve">
     <value>Welsh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items98" xml:space="preserve">
     <value>Xhosa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items99" xml:space="preserve">
     <value>Yiddish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items100" xml:space="preserve">
     <value>Yoruba</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Items101" xml:space="preserve">
     <value>Zulu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 15</value>
@@ -1133,312 +1341,415 @@
   </data>
   <data name="ComboBoxLangtargetGog.Items" xml:space="preserve">
     <value>Afrikaans</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items1" xml:space="preserve">
     <value>Albanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items2" xml:space="preserve">
     <value>Amharic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items3" xml:space="preserve">
     <value>Arabic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items4" xml:space="preserve">
     <value>Armenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items5" xml:space="preserve">
     <value>Azerbaijani</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items6" xml:space="preserve">
     <value>Basque</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items7" xml:space="preserve">
     <value>Belarusian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items8" xml:space="preserve">
     <value>Bengah</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items9" xml:space="preserve">
     <value>Bosnian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items10" xml:space="preserve">
     <value>Bulgarian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items11" xml:space="preserve">
     <value>Catalan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items12" xml:space="preserve">
     <value>Cebuano</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items13" xml:space="preserve">
     <value>Chichewa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items14" xml:space="preserve">
     <value>Chinese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items15" xml:space="preserve">
     <value>Corsican</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items16" xml:space="preserve">
     <value>Croatian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items17" xml:space="preserve">
     <value>Czech</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items18" xml:space="preserve">
     <value>Danish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items19" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items20" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items21" xml:space="preserve">
     <value>Esperanto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items22" xml:space="preserve">
     <value>Estonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items23" xml:space="preserve">
     <value>Filipino</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items24" xml:space="preserve">
     <value>Finnish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items25" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items26" xml:space="preserve">
     <value>Frisian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items27" xml:space="preserve">
     <value>Galician</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items28" xml:space="preserve">
     <value>Georgian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items29" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items30" xml:space="preserve">
     <value>Greek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items31" xml:space="preserve">
     <value>Gujarati</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items32" xml:space="preserve">
     <value>Haitian Creole</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items33" xml:space="preserve">
     <value>Hausa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items34" xml:space="preserve">
     <value>Hawaiian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items35" xml:space="preserve">
     <value>Hebrew</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items36" xml:space="preserve">
     <value>Hindi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items37" xml:space="preserve">
     <value>Hmong</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items38" xml:space="preserve">
     <value>Hunganan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items39" xml:space="preserve">
     <value>Icelandic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items40" xml:space="preserve">
     <value>Igbo</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items41" xml:space="preserve">
     <value>Indonesian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items42" xml:space="preserve">
     <value>Irish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items43" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items44" xml:space="preserve">
     <value>Japanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items45" xml:space="preserve">
     <value>Javanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items46" xml:space="preserve">
     <value>Kannada</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items47" xml:space="preserve">
     <value>Kazakh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items48" xml:space="preserve">
     <value>Khmer</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items49" xml:space="preserve">
     <value>Korean</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items50" xml:space="preserve">
     <value>Kurdish (Kurmanji)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items51" xml:space="preserve">
     <value>Kyrgyz</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items52" xml:space="preserve">
     <value>Lao</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items53" xml:space="preserve">
     <value>Latin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items54" xml:space="preserve">
     <value>Latvian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items55" xml:space="preserve">
     <value>Lithuanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items56" xml:space="preserve">
     <value>Luxembourgish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items57" xml:space="preserve">
     <value>Macedonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items58" xml:space="preserve">
     <value>Malagasy</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items59" xml:space="preserve">
     <value>Malay</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items60" xml:space="preserve">
     <value>Malayalam</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items61" xml:space="preserve">
     <value>Maltese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items62" xml:space="preserve">
     <value>Maori</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items63" xml:space="preserve">
     <value>Marathi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items64" xml:space="preserve">
     <value>Mongolian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items65" xml:space="preserve">
     <value>Myanmar (Burmese)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items66" xml:space="preserve">
     <value>Nepali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items67" xml:space="preserve">
     <value>Norwegian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items68" xml:space="preserve">
     <value>Pashto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items69" xml:space="preserve">
     <value>Persian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items70" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items71" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items72" xml:space="preserve">
     <value>Punjabi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items73" xml:space="preserve">
     <value>Romanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items74" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items75" xml:space="preserve">
     <value>Samoan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items76" xml:space="preserve">
     <value>Scots Gaelic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items77" xml:space="preserve">
     <value>Serbian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items78" xml:space="preserve">
     <value>Sesotho</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items79" xml:space="preserve">
     <value>Shona</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items80" xml:space="preserve">
     <value>Sindhi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items81" xml:space="preserve">
     <value>Sinhala</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items82" xml:space="preserve">
     <value>Slovak</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items83" xml:space="preserve">
     <value>Slovenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items84" xml:space="preserve">
     <value>Somali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items85" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items86" xml:space="preserve">
     <value>Sundanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items87" xml:space="preserve">
     <value>Swahili</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items88" xml:space="preserve">
     <value>Swedish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items89" xml:space="preserve">
     <value>Tajik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items90" xml:space="preserve">
     <value>Tamil</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items91" xml:space="preserve">
     <value>Telugu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items92" xml:space="preserve">
     <value>Thai</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items93" xml:space="preserve">
     <value>Turkish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items94" xml:space="preserve">
     <value>Ukrainian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items95" xml:space="preserve">
     <value>Urdu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items96" xml:space="preserve">
     <value>Uzbek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items97" xml:space="preserve">
     <value>Vietnamese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items98" xml:space="preserve">
     <value>Welsh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items99" xml:space="preserve">
     <value>Xhosa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items100" xml:space="preserve">
     <value>Yiddish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items101" xml:space="preserve">
     <value>Yoruba</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Items102" xml:space="preserve">
     <value>Zulu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Location" type="System.Drawing.Point, System.Drawing">
     <value>602, 15</value>
@@ -1463,309 +1774,411 @@
   </data>
   <data name="ComboBoxLangsourceGog.Items" xml:space="preserve">
     <value>Afrikaans</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items1" xml:space="preserve">
     <value>Albanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items2" xml:space="preserve">
     <value>Amharic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items3" xml:space="preserve">
     <value>Armenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items4" xml:space="preserve">
     <value>Azerbaijani</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items5" xml:space="preserve">
     <value>Basque</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items6" xml:space="preserve">
     <value>Belarusian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items7" xml:space="preserve">
     <value>Bengah</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items8" xml:space="preserve">
     <value>Bosnian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items9" xml:space="preserve">
     <value>Bulgarian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items10" xml:space="preserve">
     <value>Catalan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items11" xml:space="preserve">
     <value>Cebuano</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items12" xml:space="preserve">
     <value>Chichewa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items13" xml:space="preserve">
     <value>Chinese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items14" xml:space="preserve">
     <value>Corsican</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items15" xml:space="preserve">
     <value>Croatian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items16" xml:space="preserve">
     <value>Czech</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items17" xml:space="preserve">
     <value>Danish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items18" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items19" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items20" xml:space="preserve">
     <value>Esperanto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items21" xml:space="preserve">
     <value>Estonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items22" xml:space="preserve">
     <value>Filipino</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items23" xml:space="preserve">
     <value>Finnish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items24" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items25" xml:space="preserve">
     <value>Frisian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items26" xml:space="preserve">
     <value>Galician</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items27" xml:space="preserve">
     <value>Georgian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items28" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items29" xml:space="preserve">
     <value>Greek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items30" xml:space="preserve">
     <value>Gujarati</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items31" xml:space="preserve">
     <value>Haitian Creole</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items32" xml:space="preserve">
     <value>Hausa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items33" xml:space="preserve">
     <value>Hawaiian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items34" xml:space="preserve">
     <value>Hebrew</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items35" xml:space="preserve">
     <value>Hindi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items36" xml:space="preserve">
     <value>Hmong</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items37" xml:space="preserve">
     <value>Hunganan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items38" xml:space="preserve">
     <value>Icelandic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items39" xml:space="preserve">
     <value>Igbo</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items40" xml:space="preserve">
     <value>Indonesian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items41" xml:space="preserve">
     <value>Irish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items42" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items43" xml:space="preserve">
     <value>Japanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items44" xml:space="preserve">
     <value>Javanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items45" xml:space="preserve">
     <value>Kannada</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items46" xml:space="preserve">
     <value>Kazakh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items47" xml:space="preserve">
     <value>Khmer</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items48" xml:space="preserve">
     <value>Korean</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items49" xml:space="preserve">
     <value>Kurdish (Kurmanji)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items50" xml:space="preserve">
     <value>Kyrgyz</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items51" xml:space="preserve">
     <value>Lao</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items52" xml:space="preserve">
     <value>Latin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items53" xml:space="preserve">
     <value>Latvian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items54" xml:space="preserve">
     <value>Lithuanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items55" xml:space="preserve">
     <value>Luxembourgish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items56" xml:space="preserve">
     <value>Macedonian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items57" xml:space="preserve">
     <value>Malagasy</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items58" xml:space="preserve">
     <value>Malay</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items59" xml:space="preserve">
     <value>Malayalam</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items60" xml:space="preserve">
     <value>Maltese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items61" xml:space="preserve">
     <value>Maori</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items62" xml:space="preserve">
     <value>Marathi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items63" xml:space="preserve">
     <value>Mongolian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items64" xml:space="preserve">
     <value>Myanmar (Burmese)</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items65" xml:space="preserve">
     <value>Nepali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items66" xml:space="preserve">
     <value>Norwegian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items67" xml:space="preserve">
     <value>Pashto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items68" xml:space="preserve">
     <value>Persian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items69" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items70" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items71" xml:space="preserve">
     <value>Punjabi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items72" xml:space="preserve">
     <value>Romanian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items73" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items74" xml:space="preserve">
     <value>Samoan</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items75" xml:space="preserve">
     <value>Scots Gaelic</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items76" xml:space="preserve">
     <value>Serbian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items77" xml:space="preserve">
     <value>Sesotho</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items78" xml:space="preserve">
     <value>Shona</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items79" xml:space="preserve">
     <value>Sindhi</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items80" xml:space="preserve">
     <value>Sinhala</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items81" xml:space="preserve">
     <value>Slovak</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items82" xml:space="preserve">
     <value>Slovenian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items83" xml:space="preserve">
     <value>Somali</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items84" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items85" xml:space="preserve">
     <value>Sundanese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items86" xml:space="preserve">
     <value>Swahili</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items87" xml:space="preserve">
     <value>Swedish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items88" xml:space="preserve">
     <value>Tajik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items89" xml:space="preserve">
     <value>Tamil</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items90" xml:space="preserve">
     <value>Telugu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items91" xml:space="preserve">
     <value>Thai</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items92" xml:space="preserve">
     <value>Turkish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items93" xml:space="preserve">
     <value>Ukrainian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items94" xml:space="preserve">
     <value>Urdu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items95" xml:space="preserve">
     <value>Uzbek</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items96" xml:space="preserve">
     <value>Vietnamese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items97" xml:space="preserve">
     <value>Welsh</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items98" xml:space="preserve">
     <value>Xhosa</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items99" xml:space="preserve">
     <value>Yiddish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items100" xml:space="preserve">
     <value>Yoruba</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Items101" xml:space="preserve">
     <value>Zulu</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 15</value>
@@ -1790,30 +2203,39 @@
   </data>
   <data name="ComboBoxLangtargetDeepl.Items" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items1" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items2" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items3" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items4" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items5" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items6" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items7" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items8" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Location" type="System.Drawing.Point, System.Drawing">
     <value>602, 15</value>
@@ -1838,30 +2260,39 @@
   </data>
   <data name="ComboBoxLangsourceDeepl.Items" xml:space="preserve">
     <value>Dutch</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items1" xml:space="preserve">
     <value>English</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items2" xml:space="preserve">
     <value>French</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items3" xml:space="preserve">
     <value>German</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items4" xml:space="preserve">
     <value>Italian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items5" xml:space="preserve">
     <value>Polish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items6" xml:space="preserve">
     <value>Portuguese</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items7" xml:space="preserve">
     <value>Russian</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items8" xml:space="preserve">
     <value>Spanish</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 15</value>
@@ -1943,9 +2374,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 450</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;Timer1.Name" xml:space="preserve">
     <value>Timer1</value>

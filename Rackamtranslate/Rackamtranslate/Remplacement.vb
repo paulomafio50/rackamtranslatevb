@@ -7,9 +7,9 @@ Public Class Remplacement
             MsgBox("First box empty")
         Else
             If TextBoxremp2.Text = "" Then
-                MsgBox("Second box empty")
-            Else
-                Dim S() As String = Split(TextBoxremp1.Text & "¤:¤" & TextBoxremp2.Text, "¤:¤")
+                'MsgBox("Second box empty")
+                ' Else
+                Dim S() As String = Split(TextBoxremp1.Text & "¤:¤" & Hazar(), "¤:¤") 'TextBoxremp2.Text
                 Dim I As New ListViewItem With {
                 .Text = S(0)
             }
@@ -134,4 +134,11 @@ Public Class Remplacement
             bf.Serialize(fs, New ArrayList(ListView1.Items))
         End Using
     End Sub
+    Function Hazar()
+        Dim rdm As New Random()
+        Dim monnumero As Integer = rdm.Next(1111111, 9999999)
+        Dim moncaractere As String = monnumero.ToString.Replace("1", "♔").Replace("2", "♕").Replace("3", "♖").Replace("4", "♗").Replace("5", "♘").Replace("6", "♙").Replace("7", "♚").Replace("8", "♛").Replace("9", "♜")
+        Return moncaractere
+
+    End Function
 End Class
