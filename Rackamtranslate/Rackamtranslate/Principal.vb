@@ -74,7 +74,11 @@ Public Class Principal
 
     Private Sub DecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DecompilerToolStripMenuItem1.Click
 
-
+        If Regexconfig.TextBoxRegex.Text = "" Then
+            MsgBox("regex empty")
+            Regexconfig.Show()
+            Exit Sub
+        End If
 
         If ListView1.Items.Count > 0 Then
             Me.ListView1.Visible = False
@@ -85,22 +89,7 @@ Public Class Principal
             Selectionneur = "DECOMP"
 
             BackgroundWorkerMT.RunWorkerAsync()
-            'Me.TabControl1.Visible = False
-            'Me.ListView1.Visible = False
-            'Me.TabControl2.Visible = True
-            'Me.RecompilerToolStripMenuItem1.Visible = True
-            'Me.TraducteurToolStripMenuItem1.Visible = True
-            'Me.DecompilerToolStripMenuItem1.Visible = False
-            'Me.ReplaceToolStripMenuItem.Visible = True
-            'Me.MTToolStripMenuItem.Visible = False
-            'Me.Visible = False
-            'Chargement.Show()
 
-
-            'Dim thread1 As New Thread(Sub() Decompile()) With {
-            '    .IsBackground = True
-            '}
-            'thread1.Start()
 
         End If
     End Sub
@@ -110,7 +99,11 @@ Public Class Principal
 #Region "Recompilation"
 
     Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
-
+        If Regexconfig.TextBoxRegex.Text = "" Then
+            MsgBox("regex empty")
+            Regexconfig.Show()
+            Exit Sub
+        End If
         If TabControl2.Visible = True Then
             Me.TabControl2.Visible = False
             Me.TabControlMTCharg.Visible = True

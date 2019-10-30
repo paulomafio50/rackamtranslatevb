@@ -1,5 +1,4 @@
-﻿
-Imports Gecko
+﻿Imports Gecko
 Imports Gecko.DOM
 
 
