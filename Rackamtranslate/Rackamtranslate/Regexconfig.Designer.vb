@@ -185,6 +185,7 @@ Partial Class Regexconfig
         Me.Name = "Regexconfig"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

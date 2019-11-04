@@ -119,16 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RegexToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>159, 22</value>
   </data>
   <data name="RegexToolStripMenuItem.Text" xml:space="preserve">
     <value>Regex</value>
-  </data>
-  <data name="RitchboxOptionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="RitchboxOptionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ritchbox option</value>
   </data>
   <data name="ColorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -142,11 +136,11 @@
   <data name="FontToolStripMenuItem.Text" xml:space="preserve">
     <value>Font</value>
   </data>
-  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="RitchboxOptionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
   </data>
-  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
+  <data name="RitchboxOptionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ritchbox option</value>
   </data>
   <data name="TutorielToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
@@ -159,6 +153,12 @@
   </data>
   <data name="DiscordToolStripMenuItem.Text" xml:space="preserve">
     <value>Discord</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="ColumnHeader1.Text" xml:space="preserve">
     <value>Path</value>
@@ -176,6 +176,18 @@
   <metadata name="ContextMenulistview.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>254, 27</value>
   </metadata>
+  <data name="RemoveItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="RemoveItemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Remove item</value>
+  </data>
+  <data name="RemoveAllItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="RemoveAllItemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Remove all item</value>
+  </data>
   <data name="ContextMenulistview.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 48</value>
   </data>
@@ -208,19 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListView1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="RemoveItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
-  </data>
-  <data name="RemoveItemToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove item</value>
-  </data>
-  <data name="RemoveAllItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
-  </data>
-  <data name="RemoveAllItemToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove all item</value>
+    <value>2</value>
   </data>
   <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="TabControl4.Location" type="System.Drawing.Point, System.Drawing">
     <value>553, 282</value>
@@ -324,14 +324,14 @@
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>408, 31</value>
   </metadata>
+  <data name="ToolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 6</value>
+  </data>
   <data name="OptionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="OptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Options</value>
-  </data>
-  <data name="ToolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
   </data>
   <metadata name="FolderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>531, 31</value>
@@ -342,32 +342,17 @@
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>24, 27</value>
   </metadata>
-  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="FilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
   </data>
-  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 24</value>
+  <data name="FilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Files</value>
   </data>
-  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
   </data>
-  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="FichierToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="FichierToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Folder</value>
   </data>
   <data name="OuvrirToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -396,18 +381,6 @@
   </data>
   <data name="OuvrirToolStripMenuItem.Text" xml:space="preserve">
     <value>Open</value>
-  </data>
-  <data name="FilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="FilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Files</value>
-  </data>
-  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Folder</value>
   </data>
   <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
@@ -458,29 +431,35 @@
   <data name="QuitterToolStripMenuItem.Text" xml:space="preserve">
     <value>Quit</value>
   </data>
-  <data name="ViewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="FichierToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="ViewToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
+  <data name="FichierToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="MTToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>131, 22</value>
   </data>
   <data name="MTToolStripMenuItem1.Text" xml:space="preserve">
     <value>MT</value>
   </data>
   <data name="DecompileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>131, 22</value>
   </data>
   <data name="DecompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Decompile</value>
   </data>
   <data name="MainToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>131, 22</value>
   </data>
   <data name="MainToolStripMenuItem.Text" xml:space="preserve">
     <value>Main</value>
+  </data>
+  <data name="ViewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="ViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
   </data>
   <data name="DecompilerToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 20</value>
@@ -518,12 +497,6 @@
   <data name="TraducteurToolStripMenuItem1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="MTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 20</value>
-  </data>
-  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
-    <value>MT</value>
-  </data>
   <data name="OpenMTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
   </data>
@@ -541,6 +514,33 @@
   </data>
   <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
     <value>Apply MT</value>
+  </data>
+  <data name="MTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 20</value>
+  </data>
+  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>624, 24</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="FontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 25</value>
@@ -649,7 +649,6 @@
   </data>
   <data name="TabPageProgressBar.Text" xml:space="preserve">
     <value>TabPage1</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;TabPageProgressBar.Name" xml:space="preserve">
     <value>TabPageProgressBar</value>
@@ -662,6 +661,18 @@
   </data>
   <data name="&gt;&gt;TabPageProgressBar.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ListViewMT.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ListViewMT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="ListViewMT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 402</value>
+  </data>
+  <data name="ListViewMT.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;ListViewMT.Name" xml:space="preserve">
     <value>ListViewMT</value>
@@ -682,14 +693,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 441</value>
+    <value>616, 408</value>
   </data>
   <data name="TabPageMT.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="TabPageMT.Text" xml:space="preserve">
     <value>TabPage2</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;TabPageMT.Name" xml:space="preserve">
     <value>TabPageMT</value>
@@ -733,36 +743,9 @@
   <data name="&gt;&gt;TabControlMTCharg.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="ListViewMT.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ListViewMT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ListViewMT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>786, 435</value>
-  </data>
-  <data name="ListViewMT.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;ListViewMT.Name" xml:space="preserve">
-    <value>ListViewMT</value>
-  </data>
-  <data name="&gt;&gt;ListViewMT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListViewMT.Parent" xml:space="preserve">
-    <value>TabPageMT</value>
-  </data>
-  <data name="&gt;&gt;ListViewMT.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

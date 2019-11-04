@@ -2,6 +2,7 @@
 Imports System.Text.RegularExpressions
 Imports System.Text
 Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.ComponentModel
 
 Public Class Principal
     Public dynamicTxtlist As New List(Of TextBox)
@@ -100,6 +101,7 @@ Public Class Principal
 
     Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
         If Regexconfig.TextBoxRegex.Text = "" Then
+
             MsgBox("regex empty")
             Regexconfig.Show()
             Exit Sub
@@ -193,7 +195,7 @@ Public Class Principal
         dynamicTab2list.Add(dynamicTab2)
         dynamicTab3list.Add(dynamicTab3)
         dynamicTab4list.Add(dynamicTab4)
-        Traducteur.ComboBox1.Items.Add(dynamicTxt2.Tag)
+        Traducteur.ComboBox1.Items.Add(nom)
     End Sub
 #End Region
 #Region "Sauvegarde"
@@ -612,7 +614,7 @@ Public Class Principal
 
                     Next
                 Case = "RECOMP"
-                    Dim txt As String = ""
+
                     Dim t As Integer = 0
                     Dim li As Long = 0
                     Dim ln As Integer = 1
@@ -627,14 +629,15 @@ Public Class Principal
 
                     For Each texbox In dynamicTxtlist
 
-                        Dim Output As New StringBuilder
-                        Dim stringdebut() As String 
-                        Invoke(New MethodInvoker(Sub() stringdebut = dynamicTxt3list(t).Text.Split(Environment.NewLine)))
-                        Dim stringmilieu() As String
-                        Invoke(New MethodInvoker(Sub() stringmilieu = dynamicTxt2list(t).Text.Split(vbLf)))
-                        Dim stringfin() As String
-                        Invoke(New MethodInvoker(Sub() stringfin = dynamicTxt4list(t).Text.Split(Environment.NewLine)))
-                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
+                        Dim texte As String = texbox.Text
+                        Dim stringdebut As String() = {}
+                        Invoke(New MethodInvoker(Sub() stringdebut = dynamicTxt3list(t).Text.Split(({vbCrLf, vbCr, vbLf}), StringSplitOptions.None)))
+                        Dim stringmilieu As String() = {}
+                        Invoke(New MethodInvoker(Sub() stringmilieu = dynamicTxt2list(t).Text.Split(({vbCrLf, vbCr, vbLf}), StringSplitOptions.None)))
+
+                        Dim stringfin As String() = {}
+                        Invoke(New MethodInvoker(Sub() stringfin = dynamicTxt4list(t).Text.Split(({vbCrLf, vbCr, vbLf}), StringSplitOptions.None)))
+                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(({vbCrLf, vbCr, vbLf}), StringSplitOptions.None)
 
                         For Each Line As String In Lines
 
@@ -644,15 +647,12 @@ Public Class Principal
 
                             If Regex.IsMatch(Line, Regexconfig.TextBoxRegex.Text) Then
 
-
-
-#Disable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
-                                Output.AppendLine(stringdebut(li) & stringmilieu(li) & stringfin(li))
-#Enable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
+                                texte = texte.Replace(Line, stringdebut(li).Replace(vbCr, "").Replace(vbLf, "") & stringmilieu(li).Replace(vbCr, "").Replace(vbLf, "") & stringfin(li).Replace(vbCr, "").Replace(vbLf, ""))
 
                                 li += 1
 
-                            Else : Output.AppendLine(Line)
+
+
                             End If
 
 
@@ -660,7 +660,7 @@ Public Class Principal
                         Next Line
 
 
-                        Invoke(New MethodInvoker(Sub() dynamicTxtlist(t).Text = Output.ToString))
+                        Invoke(New MethodInvoker(Sub() dynamicTxtlist(t).Text = texte))
                         t += 1
                         li = 0
                         ln += 1
@@ -669,7 +669,7 @@ Public Class Principal
 
             End Select
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -773,43 +773,9 @@ Public Class Principal
         Me.MainToolStripMenuItem.Checked = True
     End Sub
 
-#Region "affichageligne"
-    'plustard
-    Public Sub AddLineNumbers(ByVal richbox As RichTextBox, ByVal LineNumberTextBox As TextBox)
-
-        Dim pt As Point = New Point(0, 0)
-        Dim First_Index As Integer = richbox.GetCharIndexFromPosition(pt)
-        Dim First_Line As Integer = richbox.GetLineFromCharIndex(First_Index)
-        pt.X = ClientRectangle.Width
-        pt.Y = ClientRectangle.Height
-        Dim Last_Index As Integer = richbox.GetCharIndexFromPosition(pt)
-        Dim Last_Line As Integer = richbox.GetLineFromCharIndex(Last_Index)
-        LineNumberTextBox.Dock = HorizontalAlignment.Center
-        LineNumberTextBox.Text = ""
-        LineNumberTextBox.Width = getWidth(richbox)
-
-        For i As Integer = First_Line To Last_Line + 2
-            LineNumberTextBox.Text += i + 1 & vbLf
-        Next
-
-    End Sub
-
-    Public Function getWidth(ByVal richbox As RichTextBox) As Integer
-        Dim w As Integer = 25
-        Dim line As Integer = richbox.Lines.Length
-
-        If line <= 99 Then
-            w = 20 + CInt(richbox.Font.Size)
-        ElseIf line <= 999 Then
-            w = 30 + CInt(richbox.Font.Size)
-        Else
-            w = 50 + CInt(richbox.Font.Size)
-        End If
-
-        Return w
-    End Function
 
 
 
-#End Region
+
+
 End Class

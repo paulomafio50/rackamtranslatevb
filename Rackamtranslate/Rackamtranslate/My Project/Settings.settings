@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="saveregex" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">(\s\s\s\s"|\s\s\s\s\w+\s")(.+)(")</Value>
     </Setting>
     <Setting Name="regexin1" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">#.+".+"</Value>
     </Setting>
     <Setting Name="regexin2" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">old ".+"</Value>
     </Setting>
     <Setting Name="regexthis" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">"</Value>
     </Setting>
     <Setting Name="regexfor" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">¤</Value>
     </Setting>
     <Setting Name="SauvegardeLR" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />

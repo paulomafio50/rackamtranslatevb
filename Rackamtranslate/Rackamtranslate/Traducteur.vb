@@ -160,7 +160,7 @@ Public Class Traducteur
             Me.NumericUpDown1.Maximum = count
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
         Try

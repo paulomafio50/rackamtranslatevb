@@ -72,17 +72,17 @@ Partial Class Principal
         Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
         Me.BackgroundWorkerMT = New System.ComponentModel.BackgroundWorker()
         Me.TabControlMTCharg = New System.Windows.Forms.TabControl()
-        Me.TabPageMT = New System.Windows.Forms.TabPage()
-        Me.ListViewMT = New System.Windows.Forms.ListView()
         Me.TabPageProgressBar = New System.Windows.Forms.TabPage()
         Me.ProgressBarrr = New System.Windows.Forms.ProgressBar()
         Me.Status = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabPageMT = New System.Windows.Forms.TabPage()
+        Me.ListViewMT = New System.Windows.Forms.ListView()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControlMTCharg.SuspendLayout()
-        Me.TabPageMT.SuspendLayout()
         Me.TabPageProgressBar.SuspendLayout()
+        Me.TabPageMT.SuspendLayout()
         Me.SuspendLayout()
         '
         'RegexToolStripMenuItem
@@ -330,25 +330,6 @@ Partial Class Principal
         Me.TabControlMTCharg.SelectedIndex = 0
         Me.TabControlMTCharg.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         '
-        'TabPageMT
-        '
-        Me.TabPageMT.Controls.Add(Me.ListViewMT)
-        resources.ApplyResources(Me.TabPageMT, "TabPageMT")
-        Me.TabPageMT.Name = "TabPageMT"
-        Me.TabPageMT.UseVisualStyleBackColor = True
-        '
-        'ListViewMT
-        '
-        Me.ListViewMT.ContextMenuStrip = Me.ContextMenulistview
-        resources.ApplyResources(Me.ListViewMT, "ListViewMT")
-        Me.ListViewMT.FullRowSelect = True
-        Me.ListViewMT.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListViewMT.HideSelection = False
-        Me.ListViewMT.MultiSelect = False
-        Me.ListViewMT.Name = "ListViewMT"
-        Me.ListViewMT.UseCompatibleStateImageBehavior = False
-        Me.ListViewMT.View = System.Windows.Forms.View.Details
-        '
         'TabPageProgressBar
         '
         Me.TabPageProgressBar.Controls.Add(Me.ProgressBarrr)
@@ -374,10 +355,29 @@ Partial Class Principal
         Me.Button1.Name = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TabPageMT
+        '
+        Me.TabPageMT.Controls.Add(Me.ListViewMT)
+        resources.ApplyResources(Me.TabPageMT, "TabPageMT")
+        Me.TabPageMT.Name = "TabPageMT"
+        Me.TabPageMT.UseVisualStyleBackColor = True
+        '
+        'ListViewMT
+        '
+        Me.ListViewMT.ContextMenuStrip = Me.ContextMenulistview
+        resources.ApplyResources(Me.ListViewMT, "ListViewMT")
+        Me.ListViewMT.FullRowSelect = True
+        Me.ListViewMT.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListViewMT.HideSelection = False
+        Me.ListViewMT.MultiSelect = False
+        Me.ListViewMT.Name = "ListViewMT"
+        Me.ListViewMT.UseCompatibleStateImageBehavior = False
+        Me.ListViewMT.View = System.Windows.Forms.View.Details
+        '
         'Principal
         '
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         resources.ApplyResources(Me, "$this")
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.TabControl1)
@@ -390,9 +390,9 @@ Partial Class Principal
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TabControlMTCharg.ResumeLayout(False)
-        Me.TabPageMT.ResumeLayout(False)
         Me.TabPageProgressBar.ResumeLayout(False)
         Me.TabPageProgressBar.PerformLayout()
+        Me.TabPageMT.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

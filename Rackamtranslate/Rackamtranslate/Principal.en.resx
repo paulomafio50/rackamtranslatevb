@@ -258,4 +258,10 @@
   <data name="ViewToolStripMenuItem.Text" xml:space="preserve">
     <value>View</value>
   </data>
+  <data name="TabPageProgressBar.Text" xml:space="preserve">
+    <value>TabPage1!</value>
+  </data>
+  <data name="TabPageMT.Text" xml:space="preserve">
+    <value>TabPage2!</value>
+  </data>
 </root>
