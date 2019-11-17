@@ -1,6 +1,6 @@
 ﻿Imports Gecko
 Imports Gecko.DOM
-
+Imports System.Text.RegularExpressions
 
 
 Public Class Traducteur
@@ -149,9 +149,7 @@ Public Class Traducteur
         Return MyRb
     End Function
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Try
@@ -205,7 +203,7 @@ Public Class Traducteur
         ButtonTraduire.Enabled = False
         Timer1.Start()
         Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
-
+        Dim ask As MsgBoxResult
 
 
 
@@ -220,22 +218,64 @@ Public Class Traducteur
             Case "Yandex"
                 text = Extract("/html/body/div[2]/div[2]/div[2]/div[2]/div/pre/span", "text")
         End Select
-
+        Dim texts As String = Textsource.Text
+        Dim textc As String = text
         If text <> "" Then
-
+            Dim count As Integer = 0
             Dim lines() As String = Returnrichbox.Lines
-            lines(Me.NumericUpDown1.Value - 1) = text
+
+
+
+
+
+            For Each texbox In Principal.dynamicTxt2list
+                count += Regex.Matches(texbox.Text, lines(Me.NumericUpDown1.Value - 1)).Count
+            Next
+            If count > 1 Then
+
+                ask = MsgBox(count & My.Resources.Globalstrings.Messagenombreoccurence, MsgBoxStyle.YesNo)
+
+            Else
+                lines(Me.NumericUpDown1.Value - 1) = text
+            End If
+
+
             Returnrichbox.Lines = lines
-            Me.NumericUpDown1.Value += 1
-            Select Case Me.ComboBoxtraducteur.Text
-                Case "Deepl"
-                    GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
-                Case "Google"
-                    GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
-                Case "Yandex"
-                    GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
-            End Select
-            WaitBrowser(GeckoWebBrowser1)
+            If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
+                MsgBox("last line")
+            Else
+                Me.NumericUpDown1.Value += 1
+                Select Case Me.ComboBoxtraducteur.Text
+                    Case "Deepl"
+                        GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
+                    Case "Google"
+                        GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
+                    Case "Yandex"
+                        GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
+                End Select
+                WaitBrowser(GeckoWebBrowser1)
+
+            End If
+        End If
+        If ask = MsgBoxResult.Yes Then
+
+         
+            For Each texbox In Principal.dynamicTxt2list
+                texbox.Text = texbox.Text.Replace(texts, textc)
+                'texbox.Text = Regex.Replace(texbox.Text, texts, textc)
+
+                Dim index As Integer = 0
+                While index < texbox.Text.LastIndexOf(textc)
+                    texbox.Find(textc, index, texbox.TextLength, RichTextBoxFinds.None)
+                    texbox.SelectionColor = System.Drawing.Color.Green
+                    index = texbox.Text.IndexOf(textc, index) + 1
+                End While
+
+            Next
+
+
+
+
 
         End If
 

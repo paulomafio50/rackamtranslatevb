@@ -83,6 +83,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à  identical occurrences have been found do you want replace everything.
+        '''</summary>
+        Friend Shared ReadOnly Property Messagenombreoccurence() As String
+            Get
+                Return ResourceManager.GetString("Messagenombreoccurence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Saved.
         '''</summary>
         Friend Shared ReadOnly Property MessageSave() As String

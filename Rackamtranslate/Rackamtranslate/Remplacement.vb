@@ -2,21 +2,22 @@
 
 Public Class Remplacement
     Private Sub Buttonadd_Click(sender As Object, e As EventArgs) Handles Buttonadd.Click
-
+        Dim Element As New ListViewItem
         If TextBoxremp1.Text = "" Then
             MsgBox("First box empty")
         Else
-            If TextBoxremp2.Text = "" Then
-                'MsgBox("Second box empty")
-                ' Else
-                Dim S() As String = Split(TextBoxremp1.Text & "¤:¤" & Hazar(), "¤:¤") 'TextBoxremp2.Text
-                Dim I As New ListViewItem With {
-                .Text = S(0)
-            }
-                I.SubItems.Add(S(1))
-                ListView1.Items.Add(I)
 
-                'remove doublon
+
+            If TextBoxremp2.Text = "" Then
+
+                MsgBox("second box empty")
+
+            Else
+
+                Element.Text = TextBoxremp1.Text
+                Element.SubItems.Add(TextBoxremp2.Text)
+
+                ListView1.Items.Add(Element)
                 For H = 0 To ListView1.Items.Count - 2
                     For j = H + 1 To ListView1.Items.Count - 1
                         If ListView1.Items(H).Text = ListView1.Items(j).Text Then
@@ -24,13 +25,13 @@ Public Class Remplacement
                         End If
                     Next
                 Next
-                'sauvegarde listview
                 Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
 
                 Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Create)
                     bf.Serialize(fs, New ArrayList(ListView1.Items))
                 End Using
             End If
+
         End If
         ListView1.Refresh()
     End Sub
@@ -85,9 +86,7 @@ Public Class Remplacement
         Next
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
 
-    End Sub
 
     Private Sub Remplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sauvegarde listview

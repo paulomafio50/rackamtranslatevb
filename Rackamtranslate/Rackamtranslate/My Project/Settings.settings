@@ -12,10 +12,10 @@
       <Value Profile="(Default)">old ".+"</Value>
     </Setting>
     <Setting Name="regexthis" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"</Value>
+      <Value Profile="(Default)">    old "</Value>
     </Setting>
     <Setting Name="regexfor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">¤</Value>
+      <Value Profile="(Default)">   #old "</Value>
     </Setting>
     <Setting Name="SauvegardeLR" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />

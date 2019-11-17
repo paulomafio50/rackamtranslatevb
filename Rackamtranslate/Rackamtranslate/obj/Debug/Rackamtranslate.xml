@@ -32,6 +32,11 @@ Rackamtranslate
   Recherche une chaîne localisée semblable à You must select an item to be able to delete it!.
 </summary>
 </member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagenombreoccurence">
+<summary>
+  Recherche une chaîne localisée semblable à  identical occurrences have been found do you want replace everything.
+</summary>
+</member>
 <member name="P:Rackamtranslate.My.Resources.Globalstrings.MessageSave">
 <summary>
   Recherche une chaîne localisée semblable à Saved.

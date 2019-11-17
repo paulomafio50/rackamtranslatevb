@@ -66,15 +66,14 @@ Partial Class Remplacement
         '
         'TextBoxremp2
         '
-        Me.TextBoxremp2.Location = New System.Drawing.Point(585, 138)
+        Me.TextBoxremp2.Location = New System.Drawing.Point(358, 60)
         Me.TextBoxremp2.Name = "TextBoxremp2"
         Me.TextBoxremp2.Size = New System.Drawing.Size(169, 20)
         Me.TextBoxremp2.TabIndex = 7
-        Me.TextBoxremp2.Visible = False
         '
         'TextBoxremp1
         '
-        Me.TextBoxremp1.Location = New System.Drawing.Point(249, 60)
+        Me.TextBoxremp1.Location = New System.Drawing.Point(120, 60)
         Me.TextBoxremp1.Name = "TextBoxremp1"
         Me.TextBoxremp1.Size = New System.Drawing.Size(169, 20)
         Me.TextBoxremp1.TabIndex = 8

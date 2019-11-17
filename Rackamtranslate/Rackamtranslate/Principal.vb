@@ -14,7 +14,8 @@ Public Class Principal
     Public dynamicTab3list As New List(Of TabPage)
     Public dynamicTab4list As New List(Of TabPage)
     Public Property CheckedListBoxfichierEXTENTIES As Object
-
+    Dim filePath As String = ""
+    Dim Selectionneur As String = ""
 
 #Region "Ouverture de fichier"
 
@@ -82,17 +83,18 @@ Public Class Principal
         End If
 
         If ListView1.Items.Count > 0 Then
+
             Me.ListView1.Visible = False
-            Me.TabControl1.Visible = False
-            Me.TabControlMTCharg.Visible = True
-            Me.TabControlMTCharg.SelectedIndex = 0
-            Me.MenuStrip1.Visible = False
-            Selectionneur = "DECOMP"
+                Me.TabControl1.Visible = False
+                Me.TabControlMTCharg.Visible = True
+                Me.TabControlMTCharg.SelectedIndex = 0
+                Me.MenuStrip1.Visible = False
+                Selectionneur = "DECOMP"
 
-            BackgroundWorkerMT.RunWorkerAsync()
+                BackgroundWorkerMT.RunWorkerAsync()
 
 
-        End If
+            End If
     End Sub
 
 
@@ -107,6 +109,7 @@ Public Class Principal
             Exit Sub
         End If
         If TabControl2.Visible = True Then
+
             Me.TabControl2.Visible = False
             Me.TabControlMTCharg.Visible = True
             Me.TabControlMTCharg.SelectedIndex = 0
@@ -296,7 +299,11 @@ Public Class Principal
     End Sub
 
     Private Sub RemoveAllItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveAllItemToolStripMenuItem.Click
-        ListView1.Clear()
+        For i = 1 To ListView1.Items.Count
+
+            ListView1.Items.RemoveAt(0)
+
+        Next
         dynamicTxtlist.Clear()
         dynamicTxt2list.Clear()
         dynamicTxt3list.Clear()
@@ -367,7 +374,7 @@ Public Class Principal
         Remplacement.Show()
     End Sub
 #End Region
-#Region "MT"
+
 
 
     Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
@@ -477,19 +484,13 @@ Public Class Principal
     Private Sub DiscordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiscordToolStripMenuItem.Click
         Process.Start("https://discord.gg/PsuHkDn")
     End Sub
-#End Region
 
-    Dim filePath As String = ""
-    Dim Selectionneur As String = ""
 
-    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    '    If BackgroundWorker1.IsBusy Then
-    '        If BackgroundWorker1.WorkerSupportsCancellation Then
-    '            BackgroundWorker1.CancelAsync()
-    '        End If
-    '    End If
-    'End Sub
 
+
+
+
+#Region "BackgroundWorker"
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerMT.DoWork
 
 
@@ -568,7 +569,13 @@ Public Class Principal
 
                     Dim nbl As Integer
                     Dim compteur As Integer = 0
-
+                    If Regexconfig.CheckBoxrempauto.Checked = True Then
+                        Dim k As Integer = 0
+                        For Each texbox In Me.dynamicTxtlist
+                            Invoke(New MethodInvoker(Sub() Me.dynamicTxtlist(k).Text = Regex.Replace(texbox.Text, Regexconfig.TextBoxRegexrempav.Text, Regexconfig.TextBoxRegexparav.Text, RegexOptions.IgnoreCase)))
+                            k += 1
+                        Next
+                    End If
                     For Each texbox In dynamicTxtlist
 
                         nbl += texbox.Lines.Count
@@ -652,7 +659,6 @@ Public Class Principal
                                 li += 1
 
 
-
                             End If
 
 
@@ -666,7 +672,13 @@ Public Class Principal
                         ln += 1
                     Next
 
-
+                    If Regexconfig.CheckBoxrempauto.Checked = True Then
+                        Dim k As Integer = 0
+                        For Each texbox In Me.dynamicTxtlist
+                            Invoke(New MethodInvoker(Sub() Me.dynamicTxtlist(k).Text = Regex.Replace(texbox.Text, Regexconfig.TextBoxRegexparav.Text, Regexconfig.TextBoxRegexrempav.Text, RegexOptions.IgnoreCase)))
+                            k += 1
+                        Next
+                    End If
             End Select
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -730,7 +742,7 @@ Public Class Principal
             End Select
         End If
     End Sub
-
+#End Region
     Private Sub AutoSizeListViewColumns(oListView As ListView)
         Dim nCol As Integer
         SuspendLayout()

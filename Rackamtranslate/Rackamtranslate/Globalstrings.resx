@@ -123,6 +123,9 @@
   <data name="Messagelistview1" xml:space="preserve">
     <value>You must select an item to be able to delete it!</value>
   </data>
+  <data name="Messagenombreoccurence" xml:space="preserve">
+    <value> identical occurrences have been found do you want replace everything</value>
+  </data>
   <data name="MessageSave" xml:space="preserve">
     <value>Saved</value>
   </data>

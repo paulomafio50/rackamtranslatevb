@@ -126,4 +126,7 @@
   <data name="MessageSave" xml:space="preserve">
     <value>Saved</value>
   </data>
+  <data name="Messagenombreoccurence" xml:space="preserve">
+    <value>identical occurrences have been found do you want replace everything!</value>
+  </data>
 </root>

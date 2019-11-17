@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("    old """)>  _
         Public Property regexthis() As String
             Get
                 Return CType(Me("regexthis"),String)
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("¤")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("   #old """)>  _
         Public Property regexfor() As String
             Get
                 Return CType(Me("regexfor"),String)
