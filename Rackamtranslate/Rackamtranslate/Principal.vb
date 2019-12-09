@@ -5,6 +5,8 @@ Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.ComponentModel
 
 Public Class Principal
+
+
     Public dynamicTxtlist As New List(Of TextBox)
     Public dynamicTxt2list As New List(Of RichTextBox)
     Public dynamicTxt3list As New List(Of TextBox)
@@ -14,14 +16,14 @@ Public Class Principal
     Public dynamicTab3list As New List(Of TabPage)
     Public dynamicTab4list As New List(Of TabPage)
     Public Property CheckedListBoxfichierEXTENTIES As Object
-    Dim filePath As String = ""
+
     Dim Selectionneur As String = ""
 
 #Region "Ouverture de fichier"
 
     Private Sub FilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilesToolStripMenuItem.Click
 
-        OpenFileDialog1.Filter = "fichier rpy ou txt|*.rpy;*.txt"
+        OpenFileDialog1.Filter = My.Resources.Globalstrings.Typedefichier
         Dim nomfichier As String
         Dim chemin As String
         If OpenFileDialog1.ShowDialog() = 1 Then
@@ -77,7 +79,7 @@ Public Class Principal
     Private Sub DecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DecompilerToolStripMenuItem1.Click
 
         If Regexconfig.TextBoxRegex.Text = "" Then
-            MsgBox("regex empty")
+            MsgBox(My.Resources.Globalstrings.Messageregexempty)
             Regexconfig.Show()
             Exit Sub
         End If
@@ -85,16 +87,16 @@ Public Class Principal
         If ListView1.Items.Count > 0 Then
 
             Me.ListView1.Visible = False
-                Me.TabControl1.Visible = False
-                Me.TabControlMTCharg.Visible = True
-                Me.TabControlMTCharg.SelectedIndex = 0
-                Me.MenuStrip1.Visible = False
-                Selectionneur = "DECOMP"
+            Me.TabControl1.Visible = False
+            Me.TabControlMTCharg.Visible = True
+            Me.TabControlMTCharg.SelectedIndex = 0
+            Me.MenuStrip1.Visible = False
+            Selectionneur = "DECOMP"
 
-                BackgroundWorkerMT.RunWorkerAsync()
+            BackgroundWorkerMT.RunWorkerAsync()
 
 
-            End If
+        End If
     End Sub
 
 
@@ -104,7 +106,7 @@ Public Class Principal
     Private Sub RecompilerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RecompilerToolStripMenuItem1.Click
         If Regexconfig.TextBoxRegex.Text = "" Then
 
-            MsgBox("regex empty")
+            MsgBox(My.Resources.Globalstrings.Messageregexempty)
             Regexconfig.Show()
             Exit Sub
         End If
@@ -173,16 +175,33 @@ Public Class Principal
         dynamicTxt.Name = "textborigine" & nom
         dynamicTxt.Dock = DockStyle.Fill
         dynamicTxt.Multiline = True
-
-
         dynamicTxt.ScrollBars = ScrollBars.Both
         dynamicTxt.Text = IO.File.ReadAllText(Chemin + nom)
+        ''''''test
+        'dynamicTxt.View = View.Details
+        'dynamicTxt.Columns.Add("Line")
+        'dynamicTxt.Columns.Add("Text")
+        'Dim numeroligne As Integer = 0
+        'For Each line As String In File.ReadAllLines(Chemin + nom)
+        '    numeroligne += 1
+        '    Dim Element As New ListViewItem
+        '    Element.Text = numeroligne
+        '    Element.SubItems.Add(line)
+        '    dynamicTxt.Items.Add(Element)
+        'Next
+
+
+
+
+
+
+
 
         dynamicTxt2.Name = "textbtrad" & nom
         dynamicTxt2.Dock = DockStyle.Fill
         dynamicTxt2.Tag = nom
         dynamicTxt2.Multiline = True
-
+        dynamicTxt2.ContextMenuStrip = ContextMenuStripritchbox
 
         dynamicTxt2.ScrollBars = ScrollBars.Both
         dynamicTxt3.Name = "textbtraddebut" & nom
@@ -198,7 +217,7 @@ Public Class Principal
         dynamicTab2list.Add(dynamicTab2)
         dynamicTab3list.Add(dynamicTab3)
         dynamicTab4list.Add(dynamicTab4)
-        Traducteur.ComboBox1.Items.Add(nom)
+        Traducteur.ComboBoxFile.Items.Add(nom)
     End Sub
 #End Region
 #Region "Sauvegarde"
@@ -255,7 +274,7 @@ Public Class Principal
         Dim i As Integer
 
         If ListView1.SelectedItems.Count = 0 Then
-            MsgBox(My.Resources.Globalstrings.Messagelistview1, vbYes, "Erreur")
+            MsgBox(My.Resources.Globalstrings.Messagelistview1, vbYes, "Error")
             'Sinon, on récupère le numéro de ligne
         Else
             If ListView1.SelectedItems.Count > 0 Then
@@ -279,7 +298,7 @@ Public Class Principal
                 dynamicTab3list.RemoveAt(i)
                 dynamicTab4list(i).Dispose()
                 dynamicTab4list.RemoveAt(i)
-                Traducteur.ComboBox1.Items.RemoveAt(i)
+                Traducteur.ComboBoxFile.Items.RemoveAt(i)
 
                 ListView1.Items.RemoveAt(i)
 
@@ -311,7 +330,7 @@ Public Class Principal
         ListView1.Items.Clear()
         TabControl1.TabPages.Clear()
         TabControl2.TabPages.Clear()
-        Traducteur.ComboBox1.Items.Clear()
+        Traducteur.ComboBoxFile.Items.Clear()
     End Sub
 #End Region
 #Region "Options"
@@ -361,7 +380,10 @@ Public Class Principal
 #Region "Divers"
 
     Private Sub QuitterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitterToolStripMenuItem.Click
+
         Me.Close()
+
+
     End Sub
 
     Private Sub TraducteurToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TraducteurToolStripMenuItem1.Click
@@ -377,104 +399,9 @@ Public Class Principal
 
 
 
-    Private Sub CreateMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateMTToolStripMenuItem.Click
-        If TabControl1.Visible = False Then
-            MsgBox("after recompile")
-            Exit Sub
-        End If
-
-
-        Dim SaveFileDialogMT As SaveFileDialog = New SaveFileDialog With {
-            .Filter = " files (*.mem)|*.mem"
-        }
-        If Me.ListView1.Items.Count > 0 Then
 
 
 
-            If SaveFileDialogMT.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Me.ListView1.Visible = False
-                Me.TabControl1.Visible = False
-                Me.TabControlMTCharg.Visible = True
-                Me.TabControlMTCharg.SelectedIndex = 0
-                Me.MenuStrip1.Visible = False
-                Selectionneur = "CMT"
-                filePath = Path.GetFullPath(SaveFileDialogMT.FileName)
-
-                BackgroundWorkerMT.RunWorkerAsync()
-
-
-
-
-            End If
-        Else
-            MsgBox("open Files or folder before")
-
-        End If
-        SaveFileDialogMT.Dispose()
-    End Sub
-
-    Private Sub OpenMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenMTToolStripMenuItem.Click
-        If TabControl1.Visible = False Then
-            MsgBox("after recompile")
-            Exit Sub
-        End If
-        Dim OpenFileDialogMT As OpenFileDialog = New OpenFileDialog With {
-            .Filter = " files (*.mem)|*.mem"}
-
-        If OpenFileDialogMT.ShowDialog() = DialogResult.OK Then
-            Me.ListView1.Visible = False
-            Me.TabControl1.Visible = False
-            Me.TabControlMTCharg.Visible = True
-            Me.TabControlMTCharg.SelectedIndex = 0
-            Me.MenuStrip1.Visible = False
-            Selectionneur = "OMT"
-            filePath = Path.GetFullPath(OpenFileDialogMT.FileName)
-
-            BackgroundWorkerMT.RunWorkerAsync()
-        Else
-
-
-        End If
-
-
-
-
-        OpenFileDialogMT.Dispose()
-    End Sub
-
-
-
-
-    Private Sub ApplyMTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplyMTToolStripMenuItem.Click
-        If ListView1.Items.Count > 0 Then
-
-            If Me.ListViewMT.Items.Count > 0 Then
-                Dim b As Integer = 0
-
-                For Each item As ListViewItem In Me.ListViewMT.Items
-
-                    For Each texbox In dynamicTxtlist
-
-                        texbox.Text = texbox.Text.Replace(item.Text, Me.ListViewMT.Items(b).SubItems(1).Text)
-
-                    Next
-
-                    b += 1
-
-                Next
-
-            Else
-                MsgBox("Load MT before")
-            End If
-            MsgBox("fini")
-        Else
-
-            MsgBox("open Files or folder before")
-
-        End If
-
-
-    End Sub
 
     Private Sub TutorielToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TutorielToolStripMenuItem.Click
         Dim Path As String = Application.StartupPath
@@ -497,69 +424,7 @@ Public Class Principal
         Try
             Select Case Selectionneur
 
-                Case = "OMT"
-                    Me.ListViewMT.Clear()
-                    Me.ListViewMT.Columns.Add("Source")
-                    Me.ListViewMT.Columns.Add("Target")
 
-                    Dim FS As FileStream = File.Open(filePath, FileMode.Open)
-                    Dim BinFmtr As New BinaryFormatter
-                    Dim alSavedLV As New ArrayList
-                    alSavedLV = CType(BinFmtr.Deserialize(FS), ArrayList)
-                    Dim lvi As ListViewItem
-                    For item As Integer = 0 To alSavedLV.Count - 1
-                        If BackgroundWorkerMT.CancellationPending Then
-                            e.Cancel = True
-                            Exit For
-                        End If
-                        lvi = New ListViewItem
-                        lvi = CType(alSavedLV(item), ListViewItem)
-                        BackgroundWorkerMT.ReportProgress(CInt((item / alSavedLV.Count) * 100))
-                        UpdateLabel(Me.Status, FormatPercent(item / alSavedLV.Count, 2))
-                        Me.ListViewMT.Items.Add(lvi)
-                    Next
-                    FS.Close()
-                Case = "CMT"
-                    Me.ListViewMT.Clear()
-                    Me.ListViewMT.Columns.Add("Source")
-                    Me.ListViewMT.Columns.Add("Target")
-                    Dim t As Integer = 0
-                    Dim z As Integer = 0
-                    Dim txt As String
-                    Dim MRT As New StringBuilder
-                    Dim compteur As Integer = 0
-                    Dim regex As Regex = New Regex(Regexconfig.TextBoxRegexforMT.Text)
-                    Dim match As Match
-                    For Each texte As TextBox In dynamicTxtlist
-                        If BackgroundWorkerMT.CancellationPending Then
-                            e.Cancel = True
-                            Exit For
-                        End If
-                        Dim Lines() As String = dynamicTxtlist(t).Text.Split(Environment.NewLine)
-                        t += 1
-                        For Each Line As String In Lines
-                            match = regex.Match(Line)
-                            If match.Success Then
-                                txt = match.Value
-                                If compteur = 0 Then
-                                    Me.ListViewMT.Items.Add(txt)
-                                    compteur = 1
-                                Else
-                                    Me.ListViewMT.Items(z).SubItems.Add(txt)
-                                    z += 1
-                                    compteur = 0
-                                End If
-                            End If
-                        Next Line
-                    Next
-                    Dim FS As FileStream = File.Create(filePath)
-                    Dim BinFmtr As New BinaryFormatter
-                    Dim alSavedLV As New ArrayList
-                    For item As Integer = 0 To Me.ListViewMT.Items.Count - 1
-                        alSavedLV.Add(Me.ListViewMT.Items(item))
-                    Next
-                    BinFmtr.Serialize(FS, alSavedLV)
-                    FS.Close()
                 Case = "DECOMP"
                     Dim txt As String
                     Dim txt2 As String
@@ -753,24 +618,13 @@ Public Class Principal
         ResumeLayout()
     End Sub
 
-    Private Sub MTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MTToolStripMenuItem1.Click
-        Me.TabControlMTCharg.Visible = True
-        Me.TabControlMTCharg.SelectedIndex = 1
-        Me.TabControl1.Visible = False
-        Me.ListView1.Visible = False
-        Me.TabControl2.Visible = False
-        Me.MTToolStripMenuItem1.Checked = True
-        Me.DecompileToolStripMenuItem.Checked = False
-        Me.MainToolStripMenuItem.Checked = False
-    End Sub
-
     Private Sub DecompileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DecompileToolStripMenuItem.Click
         Me.TabControlMTCharg.Visible = False
 
         Me.TabControl1.Visible = False
         Me.ListView1.Visible = False
         Me.TabControl2.Visible = True
-        Me.MTToolStripMenuItem1.Checked = False
+
         Me.DecompileToolStripMenuItem.Checked = True
         Me.MainToolStripMenuItem.Checked = False
     End Sub
@@ -780,14 +634,53 @@ Public Class Principal
         Me.TabControl1.Visible = True
         Me.ListView1.Visible = True
         Me.TabControl2.Visible = False
-        Me.MTToolStripMenuItem1.Checked = False
+
         Me.DecompileToolStripMenuItem.Checked = False
         Me.MainToolStripMenuItem.Checked = True
     End Sub
 
 
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        SendKeys.Send("^(c)")
 
 
 
+    End Sub
+
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+        SendKeys.Send("^(x)")
+    End Sub
+
+    Private Sub PasteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteToolStripMenuItem.Click
+        SendKeys.Send("^(v)")
+    End Sub
+
+    Private Sub SaveFinalWithoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveFinalWithoutToolStripMenuItem.Click
+        If ListView1.Items.Count > 0 Then
+            Dim a As Integer = 0
+            For Each texbox In dynamicTxtlist
+                Dim textefinal As String = texbox.Text
+                textefinal = textefinal.Replace("°℗°", "")
+                IO.File.WriteAllText((ListView1.Items(a).Text & ListView1.Items(a).SubItems(1).Text), textefinal)
+                a += 1
+
+            Next
+            MsgBox(My.Resources.Globalstrings.MessageSave)
+
+
+
+        End If
+    End Sub
+
+
+
+    Private Sub Principal_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If MsgBox(My.Resources.Globalstrings.MessageQuit, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+        Else
+            e.Cancel = True
+        End If
+
+    End Sub
 
 End Class

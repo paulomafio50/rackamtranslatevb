@@ -22,6 +22,11 @@ Rackamtranslate
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagelastline">
+<summary>
+  Recherche une chaîne localisée semblable à last line.
+</summary>
+</member>
 <member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagelater">
 <summary>
   Recherche une chaîne localisée semblable à Later.
@@ -32,14 +37,35 @@ Rackamtranslate
   Recherche une chaîne localisée semblable à You must select an item to be able to delete it!.
 </summary>
 </member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagemissdelete">
+<summary>
+  Recherche une chaîne localisée semblable à You must select an item to be able to delete it!.
+</summary>
+</member>
 <member name="P:Rackamtranslate.My.Resources.Globalstrings.Messagenombreoccurence">
 <summary>
   Recherche une chaîne localisée semblable à  identical occurrences have been found do you want replace everything.
 </summary>
 </member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.MessageQuit">
+<summary>
+  Recherche une chaîne localisée semblable à if you quit all the unsaved work will be lost.
+Do you really want to leave ?.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Messageregexempty">
+<summary>
+  Recherche une chaîne localisée semblable à regex empty.
+</summary>
+</member>
 <member name="P:Rackamtranslate.My.Resources.Globalstrings.MessageSave">
 <summary>
   Recherche une chaîne localisée semblable à Saved.
+</summary>
+</member>
+<member name="P:Rackamtranslate.My.Resources.Globalstrings.Typedefichier">
+<summary>
+  Recherche une chaîne localisée semblable à file rpy or txt|*.rpy;*.txt.
 </summary>
 </member>
 <member name="T:Rackamtranslate.My.Resources.Resources">

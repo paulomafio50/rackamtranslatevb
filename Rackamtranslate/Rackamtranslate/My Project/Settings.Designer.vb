@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("(\s\s\s\s""|\s\s\s\s\w+\s"")(.+)("")")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("(\s\s\s\s\""|\s\s\s\s\w+\s\""|\s\s\s\s\w+\s\w+\s\"")(.+)(\"".+|\"")")>  _
         Public Property saveregex() As String
             Get
                 Return CType(Me("saveregex"),String)

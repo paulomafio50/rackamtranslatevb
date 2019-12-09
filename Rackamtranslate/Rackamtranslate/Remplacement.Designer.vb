@@ -135,7 +135,6 @@ Partial Class Remplacement
         Me.MinimizeBox = False
         Me.Name = "Remplacement"
         Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

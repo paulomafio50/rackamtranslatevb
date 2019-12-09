@@ -53,21 +53,17 @@ Partial Class Principal
         Me.FolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.EnregistrerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFinalWithoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnregistrersousToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.QuitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DecompileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecompilerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TraducteurToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CreateMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ApplyMTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.SaveFileDialogMT = New System.Windows.Forms.SaveFileDialog()
         Me.BackgroundWorkerMT = New System.ComponentModel.BackgroundWorker()
@@ -75,14 +71,18 @@ Partial Class Principal
         Me.TabPageProgressBar = New System.Windows.Forms.TabPage()
         Me.ProgressBarrr = New System.Windows.Forms.ProgressBar()
         Me.Status = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPageMT = New System.Windows.Forms.TabPage()
         Me.ListViewMT = New System.Windows.Forms.ListView()
+        Me.ContextMenuStripritchbox = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenulistview.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControlMTCharg.SuspendLayout()
         Me.TabPageProgressBar.SuspendLayout()
         Me.TabPageMT.SuspendLayout()
+        Me.ContextMenuStripritchbox.SuspendLayout()
         Me.SuspendLayout()
         '
         'RegexToolStripMenuItem
@@ -203,13 +203,13 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.ViewToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.MTToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.ViewToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DecompilerToolStripMenuItem1, Me.RecompilerToolStripMenuItem1, Me.ReplaceToolStripMenuItem, Me.TraducteurToolStripMenuItem1, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
         'FichierToolStripMenuItem
         '
-        Me.FichierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OuvrirToolStripMenuItem, Me.toolStripSeparator, Me.EnregistrerToolStripMenuItem, Me.EnregistrersousToolStripMenuItem, Me.toolStripSeparator1, Me.QuitterToolStripMenuItem})
+        Me.FichierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OuvrirToolStripMenuItem, Me.toolStripSeparator, Me.EnregistrerToolStripMenuItem, Me.SaveFinalWithoutToolStripMenuItem, Me.EnregistrersousToolStripMenuItem, Me.toolStripSeparator1, Me.QuitterToolStripMenuItem})
         Me.FichierToolStripMenuItem.Name = "FichierToolStripMenuItem"
         resources.ApplyResources(Me.FichierToolStripMenuItem, "FichierToolStripMenuItem")
         '
@@ -239,6 +239,11 @@ Partial Class Principal
         resources.ApplyResources(Me.EnregistrerToolStripMenuItem, "EnregistrerToolStripMenuItem")
         Me.EnregistrerToolStripMenuItem.Name = "EnregistrerToolStripMenuItem"
         '
+        'SaveFinalWithoutToolStripMenuItem
+        '
+        Me.SaveFinalWithoutToolStripMenuItem.Name = "SaveFinalWithoutToolStripMenuItem"
+        resources.ApplyResources(Me.SaveFinalWithoutToolStripMenuItem, "SaveFinalWithoutToolStripMenuItem")
+        '
         'EnregistrersousToolStripMenuItem
         '
         Me.EnregistrersousToolStripMenuItem.Name = "EnregistrersousToolStripMenuItem"
@@ -256,14 +261,9 @@ Partial Class Principal
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MTToolStripMenuItem1, Me.DecompileToolStripMenuItem, Me.MainToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DecompileToolStripMenuItem, Me.MainToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
         resources.ApplyResources(Me.ViewToolStripMenuItem, "ViewToolStripMenuItem")
-        '
-        'MTToolStripMenuItem1
-        '
-        Me.MTToolStripMenuItem1.Name = "MTToolStripMenuItem1"
-        resources.ApplyResources(Me.MTToolStripMenuItem1, "MTToolStripMenuItem1")
         '
         'DecompileToolStripMenuItem
         '
@@ -295,27 +295,6 @@ Partial Class Principal
         Me.TraducteurToolStripMenuItem1.Name = "TraducteurToolStripMenuItem1"
         resources.ApplyResources(Me.TraducteurToolStripMenuItem1, "TraducteurToolStripMenuItem1")
         '
-        'MTToolStripMenuItem
-        '
-        Me.MTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenMTToolStripMenuItem, Me.CreateMTToolStripMenuItem, Me.ApplyMTToolStripMenuItem})
-        Me.MTToolStripMenuItem.Name = "MTToolStripMenuItem"
-        resources.ApplyResources(Me.MTToolStripMenuItem, "MTToolStripMenuItem")
-        '
-        'OpenMTToolStripMenuItem
-        '
-        Me.OpenMTToolStripMenuItem.Name = "OpenMTToolStripMenuItem"
-        resources.ApplyResources(Me.OpenMTToolStripMenuItem, "OpenMTToolStripMenuItem")
-        '
-        'CreateMTToolStripMenuItem
-        '
-        Me.CreateMTToolStripMenuItem.Name = "CreateMTToolStripMenuItem"
-        resources.ApplyResources(Me.CreateMTToolStripMenuItem, "CreateMTToolStripMenuItem")
-        '
-        'ApplyMTToolStripMenuItem
-        '
-        Me.ApplyMTToolStripMenuItem.Name = "ApplyMTToolStripMenuItem"
-        resources.ApplyResources(Me.ApplyMTToolStripMenuItem, "ApplyMTToolStripMenuItem")
-        '
         'BackgroundWorkerMT
         '
         Me.BackgroundWorkerMT.WorkerReportsProgress = True
@@ -334,7 +313,6 @@ Partial Class Principal
         '
         Me.TabPageProgressBar.Controls.Add(Me.ProgressBarrr)
         Me.TabPageProgressBar.Controls.Add(Me.Status)
-        Me.TabPageProgressBar.Controls.Add(Me.Button1)
         resources.ApplyResources(Me.TabPageProgressBar, "TabPageProgressBar")
         Me.TabPageProgressBar.Name = "TabPageProgressBar"
         Me.TabPageProgressBar.UseVisualStyleBackColor = True
@@ -348,12 +326,6 @@ Partial Class Principal
         '
         resources.ApplyResources(Me.Status, "Status")
         Me.Status.Name = "Status"
-        '
-        'Button1
-        '
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TabPageMT
         '
@@ -374,6 +346,27 @@ Partial Class Principal
         Me.ListViewMT.UseCompatibleStateImageBehavior = False
         Me.ListViewMT.View = System.Windows.Forms.View.Details
         '
+        'ContextMenuStripritchbox
+        '
+        Me.ContextMenuStripritchbox.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem, Me.CutToolStripMenuItem, Me.PasteToolStripMenuItem})
+        Me.ContextMenuStripritchbox.Name = "ContextMenuStripritchbox"
+        resources.ApplyResources(Me.ContextMenuStripritchbox, "ContextMenuStripritchbox")
+        '
+        'CopyToolStripMenuItem
+        '
+        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
+        resources.ApplyResources(Me.CopyToolStripMenuItem, "CopyToolStripMenuItem")
+        '
+        'CutToolStripMenuItem
+        '
+        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
+        resources.ApplyResources(Me.CutToolStripMenuItem, "CutToolStripMenuItem")
+        '
+        'PasteToolStripMenuItem
+        '
+        Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
+        resources.ApplyResources(Me.PasteToolStripMenuItem, "PasteToolStripMenuItem")
+        '
         'Principal
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -393,6 +386,7 @@ Partial Class Principal
         Me.TabPageProgressBar.ResumeLayout(False)
         Me.TabPageProgressBar.PerformLayout()
         Me.TabPageMT.ResumeLayout(False)
+        Me.ContextMenuStripritchbox.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -433,11 +427,7 @@ Partial Class Principal
     Friend WithEvents RecompilerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TraducteurToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReplaceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MTToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CreateMTToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ApplyMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveFileDialogMT As SaveFileDialog
-    Friend WithEvents OpenMTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TutorielToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DiscordToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BackgroundWorkerMT As System.ComponentModel.BackgroundWorker
@@ -446,10 +436,13 @@ Partial Class Principal
     Friend WithEvents TabPageMT As TabPage
     Friend WithEvents ProgressBarrr As ProgressBar
     Friend WithEvents Status As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents ListViewMT As ListView
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MTToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents DecompileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MainToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStripritchbox As ContextMenuStrip
+    Friend WithEvents CopyToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PasteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFinalWithoutToolStripMenuItem As ToolStripMenuItem
 End Class

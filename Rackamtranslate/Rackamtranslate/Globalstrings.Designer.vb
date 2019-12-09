@@ -65,6 +65,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à last line.
+        '''</summary>
+        Friend Shared ReadOnly Property Messagelastline() As String
+            Get
+                Return ResourceManager.GetString("Messagelastline", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Later.
         '''</summary>
         Friend Shared ReadOnly Property Messagelater() As String
@@ -83,6 +92,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à You must select an item to be able to delete it!.
+        '''</summary>
+        Friend Shared ReadOnly Property Messagemissdelete() As String
+            Get
+                Return ResourceManager.GetString("Messagemissdelete", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à  identical occurrences have been found do you want replace everything.
         '''</summary>
         Friend Shared ReadOnly Property Messagenombreoccurence() As String
@@ -92,11 +110,39 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à if you quit all the unsaved work will be lost.
+        '''Do you really want to leave ?.
+        '''</summary>
+        Friend Shared ReadOnly Property MessageQuit() As String
+            Get
+                Return ResourceManager.GetString("MessageQuit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à regex empty.
+        '''</summary>
+        Friend Shared ReadOnly Property Messageregexempty() As String
+            Get
+                Return ResourceManager.GetString("Messageregexempty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Saved.
         '''</summary>
         Friend Shared ReadOnly Property MessageSave() As String
             Get
                 Return ResourceManager.GetString("MessageSave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à file rpy or txt|*.rpy;*.txt.
+        '''</summary>
+        Friend Shared ReadOnly Property Typedefichier() As String
+            Get
+                Return ResourceManager.GetString("Typedefichier", resourceCulture)
             End Get
         End Property
     End Class

@@ -1,16 +1,16 @@
 ﻿Imports Gecko
 Imports Gecko.DOM
 Imports System.Text.RegularExpressions
-
-
+Imports System.IO
+Imports System.Text
 Public Class Traducteur
-
+    Dim sauvegarde As String
 
     Private Sub Traducteur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        If Me.ComboBox1.Items.Count > 0 Then
-            Me.ComboBox1.SelectedIndex = 0
+        If Me.ComboBoxFile.Items.Count > 0 Then
+            Me.ComboBoxFile.SelectedIndex = 0
         End If
+
         Select Case ComboBoxtraducteur.Text
             Case "Deepl"
                 GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
@@ -23,30 +23,25 @@ Public Class Traducteur
 
         Try
             Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+
             Me.Textsource.Text = line
+
+            If Me.NumericUpDown1.Value = 1 Then
+                Me.Textsourceav.Text = ""
+            Else
+                Me.Textsourceav.Text = Returnrichbox.Lines(Me.NumericUpDown1.Value - 2)
+            End If
+            If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
+                Me.Textsourceap.Text = ""
+            Else
+                Me.Textsourceap.Text = Returnrichbox.Lines(Me.NumericUpDown1.Value)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
 
     End Sub
-
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Visible = False
-    End Sub
-
-
-
-
-
-
-    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs)
-
-    End Sub
-
-
 
     Public Function Extract(ByVal xpath As String, ByVal type As String) As String
         Dim result As String = String.Empty
@@ -94,8 +89,6 @@ Public Class Traducteur
         Return result
     End Function
 
-
-
     Private Function GetElement(ByVal wb As GeckoWebBrowser, ByVal xpath As String) As GeckoHtmlElement
         Dim elm As GeckoHtmlElement = Nothing
 
@@ -121,7 +114,6 @@ Public Class Traducteur
         Return elm
     End Function
 
-
     Private Function GetHtmlFromGeckoDocument(ByVal doc As GeckoDocument) As String
         Dim result = String.Empty
         Dim element As GeckoHtmlElement
@@ -136,22 +128,35 @@ Public Class Traducteur
     End Function
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-        If Me.Visible Then
-            Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+        Try
 
-            Me.Textsource.Text = line
-        End If
+            ButtonTraduire.Visible = False
+
+            If Me.Visible Then
+                Dim line = Returnrichbox.Lines(Me.NumericUpDown1.Value - 1)
+
+                Me.Textsource.Text = line
+            End If
+            If Me.Visible = True Then
+
+                If Me.NumericUpDown1.Value = 1 Then
+                    Me.Textsourceav.Text = ""
+                Else
+                    Me.Textsourceav.Text = Returnrichbox.Lines(Me.NumericUpDown1.Value - 2)
+                End If
+                If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
+                    Me.Textsourceap.Text = ""
+                Else
+                    Me.Textsourceap.Text = Returnrichbox.Lines(Me.NumericUpDown1.Value)
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
-    Private Function Returnrichbox()
+    Private Sub ComboBoxFile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxFile.SelectedIndexChanged
 
-        Dim Mytab As TabPage = Principal.TabControl2.TabPages("tabtrad" & Me.ComboBox1.SelectedItem)
-        Dim MyRb As RichTextBox = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
-        Return MyRb
-    End Function
-
-
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Try
             Me.NumericUpDown1.Value = 1
             Dim count = Returnrichbox.lines.Length - 1
@@ -169,116 +174,182 @@ Public Class Traducteur
         End Try
 
     End Sub
+    Private Function Returnrichbox()
+        Dim Mytab As TabPage
+        Dim MyRb As RichTextBox
+        Try
+            Mytab = Principal.TabControl2.TabPages("tabtrad" & Me.ComboBoxFile.SelectedItem)
+            MyRb = Mytab.Controls.Find("textbtrad" & Mytab.Tag, False).First()
+
+        Catch ex As Exception
+            MsgBox("error")
+            System.IO.File.WriteAllText("log.txt", sauvegarde)
+
+        End Try
+#Disable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
+        Return MyRb
+#Enable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
+    End Function
+
+
 
     Private Sub Buttonok_Click(sender As Object, e As EventArgs) Handles Buttonok.Click
         Me.ButtonTraduire.Visible = True
+        Dim atrad As String
+
+        atrad = Regex.Replace(Textsource.Text, "\{.\}|\{\/.\}|{.olor=#[a-z0-9]+\}|\{/.olor\}", "")
+        atrad = atrad.Replace("\""", "").Replace("%%", "%").Replace("(", "").Replace(")", "")
+
 
         Select Case Me.ComboBoxtraducteur.Text
             Case "Deepl"
-                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & atrad)
             Case "Google"
-                GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & atrad)
             Case "Yandex"
-                GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
+                GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & atrad)
         End Select
 
-
+        If atrad = Textsource.Text Then
+            ButtonTraduire.BackColor = SystemColors.Control
+        Else
+            ButtonTraduire.BackColor = Color.Red
+        End If
 
     End Sub
-
-
-
 
 
     Private Sub WaitBrowser(ByVal wb As Gecko.GeckoWebBrowser)
-        While wb.IsBusy
+        Try
 
-            Application.DoEvents()
-            System.Threading.Thread.Sleep(2000)
-        End While
 
+            While wb.IsBusy
+
+                Application.DoEvents()
+                System.Threading.Thread.Sleep(2000)
+            End While
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub ButtonTraduire_Click(sender As Object, e As EventArgs) Handles ButtonTraduire.Click
-        ButtonTraduire.Enabled = False
-        Timer1.Start()
-        Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
-        Dim ask As MsgBoxResult
+        Try
 
 
+            ButtonTraduire.Enabled = False
 
-        WaitBrowser(GeckoWebBrowser1)
+            Timer1.Start()
+            Dim text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
+            Dim ask As MsgBoxResult
 
-
-        Select Case Me.ComboBoxtraducteur.Text
-            Case "Deepl"
-                text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
-            Case "Google"
-                text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div", "text")
-            Case "Yandex"
-                text = Extract("/html/body/div[2]/div[2]/div[2]/div[2]/div/pre/span", "text")
-        End Select
-        Dim texts As String = Textsource.Text
-        Dim textc As String = text
-        If text <> "" Then
-            Dim count As Integer = 0
+            Dim atrad As String
             Dim lines() As String = Returnrichbox.Lines
+            sauvegarde = Returnrichbox.text
+
+            WaitBrowser(GeckoWebBrowser1)
+
+
+            Select Case Me.ComboBoxtraducteur.Text
+                Case "Deepl"
+                    text = Extract("/html/body/div[2]/div[1]/div[1]/div[3]/div[3]/div[1]/textarea", "text")
+                Case "Google"
+                    text = Extract("/html/body/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div", "text")
+                Case "Yandex"
+                    text = Extract("/html/body/div[2]/div[2]/div[2]/div[2]/div/pre/span", "text")
+            End Select
+            Dim texts As String = Textsource.Text
+            Dim textc As String = text
+
+            If text <> "" Then
+                Dim count As Integer = 0
 
 
 
 
 
-            For Each texbox In Principal.dynamicTxt2list
-                count += Regex.Matches(texbox.Text, lines(Me.NumericUpDown1.Value - 1)).Count
-            Next
-            If count > 1 Then
 
-                ask = MsgBox(count & My.Resources.Globalstrings.Messagenombreoccurence, MsgBoxStyle.YesNo)
+                For Each texbox In Principal.dynamicTxt2list
+                    If CheckBoxdetectocu.Checked = True Then
+                        For Each strLine As String In texbox.Text.Split(vbLf)
+                            If strLine = lines(Me.NumericUpDown1.Value - 1) Then
+                                count += 1
+                            End If
+                        Next
 
-            Else
-                lines(Me.NumericUpDown1.Value - 1) = text
+                    End If
+                Next
+                If count > 1 Then
+
+                    ask = MsgBox(count & My.Resources.Globalstrings.Messagenombreoccurence, MsgBoxStyle.YesNo)
+
+                Else
+                    lines(Me.NumericUpDown1.Value - 1) = text & "°℗°"
+                End If
+
+
+                Returnrichbox.Lines = lines
+                If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
+                    MsgBox(My.Resources.Globalstrings.Messagelastline)
+                Else
+
+                    Me.NumericUpDown1.Value += 1
+                    If Me.Textsource.Text.Contains("°℗°") Then
+
+                        While Me.Textsource.Text.Contains("°℗°")
+                            If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
+                                MsgBox(My.Resources.Globalstrings.Messagelastline)
+                                Exit Sub
+                            Else
+                                Me.NumericUpDown1.Value += 1
+                            End If
+
+                        End While
+
+                    End If
+
+                    atrad = Textsource.Text
+
+                    Select Case Me.ComboBoxtraducteur.Text
+                        Case "Deepl"
+                            GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & atrad)
+                        Case "Google"
+                            GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & atrad)
+                        Case "Yandex"
+                            GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & atrad)
+                    End Select
+                    WaitBrowser(GeckoWebBrowser1)
+
+                End If
+            End If
+            If CheckBoxdetectocu.Checked = True Then
+                If ask = MsgBoxResult.Yes Then
+
+
+                    For Each texbox In Principal.dynamicTxt2list
+                        Dim newLines As New List(Of String)
+                        For Each line As String In texbox.Lines
+                            Dim newLine = If(line = texts, textc & "°℗°", line)
+                            newLines.Add(newLine)
+                        Next
+                        texbox.Lines = newLines.ToArray()
+                        'texbox.Text = texbox.Text.Replace(texts, textc)
+                        'texbox.Text = Regex.Replace(texbox.Text, "^" & texts & "$", textc)
+
+
+                    Next
+
+
+
+
+                End If
             End If
 
-
-            Returnrichbox.Lines = lines
-            If Me.NumericUpDown1.Value = Me.NumericUpDown1.Maximum Then
-                MsgBox("last line")
-            Else
-                Me.NumericUpDown1.Value += 1
-                Select Case Me.ComboBoxtraducteur.Text
-                    Case "Deepl"
-                        GeckoWebBrowser1.Navigate("https://www.deepl.com/translator#" & Lang(ComboBoxLangsourceDeepl.Text) & "/" & Lang(ComboBoxLangtargetDeepl.Text) & "/" & Textsource.Text)
-                    Case "Google"
-                        GeckoWebBrowser1.Navigate("https://translate.google.com/#view=home&op=translate&sl=" & Lang(ComboBoxLangsourceGog.Text) & "&tl=" & Lang(ComboBoxLangtargetGog.Text) & "&text=" & Textsource.Text)
-                    Case "Yandex"
-                        GeckoWebBrowser1.Navigate("https://translate.yandex.com/?lang=" & Lang(ComboBoxLangsourceYand.Text) & "-" & Lang(ComboBoxLangtargetYand.Text) & "&text=" & Textsource.Text)
-                End Select
-                WaitBrowser(GeckoWebBrowser1)
-
-            End If
-        End If
-        If ask = MsgBoxResult.Yes Then
-
-         
-            For Each texbox In Principal.dynamicTxt2list
-                texbox.Text = texbox.Text.Replace(texts, textc)
-                'texbox.Text = Regex.Replace(texbox.Text, texts, textc)
-
-                Dim index As Integer = 0
-                While index < texbox.Text.LastIndexOf(textc)
-                    texbox.Find(textc, index, texbox.TextLength, RichTextBoxFinds.None)
-                    texbox.SelectionColor = System.Drawing.Color.Green
-                    index = texbox.Text.IndexOf(textc, index) + 1
-                End While
-
-            Next
-
-
-
-
-
-        End If
-
+        Catch ex As Exception
+            Exit Sub
+        End Try
+        Buttonok.PerformClick()
+        Me.Textsourceav.Text = Returnrichbox.Lines(Me.NumericUpDown1.Value - 2)
     End Sub
 
     Private Sub Traducteur_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -292,35 +363,40 @@ Public Class Traducteur
     End Sub
 
     Private Sub ComboBoxtraducteur_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxtraducteur.SelectedIndexChanged
-        Select Case Me.ComboBoxtraducteur.Text
-            Case "Deepl"
-                GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
-                Me.ComboBoxLangsourceDeepl.Visible = True
-                Me.ComboBoxLangtargetDeepl.Visible = True
-                Me.ComboBoxLangsourceGog.Visible = False
-                Me.ComboBoxLangtargetGog.Visible = False
-                Me.ComboBoxLangsourceYand.Visible = False
-                Me.ComboBoxLangtargetYand.Visible = False
-            Case "Google"
-                GeckoWebBrowser1.Navigate("https://translate.google.com")
-                Me.ComboBoxLangsourceDeepl.Visible = False
-                Me.ComboBoxLangtargetDeepl.Visible = False
-                Me.ComboBoxLangsourceGog.Visible = True
-                Me.ComboBoxLangtargetGog.Visible = True
-                Me.ComboBoxLangsourceYand.Visible = False
-                Me.ComboBoxLangtargetYand.Visible = False
+        Try
+
+
+            Select Case Me.ComboBoxtraducteur.Text
+                Case "Deepl"
+                    GeckoWebBrowser1.Navigate("https://www.deepl.com/translator")
+                    Me.ComboBoxLangsourceDeepl.Visible = True
+                    Me.ComboBoxLangtargetDeepl.Visible = True
+                    Me.ComboBoxLangsourceGog.Visible = False
+                    Me.ComboBoxLangtargetGog.Visible = False
+                    Me.ComboBoxLangsourceYand.Visible = False
+                    Me.ComboBoxLangtargetYand.Visible = False
+                Case "Google"
+                    GeckoWebBrowser1.Navigate("https://translate.google.com")
+                    Me.ComboBoxLangsourceDeepl.Visible = False
+                    Me.ComboBoxLangtargetDeepl.Visible = False
+                    Me.ComboBoxLangsourceGog.Visible = True
+                    Me.ComboBoxLangtargetGog.Visible = True
+                    Me.ComboBoxLangsourceYand.Visible = False
+                    Me.ComboBoxLangtargetYand.Visible = False
                 'combobox Langsource
 
-            Case "Yandex"
-                GeckoWebBrowser1.Navigate("https://translate.yandex.com/")
-                Me.ComboBoxLangsourceDeepl.Visible = False
-                Me.ComboBoxLangtargetDeepl.Visible = False
-                Me.ComboBoxLangsourceGog.Visible = False
-                Me.ComboBoxLangtargetGog.Visible = False
-                Me.ComboBoxLangsourceYand.Visible = True
-                Me.ComboBoxLangtargetYand.Visible = True
-        End Select
+                Case "Yandex"
+                    GeckoWebBrowser1.Navigate("https://translate.yandex.com/")
+                    Me.ComboBoxLangsourceDeepl.Visible = False
+                    Me.ComboBoxLangtargetDeepl.Visible = False
+                    Me.ComboBoxLangsourceGog.Visible = False
+                    Me.ComboBoxLangtargetGog.Visible = False
+                    Me.ComboBoxLangsourceYand.Visible = True
+                    Me.ComboBoxLangtargetYand.Visible = True
+            End Select
+        Catch ex As Exception
 
+        End Try
     End Sub
     Public Function Lang(ByVal Source As String) As String
         Select Case Source
@@ -537,4 +613,200 @@ Public Class Traducteur
         Return Lang
 
     End Function
+
+
+#Region "ContextMenuStripweb"
+    Private Sub GeckoWebBrowser1_ShowContextMenu(sender As Object, e As GeckoContextMenuEventArgs) Handles GeckoWebBrowser1.ShowContextMenu
+
+        ContextMenuStripweb.Show(CType(sender, Control), e.Location)
+
+    End Sub
+    Private Sub CopierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopierToolStripMenuItem.Click
+        GeckoWebBrowser1.CopySelection()
+    End Sub
+    Private Sub ClToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClToolStripMenuItem.Click
+        GeckoWebBrowser1.Paste()
+    End Sub
+
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
+        Try
+
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "\""" & My.Computer.Clipboard.GetText & "\"""
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub AddItaliqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddItaliqueToolStripMenuItem.Click
+        Try
+
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{i}" & My.Computer.Clipboard.GetText & "{/i}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub AddBigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddBigToolStripMenuItem.Click
+        Try
+
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{b}" & My.Computer.Clipboard.GetText & "{/b}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+
+        GeckoWebBrowser1.CutSelection()
+    End Sub
+
+    Private Sub RedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RedToolStripMenuItem.Click
+        Try
+
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{color=#f0000}" & My.Computer.Clipboard.GetText & "{/color}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub BlueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlueToolStripMenuItem.Click
+        Try
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{color=#0000ff}" & My.Computer.Clipboard.GetText & "{/color}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub GreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GreenToolStripMenuItem.Click
+        Try
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{color=#00ff00}" & My.Computer.Clipboard.GetText & "{/color}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub YelowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YelowToolStripMenuItem.Click
+        Try
+
+
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "{color=#fff00}" & My.Computer.Clipboard.GetText & "{/color}"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+
+
+        Catch ex As Exception
+
+            End Try
+    End Sub
+
+    Private Sub PersoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersoToolStripMenuItem.Click
+        Try
+
+
+            Dim cDialog As New ColorDialog
+            Dim conv As New ColorConverter
+
+
+
+            If (cDialog.ShowDialog() = DialogResult.OK) Then
+
+                Dim hex_color As String = String.Format("#{0:X2}{1:X2}{2:X2}", cDialog.Color.R, cDialog.Color.G, cDialog.Color.B)
+
+
+                My.Computer.Clipboard.Clear()
+                  GeckoWebBrowser1.CopySelection()
+                If My.Computer.Clipboard.ContainsText Then
+                    Dim trans As String
+                    trans = "{color=" & hex_color.ToLower & "}" & My.Computer.Clipboard.GetText & "{/color}"
+                    My.Computer.Clipboard.SetText(trans)
+                    GeckoWebBrowser1.Paste()
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub AddToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
+        Try
+            My.Computer.Clipboard.Clear()
+            GeckoWebBrowser1.CopySelection()
+            If My.Computer.Clipboard.ContainsText Then
+                Dim trans As String
+                trans = "(" & My.Computer.Clipboard.GetText & ")"
+                My.Computer.Clipboard.SetText(trans)
+                GeckoWebBrowser1.Paste()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+#End Region
 End Class

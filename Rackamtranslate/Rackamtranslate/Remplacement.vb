@@ -3,28 +3,22 @@
 Public Class Remplacement
     Private Sub Buttonadd_Click(sender As Object, e As EventArgs) Handles Buttonadd.Click
         Dim Element As New ListViewItem
+        Dim x As Integer
         If TextBoxremp1.Text = "" Then
             MsgBox("First box empty")
         Else
 
 
             If TextBoxremp2.Text = "" Then
-
                 MsgBox("second box empty")
 
             Else
 
-                Element.Text = TextBoxremp1.Text
-                Element.SubItems.Add(TextBoxremp2.Text)
+                x = Me.ListView1.Items.Count
 
-                ListView1.Items.Add(Element)
-                For H = 0 To ListView1.Items.Count - 2
-                    For j = H + 1 To ListView1.Items.Count - 1
-                        If ListView1.Items(H).Text = ListView1.Items(j).Text Then
-                            ListView1.Items(H).Remove()
-                        End If
-                    Next
-                Next
+                Me.ListView1.Items.Add(TextBoxremp1.Text)
+                ListView1.Items(x).SubItems.Add(TextBoxremp2.Text)
+
                 Dim bf As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
 
                 Using fs As New System.IO.FileStream("savelistR.txt", IO.FileMode.Create)
@@ -41,7 +35,7 @@ Public Class Remplacement
         Dim i As Integer
 
         If ListView1.SelectedItems.Count = 0 Then
-            MsgBox("Vous devez sélectionner un élément pour pouvoir le supprimer !", vbYes, "Erreur")
+            MsgBox(My.Resources.Globalstrings.Messagemissdelete, vbYes, "Erreur")
             'Sinon, on récupère le numéro de ligne
         Else
             i = ListView1.SelectedIndices(0)
@@ -63,8 +57,6 @@ Public Class Remplacement
             For Each texbox In Principal.dynamicTxt2list
 
                 texbox.Text = texbox.Text.Replace(ListView1.Items(x).Text, ListView1.Items(x).SubItems(1).Text)
-
-
 
             Next
             x += 1

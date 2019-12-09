@@ -138,4 +138,55 @@
   <data name="Labellangsouce.Text" xml:space="preserve">
     <value>Lang Source</value>
   </data>
+  <data name="CopierToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="ClToolStripMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="AddToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add ""</value>
+  </data>
+  <data name="AddItaliqueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Italic</value>
+  </data>
+  <data name="AddBigToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Big</value>
+  </data>
+  <data name="CheckBoxdetectocu.Text" xml:space="preserve">
+    <value>Auto Detect</value>
+  </data>
+  <data name="CutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cut!</value>
+  </data>
+  <data name="RedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="BlueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="GreenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="YelowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Yelow</value>
+  </data>
+  <data name="PersoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ColorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="AddToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Add ()</value>
+  </data>
+  <data name="Textsource.Text" xml:space="preserve">
+    <value>textsouce!</value>
+  </data>
+  <data name="Textsourceav.Text" xml:space="preserve">
+    <value>textav</value>
+  </data>
+  <data name="Textsourceap.Text" xml:space="preserve">
+    <value>textap</value>
+  </data>
 </root>

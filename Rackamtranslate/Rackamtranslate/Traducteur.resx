@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Top, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 19</value>
+    <value>697, 57</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 13</value>
@@ -148,13 +148,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Top, Right</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -163,16 +163,16 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 18</value>
+    <value>696, 15</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
+    <value>23, 13</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Folder</value>
+    <value>File</value>
   </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
@@ -181,10 +181,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>10</value>
   </data>
   <data name="ButtonTraduire.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -193,10 +193,10 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonTraduire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 0</value>
+    <value>913, 0</value>
   </data>
   <data name="ButtonTraduire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 112</value>
+    <value>75, 133</value>
   </data>
   <data name="ButtonTraduire.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -219,6 +219,96 @@
   <data name="&gt;&gt;ButtonTraduire.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="ContextMenuStripweb.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>106, 17</value>
+  </metadata>
+  <data name="CopierToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="CopierToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="CutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="ClToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="ClToolStripMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="AddToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="AddToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add""</value>
+  </data>
+  <data name="AddItaliqueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="AddItaliqueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Italic</value>
+  </data>
+  <data name="AddBigToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="AddBigToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Big</value>
+  </data>
+  <data name="RedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="RedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="BlueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="BlueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="GreenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="GreenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="YelowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="YelowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Yelow</value>
+  </data>
+  <data name="PersoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="PersoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ColorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="ColorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="AddToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="AddToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Add ()</value>
+  </data>
+  <data name="ContextMenuStripweb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 180</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripweb.Name" xml:space="preserve">
+    <value>ContextMenuStripweb</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripweb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GeckoWebBrowser1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -226,7 +316,7 @@
     <value>0, 0</value>
   </data>
   <data name="GeckoWebBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>988, 612</value>
   </data>
   <data name="GeckoWebBrowser1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -241,37 +331,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GeckoWebBrowser1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="ComboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="ComboBoxFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 34</value>
+  <data name="ComboBoxFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>699, 31</value>
   </data>
-  <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ComboBoxFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
   </data>
-  <data name="ComboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ComboBoxFile.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;ComboBox1.Name" xml:space="preserve">
-    <value>ComboBox1</value>
+  <data name="&gt;&gt;ComboBoxFile.Name" xml:space="preserve">
+    <value>ComboBoxFile</value>
   </data>
-  <data name="&gt;&gt;ComboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComboBoxFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ComboBox1.Parent" xml:space="preserve">
-    <value>Panel2</value>
+  <data name="&gt;&gt;ComboBoxFile.Parent" xml:space="preserve">
+    <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;ComboBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;ComboBoxFile.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="NumericUpDown1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Top, Right</value>
   </data>
   <data name="NumericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 34</value>
+    <value>700, 72</value>
   </data>
   <data name="NumericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 20</value>
@@ -286,10 +376,10 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;NumericUpDown1.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>Panel1</value>
   </data>
   <data name="&gt;&gt;NumericUpDown1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="Textsource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -297,17 +387,23 @@
   <data name="Textsource.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="Textsource.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 12pt, style=Bold</value>
+  </data>
   <data name="Textsource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="Textsource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 84</value>
+    <value>12, 64</value>
   </data>
   <data name="Textsource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>88, 18</value>
   </data>
   <data name="Textsource.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
+  </data>
+  <data name="Textsource.Text" xml:space="preserve">
+    <value>textsouce</value>
   </data>
   <data name="&gt;&gt;Textsource.Name" xml:space="preserve">
     <value>Textsource</value>
@@ -316,22 +412,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Textsource.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>Panel3</value>
   </data>
   <data name="&gt;&gt;Textsource.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="Buttonok.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Top, Right</value>
   </data>
   <data name="Buttonok.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="Buttonok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 35</value>
+    <value>858, 72</value>
   </data>
   <data name="Buttonok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 22</value>
+    <value>39, 20</value>
   </data>
   <data name="Buttonok.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -346,7 +442,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Buttonok.Parent" xml:space="preserve">
-    <value>Panel2</value>
+    <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Buttonok.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -358,7 +454,7 @@
     <value>NoControl</value>
   </data>
   <data name="Labeltraducteur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 18</value>
+    <value>8, 23</value>
   </data>
   <data name="Labeltraducteur.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -379,7 +475,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Labeltraducteur.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>15</value>
   </data>
   <data name="Labellangtarget.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -388,7 +484,7 @@
     <value>NoControl</value>
   </data>
   <data name="Labellangtarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 18</value>
+    <value>8, 80</value>
   </data>
   <data name="Labellangtarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -409,7 +505,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Labellangtarget.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>14</value>
   </data>
   <data name="Labellangsouce.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,7 +514,7 @@
     <value>NoControl</value>
   </data>
   <data name="Labellangsouce.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 18</value>
+    <value>8, 50</value>
   </data>
   <data name="Labellangsouce.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -439,7 +535,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Labellangsouce.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -857,7 +953,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetYand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 15</value>
+    <value>75, 72</value>
   </data>
   <data name="ComboBoxLangtargetYand.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -890,7 +986,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxtraducteur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 15</value>
+    <value>75, 15</value>
   </data>
   <data name="ComboBoxtraducteur.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 21</value>
@@ -1319,7 +1415,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceYand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 15</value>
+    <value>75, 42</value>
   </data>
   <data name="ComboBoxLangsourceYand.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 21</value>
@@ -1337,7 +1433,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ComboBoxLangsourceYand.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="ComboBoxLangtargetGog.Items" xml:space="preserve">
     <value>Afrikaans</value>
@@ -1752,7 +1848,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetGog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 15</value>
+    <value>75, 72</value>
   </data>
   <data name="ComboBoxLangtargetGog.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -1770,7 +1866,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ComboBoxLangtargetGog.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="ComboBoxLangsourceGog.Items" xml:space="preserve">
     <value>Afrikaans</value>
@@ -2181,10 +2277,10 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceGog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 15</value>
+    <value>75, 42</value>
   </data>
   <data name="ComboBoxLangsourceGog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 21</value>
+    <value>75, 21</value>
   </data>
   <data name="ComboBoxLangsourceGog.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -2199,7 +2295,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ComboBoxLangsourceGog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="ComboBoxLangtargetDeepl.Items" xml:space="preserve">
     <value>Dutch</value>
@@ -2238,7 +2334,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangtargetDeepl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 15</value>
+    <value>75, 72</value>
   </data>
   <data name="ComboBoxLangtargetDeepl.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -2256,7 +2352,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ComboBoxLangtargetDeepl.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="ComboBoxLangsourceDeepl.Items" xml:space="preserve">
     <value>Dutch</value>
@@ -2295,7 +2391,7 @@
     <comment>@Invariant</comment>
   </data>
   <data name="ComboBoxLangsourceDeepl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 15</value>
+    <value>75, 42</value>
   </data>
   <data name="ComboBoxLangsourceDeepl.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 21</value>
@@ -2313,7 +2409,37 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ComboBoxLangsourceDeepl.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
+  </data>
+  <data name="CheckBoxdetectocu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CheckBoxdetectocu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBoxdetectocu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>872, 31</value>
+  </data>
+  <data name="CheckBoxdetectocu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="CheckBoxdetectocu.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="CheckBoxdetectocu.Text" xml:space="preserve">
+    <value>Find duplicate</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxdetectocu.Name" xml:space="preserve">
+    <value>CheckBoxdetectocu</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxdetectocu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxdetectocu.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxdetectocu.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2322,7 +2448,7 @@
     <value>0, 0</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 51</value>
+    <value>988, 113</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -2337,16 +2463,112 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="Textsourceav.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="Textsourceav.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Textsourceav.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 12pt</value>
+  </data>
+  <data name="Textsourceav.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Textsourceav.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 20</value>
+  </data>
+  <data name="Textsourceav.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 18</value>
+  </data>
+  <data name="Textsourceav.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Textsourceav.Text" xml:space="preserve">
+    <value>textav</value>
+  </data>
+  <data name="&gt;&gt;Textsourceav.Name" xml:space="preserve">
+    <value>Textsourceav</value>
+  </data>
+  <data name="&gt;&gt;Textsourceav.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Textsourceav.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Textsourceav.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Textsourceap.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="Textsourceap.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Textsourceap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 12pt</value>
+  </data>
+  <data name="Textsourceap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Textsourceap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 108</value>
+  </data>
+  <data name="Textsourceap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 18</value>
+  </data>
+  <data name="Textsourceap.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="Textsourceap.Text" xml:space="preserve">
+    <value>textap</value>
+  </data>
+  <data name="&gt;&gt;Textsourceap.Name" xml:space="preserve">
+    <value>Textsourceap</value>
+  </data>
+  <data name="&gt;&gt;Textsourceap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Textsourceap.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Textsourceap.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>907, 133</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 338</value>
+    <value>0, 479</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 112</value>
+    <value>988, 133</value>
   </data>
   <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -2361,7 +2583,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2373,7 +2595,85 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>988, 612</value>
+  </data>
+  <data name="&gt;&gt;CopierToolStripMenuItem.Name" xml:space="preserve">
+    <value>CopierToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CopierToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CutToolStripMenuItem.Name" xml:space="preserve">
+    <value>CutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClToolStripMenuItem.Name" xml:space="preserve">
+    <value>ClToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ClToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddItaliqueToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddItaliqueToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddItaliqueToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddBigToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddBigToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddBigToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorToolStripMenuItem.Name" xml:space="preserve">
+    <value>ColorToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ColorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RedToolStripMenuItem.Name" xml:space="preserve">
+    <value>RedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;RedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BlueToolStripMenuItem.Name" xml:space="preserve">
+    <value>BlueToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;BlueToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GreenToolStripMenuItem.Name" xml:space="preserve">
+    <value>GreenToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;GreenToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;YelowToolStripMenuItem.Name" xml:space="preserve">
+    <value>YelowToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;YelowToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PersoToolStripMenuItem.Name" xml:space="preserve">
+    <value>PersoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;PersoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddToolStripMenuItem1.Name" xml:space="preserve">
+    <value>AddToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;AddToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Timer1.Name" xml:space="preserve">
     <value>Timer1</value>

@@ -117,12 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Chargement.Designer.vb">
-      <DependentUpon>Chargement.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Chargement.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Globalstrings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,9 +171,6 @@
     <Compile Include="Wait_Function.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Chargement.resx">
-      <DependentUpon>Chargement.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Globalstrings.en.resx" />
     <EmbeddedResource Include="Globalstrings.fr.resx" />
     <EmbeddedResource Include="Globalstrings.resx">

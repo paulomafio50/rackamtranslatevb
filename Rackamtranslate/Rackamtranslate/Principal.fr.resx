@@ -183,29 +183,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Rackam translatebeta</value>
   </data>
-  <data name="CreateMTToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer MT</value>
-  </data>
-  <data name="ApplyMTToolStripMenuItem.Text" xml:space="preserve">
-    <value>Appliquer MT</value>
-  </data>
-  <data name="MTToolStripMenuItem.Text" xml:space="preserve">
-    <value>MT</value>
-  </data>
-  <data name="OpenMTToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ouvrir MT</value>
-  </data>
   <data name="TutorielToolStripMenuItem.Text" xml:space="preserve">
     <value>Tutorial</value>
   </data>
   <data name="DiscordToolStripMenuItem.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="Button1.Text" xml:space="preserve">
-    <value>Arrêter</value>
-  </data>
-  <data name="MTToolStripMenuItem1.Text" xml:space="preserve">
-    <value>MT</value>
   </data>
   <data name="DecompileToolStripMenuItem.Text" xml:space="preserve">
     <value>Décompilateur</value>
@@ -221,5 +203,17 @@
   </data>
   <data name="TabPageMT.Text" xml:space="preserve">
     <value>tabPage2</value>
+  </data>
+  <data name="SaveFinalWithoutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sauvegarde finale sans °℗°</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="CutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Couper</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller</value>
   </data>
 </root>

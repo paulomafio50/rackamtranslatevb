@@ -129,4 +129,20 @@
   <data name="Messagenombreoccurence" xml:space="preserve">
     <value>identical occurrences have been found do you want replace everything!</value>
   </data>
+  <data name="MessageQuit" xml:space="preserve">
+    <value>if you quit all the unsaved work will be lost.
+Do you really want to leave ?!</value>
+  </data>
+  <data name="Messagelastline" xml:space="preserve">
+    <value>Last line</value>
+  </data>
+  <data name="Messagemissdelete" xml:space="preserve">
+    <value>You must select an item to be able to delete it!</value>
+  </data>
+  <data name="Messageregexempty" xml:space="preserve">
+    <value>regex empty</value>
+  </data>
+  <data name="Typedefichier" xml:space="preserve">
+    <value>file rpy or txt|*.rpy;*.txt</value>
+  </data>
 </root>

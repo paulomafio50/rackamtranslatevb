@@ -28,7 +28,21 @@ Partial Class Traducteur
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonTraduire = New System.Windows.Forms.Button()
         Me.GeckoWebBrowser1 = New Gecko.GeckoWebBrowser()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ContextMenuStripweb = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CopierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddItaliqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddBigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BlueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GreenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YelowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PersoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComboBoxFile = New System.Windows.Forms.ComboBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Textsource = New System.Windows.Forms.Label()
         Me.Buttonok = New System.Windows.Forms.Button()
@@ -44,10 +58,16 @@ Partial Class Traducteur
         Me.ComboBoxLangtargetDeepl = New System.Windows.Forms.ComboBox()
         Me.ComboBoxLangsourceDeepl = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CheckBoxdetectocu = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Textsourceav = New System.Windows.Forms.Label()
+        Me.Textsourceap = New System.Windows.Forms.Label()
+        Me.ContextMenuStripweb.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -62,24 +82,98 @@ Partial Class Traducteur
         '
         'ButtonTraduire
         '
-        Me.ButtonTraduire.BackColor = System.Drawing.SystemColors.Control
+        Me.ButtonTraduire.BackColor = System.Drawing.Color.WhiteSmoke
         resources.ApplyResources(Me.ButtonTraduire, "ButtonTraduire")
         Me.ButtonTraduire.Name = "ButtonTraduire"
         Me.ButtonTraduire.UseVisualStyleBackColor = False
         '
         'GeckoWebBrowser1
         '
+        Me.GeckoWebBrowser1.ContextMenuStrip = Me.ContextMenuStripweb
         resources.ApplyResources(Me.GeckoWebBrowser1, "GeckoWebBrowser1")
         Me.GeckoWebBrowser1.FrameEventsPropagateToMainWindow = False
         Me.GeckoWebBrowser1.Name = "GeckoWebBrowser1"
+        Me.GeckoWebBrowser1.NoDefaultContextMenu = True
         Me.GeckoWebBrowser1.TabStop = False
         Me.GeckoWebBrowser1.UseHttpActivityObserver = False
         '
-        'ComboBox1
+        'ContextMenuStripweb
         '
-        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Name = "ComboBox1"
+        Me.ContextMenuStripweb.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopierToolStripMenuItem, Me.CutToolStripMenuItem, Me.ClToolStripMenuItem, Me.AddToolStripMenuItem, Me.AddItaliqueToolStripMenuItem, Me.AddBigToolStripMenuItem, Me.ColorToolStripMenuItem, Me.AddToolStripMenuItem1})
+        Me.ContextMenuStripweb.Name = "ContextMenuStripweb"
+        resources.ApplyResources(Me.ContextMenuStripweb, "ContextMenuStripweb")
+        '
+        'CopierToolStripMenuItem
+        '
+        Me.CopierToolStripMenuItem.Name = "CopierToolStripMenuItem"
+        resources.ApplyResources(Me.CopierToolStripMenuItem, "CopierToolStripMenuItem")
+        '
+        'CutToolStripMenuItem
+        '
+        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
+        resources.ApplyResources(Me.CutToolStripMenuItem, "CutToolStripMenuItem")
+        '
+        'ClToolStripMenuItem
+        '
+        Me.ClToolStripMenuItem.Name = "ClToolStripMenuItem"
+        resources.ApplyResources(Me.ClToolStripMenuItem, "ClToolStripMenuItem")
+        '
+        'AddToolStripMenuItem
+        '
+        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
+        resources.ApplyResources(Me.AddToolStripMenuItem, "AddToolStripMenuItem")
+        '
+        'AddItaliqueToolStripMenuItem
+        '
+        Me.AddItaliqueToolStripMenuItem.Name = "AddItaliqueToolStripMenuItem"
+        resources.ApplyResources(Me.AddItaliqueToolStripMenuItem, "AddItaliqueToolStripMenuItem")
+        '
+        'AddBigToolStripMenuItem
+        '
+        Me.AddBigToolStripMenuItem.Name = "AddBigToolStripMenuItem"
+        resources.ApplyResources(Me.AddBigToolStripMenuItem, "AddBigToolStripMenuItem")
+        '
+        'ColorToolStripMenuItem
+        '
+        Me.ColorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RedToolStripMenuItem, Me.BlueToolStripMenuItem, Me.GreenToolStripMenuItem, Me.YelowToolStripMenuItem, Me.PersoToolStripMenuItem})
+        Me.ColorToolStripMenuItem.Name = "ColorToolStripMenuItem"
+        resources.ApplyResources(Me.ColorToolStripMenuItem, "ColorToolStripMenuItem")
+        '
+        'RedToolStripMenuItem
+        '
+        Me.RedToolStripMenuItem.Name = "RedToolStripMenuItem"
+        resources.ApplyResources(Me.RedToolStripMenuItem, "RedToolStripMenuItem")
+        '
+        'BlueToolStripMenuItem
+        '
+        Me.BlueToolStripMenuItem.Name = "BlueToolStripMenuItem"
+        resources.ApplyResources(Me.BlueToolStripMenuItem, "BlueToolStripMenuItem")
+        '
+        'GreenToolStripMenuItem
+        '
+        Me.GreenToolStripMenuItem.Name = "GreenToolStripMenuItem"
+        resources.ApplyResources(Me.GreenToolStripMenuItem, "GreenToolStripMenuItem")
+        '
+        'YelowToolStripMenuItem
+        '
+        Me.YelowToolStripMenuItem.Name = "YelowToolStripMenuItem"
+        resources.ApplyResources(Me.YelowToolStripMenuItem, "YelowToolStripMenuItem")
+        '
+        'PersoToolStripMenuItem
+        '
+        Me.PersoToolStripMenuItem.Name = "PersoToolStripMenuItem"
+        resources.ApplyResources(Me.PersoToolStripMenuItem, "PersoToolStripMenuItem")
+        '
+        'AddToolStripMenuItem1
+        '
+        Me.AddToolStripMenuItem1.Name = "AddToolStripMenuItem1"
+        resources.ApplyResources(Me.AddToolStripMenuItem1, "AddToolStripMenuItem1")
+        '
+        'ComboBoxFile
+        '
+        resources.ApplyResources(Me.ComboBoxFile, "ComboBoxFile")
+        Me.ComboBoxFile.FormattingEnabled = True
+        Me.ComboBoxFile.Name = "ComboBoxFile"
         '
         'NumericUpDown1
         '
@@ -92,6 +186,8 @@ Partial Class Traducteur
         'Textsource
         '
         resources.ApplyResources(Me.Textsource, "Textsource")
+        Me.Textsource.BackColor = System.Drawing.Color.SandyBrown
+        Me.Textsource.ForeColor = System.Drawing.Color.Black
         Me.Textsource.Name = "Textsource"
         '
         'Buttonok
@@ -206,29 +302,57 @@ Partial Class Traducteur
         Me.Panel1.BackColor = System.Drawing.Color.SandyBrown
         Me.Panel1.Controls.Add(Me.ComboBoxtraducteur)
         Me.Panel1.Controls.Add(Me.ComboBoxLangtargetYand)
+        Me.Panel1.Controls.Add(Me.Buttonok)
+        Me.Panel1.Controls.Add(Me.NumericUpDown1)
+        Me.Panel1.Controls.Add(Me.CheckBoxdetectocu)
         Me.Panel1.Controls.Add(Me.ComboBoxLangsourceGog)
         Me.Panel1.Controls.Add(Me.ComboBoxLangsourceYand)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ComboBoxLangtargetGog)
         Me.Panel1.Controls.Add(Me.ComboBoxLangtargetDeepl)
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Labellangsouce)
         Me.Panel1.Controls.Add(Me.ComboBoxLangsourceDeepl)
+        Me.Panel1.Controls.Add(Me.ComboBoxFile)
         Me.Panel1.Controls.Add(Me.Labellangtarget)
         Me.Panel1.Controls.Add(Me.Labeltraducteur)
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
+        'CheckBoxdetectocu
+        '
+        resources.ApplyResources(Me.CheckBoxdetectocu, "CheckBoxdetectocu")
+        Me.CheckBoxdetectocu.Name = "CheckBoxdetectocu"
+        Me.CheckBoxdetectocu.UseVisualStyleBackColor = True
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.SandyBrown
-        Me.Panel2.Controls.Add(Me.NumericUpDown1)
+        Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.ButtonTraduire)
-        Me.Panel2.Controls.Add(Me.Buttonok)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.Textsource)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
+        '
+        'Panel3
+        '
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.BackColor = System.Drawing.Color.SandyBrown
+        Me.Panel3.Controls.Add(Me.Textsourceav)
+        Me.Panel3.Controls.Add(Me.Textsourceap)
+        Me.Panel3.Controls.Add(Me.Textsource)
+        Me.Panel3.Name = "Panel3"
+        '
+        'Textsourceav
+        '
+        resources.ApplyResources(Me.Textsourceav, "Textsourceav")
+        Me.Textsourceav.ForeColor = System.Drawing.Color.Black
+        Me.Textsourceav.Name = "Textsourceav"
+        '
+        'Textsourceap
+        '
+        resources.ApplyResources(Me.Textsourceap, "Textsourceap")
+        Me.Textsourceap.ForeColor = System.Drawing.Color.Black
+        Me.Textsourceap.Name = "Textsourceap"
         '
         'Traducteur
         '
@@ -239,11 +363,13 @@ Partial Class Traducteur
         Me.Controls.Add(Me.GeckoWebBrowser1)
         Me.Name = "Traducteur"
         Me.ShowIcon = False
+        Me.ContextMenuStripweb.ResumeLayout(False)
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -251,7 +377,7 @@ Partial Class Traducteur
     Friend WithEvents Label1 As Label
     Friend WithEvents ButtonTraduire As Button
     Friend WithEvents GeckoWebBrowser1 As Gecko.GeckoWebBrowser
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBoxFile As ComboBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Textsource As Label
     Friend WithEvents Buttonok As Button
@@ -268,4 +394,22 @@ Partial Class Traducteur
     Friend WithEvents ComboBoxLangtargetYand As ComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ContextMenuStripweb As ContextMenuStrip
+    Friend WithEvents CopierToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddItaliqueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddBigToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckBoxdetectocu As CheckBox
+    Friend WithEvents Textsourceap As Label
+    Friend WithEvents Textsourceav As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents CutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ColorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BlueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GreenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents YelowToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PersoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddToolStripMenuItem1 As ToolStripMenuItem
 End Class

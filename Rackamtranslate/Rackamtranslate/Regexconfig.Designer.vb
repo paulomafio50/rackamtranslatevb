@@ -30,8 +30,6 @@ Partial Class Regexconfig
         Me.TextBoxRegexparav = New System.Windows.Forms.TextBox()
         Me.TextBoxRegexrempav = New System.Windows.Forms.TextBox()
         Me.TextBoxRegex = New System.Windows.Forms.TextBox()
-        Me.TextBoxRegexforMT = New System.Windows.Forms.TextBox()
-        Me.LabelRegexforMT = New System.Windows.Forms.Label()
         Me.CheckBoxrempauto = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
@@ -108,28 +106,11 @@ Partial Class Regexconfig
         'TextBoxRegex
         '
         Me.TextBoxRegex.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Rackamtranslate.My.MySettings.Default, "saveregex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxRegex.Location = New System.Drawing.Point(26, 34)
+        Me.TextBoxRegex.Location = New System.Drawing.Point(12, 34)
         Me.TextBoxRegex.Name = "TextBoxRegex"
-        Me.TextBoxRegex.Size = New System.Drawing.Size(192, 20)
+        Me.TextBoxRegex.Size = New System.Drawing.Size(313, 20)
         Me.TextBoxRegex.TabIndex = 9
         Me.TextBoxRegex.Text = Global.Rackamtranslate.My.MySettings.Default.saveregex
-        '
-        'TextBoxRegexforMT
-        '
-        Me.TextBoxRegexforMT.Location = New System.Drawing.Point(26, 240)
-        Me.TextBoxRegexforMT.Name = "TextBoxRegexforMT"
-        Me.TextBoxRegexforMT.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxRegexforMT.TabIndex = 20
-        Me.TextBoxRegexforMT.Text = """.+"""
-        '
-        'LabelRegexforMT
-        '
-        Me.LabelRegexforMT.AutoSize = True
-        Me.LabelRegexforMT.Location = New System.Drawing.Point(24, 224)
-        Me.LabelRegexforMT.Name = "LabelRegexforMT"
-        Me.LabelRegexforMT.Size = New System.Drawing.Size(72, 13)
-        Me.LabelRegexforMT.TabIndex = 21
-        Me.LabelRegexforMT.Text = "Regex for MT"
         '
         'CheckBoxrempauto
         '
@@ -147,10 +128,8 @@ Partial Class Regexconfig
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(437, 290)
+        Me.ClientSize = New System.Drawing.Size(330, 211)
         Me.Controls.Add(Me.CheckBoxrempauto)
-        Me.Controls.Add(Me.LabelRegexforMT)
-        Me.Controls.Add(Me.TextBoxRegexforMT)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -165,6 +144,7 @@ Partial Class Regexconfig
         Me.Name = "Regexconfig"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.Text = "(\s\s\s\s\""|\s\s\s\s\w+\s\""|\s\s\s\s\w+\s\w+\s\"")(.+)(\"".+|\"")"
         Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -178,7 +158,5 @@ Partial Class Regexconfig
     Friend WithEvents TextBoxRegexparav As TextBox
     Friend WithEvents TextBoxRegexrempav As TextBox
     Friend WithEvents TextBoxRegex As TextBox
-    Friend WithEvents TextBoxRegexforMT As TextBox
-    Friend WithEvents LabelRegexforMT As Label
     Friend WithEvents CheckBoxrempauto As CheckBox
 End Class
